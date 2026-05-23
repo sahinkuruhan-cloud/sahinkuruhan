@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Şahin Kuruhan - Modern, şık ve minimalist kişisel portfolyo. Yazılım geliştirme ve UI/UX tasarım çalışmalarım.">
+  <meta name="keywords" content="Şahin Kuruhan, portfolio, portfolyo, frontend developer, UI/UX design, web tasarım, javascript, figma, tailwindcss">
+  <meta name="author" content="Şahin Kuruhan">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sahinkuruhan.github.io/">
+  <meta property="og:title" content="Şahin Kuruhan | Portfolio - Geliştirici & Tasarımcı">
+  <meta property="og:description" content="Modern, şık ve minimalist kişisel portfolyo. Yazılım geliştirme ve UI/UX tasarım projelerim.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Şahin Kuruhan | Portfolio">
+  <meta property="twitter:description" content="Modern, şık ve minimalist kişisel portfolyo. Yazılım geliştirme ve UI/UX tasarım projelerim.">
+
+  <title>Şahin Kuruhan | Portfolio - Geliştirici & Tasarımcı</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            dark: '#030712',
+            glass: 'rgba(17, 24, 39, 0.65)',
+            accent: {
+              emerald: '#10B981',
+              violet: '#8B5CF6',
+              cyan: '#06B6D4',
+              indigo: '#6366F1',
+            }
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-dark text-slate-100 bg-grid-pattern selection:bg-indigo-500/20 selection:text-indigo-300 min-h-screen relative antialiased">
+
+  <!-- Fixed Animated Background Layer -->
+  <div class="bg-animated-wrapper"></div>
+
+  <!-- Background Decorative Glowing Neon Light Streaks -->
+  <div class="absolute top-[5%] left-[-10%] w-[600px] h-[160px] bg-gradient-to-r from-indigo-500/10 to-transparent rounded-full blur-[110px] rotate-[35deg] pointer-events-none -z-10 animate-pulse animate-blob-1"></div>
+  <div class="absolute top-[35%] right-[-10%] w-[700px] h-[180px] bg-gradient-to-r from-violet-500/10 to-transparent rounded-full blur-[120px] -rotate-[35deg] pointer-events-none -z-10 animate-pulse animate-blob-2" style="animation-delay: 2s;"></div>
+  <div class="absolute bottom-[5%] left-[5%] w-[650px] h-[160px] bg-gradient-to-r from-cyan-500/10 to-transparent rounded-full blur-[110px] rotate-[15deg] pointer-events-none -z-10 animate-pulse animate-blob-3" style="animation-delay: 4s;"></div>
+
+  <!-- Header Section -->
+  <header id="main-header" class="fixed top-0 left-0 w-full z-40 py-5 transition-all duration-300 glass-navbar">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
+      <!-- Logo -->
+      <a href="#hero" class="flex items-center group focus:outline-none" id="nav-logo" aria-label="Ana sayfa">
+        <img src="logo.png" alt="Şahin Kuruhan Logo" class="h-16 w-16 object-contain rounded-xl border border-slate-800/80 shadow-md group-hover:scale-105 transition-transform duration-300">
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-8" id="desktop-navigation">
+        <a href="#about" class="nav-link text-sm font-medium text-slate-400 hover:text-slate-200 transition-colors duration-200 relative py-1 after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-indigo-500 after:scale-x-0 after:origin-right hover:after:scale-x-100 hover:after:origin-left after:transition-transform after:duration-300">Hakkımda</a>
+        <a href="#skills" class="nav-link text-sm font-medium text-slate-400 hover:text-slate-200 transition-colors duration-200 relative py-1 after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-indigo-500 after:scale-x-0 after:origin-right hover:after:scale-x-100 hover:after:origin-left after:transition-transform after:duration-300">Yetenekler</a>
+        <a href="#works" class="nav-link text-sm font-medium text-slate-400 hover:text-slate-200 transition-colors duration-200 relative py-1 after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-indigo-500 after:scale-x-0 after:origin-right hover:after:scale-x-100 hover:after:origin-left after:transition-transform after:duration-300">Projelerim</a>
+        <a href="#contact" class="nav-link text-sm font-medium text-slate-400 hover:text-slate-200 transition-colors duration-200 relative py-1 after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-indigo-500 after:scale-x-0 after:origin-right hover:after:scale-x-100 hover:after:origin-left after:transition-transform after:duration-300">İletişim</a>
+        <a href="#contact" class="px-4.5 py-2 text-xs font-semibold rounded-lg bg-indigo-600/10 hover:bg-indigo-600 border border-indigo-500/20 hover:border-indigo-400 text-indigo-300 hover:text-white shadow-sm hover:shadow-indigo-500/20 hover:shadow-lg transition-all duration-300 hover-lift">
+          Beraber Çalışalım
+        </a>
+      </nav>
+
+      <!-- Mobile Nav Trigger -->
+      <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-900 focus:outline-none" aria-label="Menüyü Aç" aria-expanded="false" aria-controls="mobile-menu">
+        <svg id="menu-icon-open" class="h-6 w-6 block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="menu-icon-close" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Panel -->
+    <div id="mobile-menu" class="hidden md:hidden fixed top-[69px] left-0 w-full h-[calc(100vh-69px)] bg-slate-950/95 backdrop-blur-xl flex-col items-center justify-center gap-8 py-8 px-6 transition-all duration-300 z-30">
+      <a href="#about" class="mobile-link text-xl font-semibold text-slate-300 hover:text-white transition-colors">Hakkımda</a>
+      <a href="#skills" class="mobile-link text-xl font-semibold text-slate-300 hover:text-white transition-colors">Yetenekler</a>
+      <a href="#works" class="mobile-link text-xl font-semibold text-slate-300 hover:text-white transition-colors">Projelerim</a>
+      <a href="#contact" class="mobile-link text-xl font-semibold text-slate-300 hover:text-white transition-colors">İletişim</a>
+      <a href="#contact" class="mobile-link px-8 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-medium shadow-lg shadow-indigo-500/20 transition-all w-full max-w-[280px] text-center">
+        Beraber Çalışalım
+      </a>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-6 md:px-12 pt-28 pb-16">
+    
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-[85vh] flex flex-col lg:flex-row items-center justify-center gap-12 py-12 md:py-20">
+      <!-- Hero Details -->
+      <div class="flex-1 space-y-6 text-left reveal">
+        <!-- Open to Work Badge -->
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold tracking-wide">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          Yeni Projeler İçin Müsait
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] font-display text-white">
+          Yaratıcı Fikirleri <br>
+          <span class="bg-gradient-to-r from-indigo-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent animate-gradient">
+            Koda Dönüştürüyorum.
+          </span>
+        </h1>
+
+        <p class="text-base sm:text-lg text-slate-400 max-w-xl leading-relaxed">
+          Merhaba, ben Şahin. Modern arayüz tasarımlarını (UI/UX) yüksek kaliteli ve ölçeklenebilir frontend teknolojileri ile hayata geçiren bir geliştiriciyim.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
+          <a href="#works" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-indigo-500 to-violet-500 hover:from-indigo-600 hover:to-violet-600 text-white font-semibold text-sm shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/45 transition-all text-center hover-lift">
+            Çalışmalarımı Gör
+          </a>
+          <a href="#contact" class="px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-slate-300 hover:text-white font-semibold text-sm transition-all text-center hover-lift">
+            İletişime Geç
+          </a>
+        </div>
+
+        <!-- Social Connections -->
+        <div class="flex items-center gap-5 pt-6 text-slate-500">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors duration-200" aria-label="LinkedIn Profilim">
+            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd" />
+            </svg>
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors duration-200" aria-label="Instagram Profilim">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors duration-200" aria-label="X (Twitter) Profilim">
+            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors duration-200" aria-label="YouTube Profilim">
+            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.52 3.545 12 3.545 12 3.545s-7.52 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.868.507 9.388.507 9.388.507s7.52 0 9.388-.507a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero Visual: Code Editor Mockup -->
+      <div class="flex-1 w-full max-w-lg lg:max-w-none reveal reveal-delay-2">
+        <div class="glass-panel rounded-2xl overflow-hidden shadow-2xl border border-slate-800/80">
+          <!-- Terminal Header -->
+          <div class="bg-slate-900/90 px-4 py-3 border-b border-slate-800/80 flex items-center justify-between">
+            <div class="flex items-center gap-1.5">
+              <span class="w-3.5 h-3.5 rounded-full bg-red-500/80 block"></span>
+              <span class="w-3.5 h-3.5 rounded-full bg-yellow-500/80 block"></span>
+              <span class="w-3.5 h-3.5 rounded-full bg-emerald-500/80 block"></span>
+            </div>
+            <div class="text-[11px] text-slate-500 font-mono tracking-wide">developer.js</div>
+            <div class="w-12"></div>
+          </div>
+          <!-- Terminal Content -->
+          <div class="p-6 md:p-8 font-mono text-xs md:text-sm leading-relaxed overflow-x-auto text-indigo-300">
+            <div><span class="text-pink-500">const</span> developer <span class="text-slate-400">=</span> {</div>
+            <div class="pl-4"><span class="text-slate-400">name:</span> <span class="text-emerald-400">'Şahin Kuruhan'</span>,</div>
+            <div class="pl-4"><span class="text-slate-400">role:</span> <span class="text-emerald-400">'Frontend Developer & Designer'</span>,</div>
+            <div class="pl-4"><span class="text-slate-400">experience:</span> <span class="text-cyan-400">4</span>, <span class="text-slate-500">// in years</span></div>
+            <div class="pl-4"><span class="text-slate-400">skills:</span> [</div>
+            <div class="pl-8"><span class="text-emerald-400">'JavaScript'</span>, <span class="text-emerald-400">'React.js'</span>, <span class="text-emerald-400">'CSS/Tailwind'</span>,</div>
+            <div class="pl-8"><span class="text-emerald-400">'UI/UX Design'</span>, <span class="text-emerald-400">'Git'</span>, <span class="text-emerald-400">'Figma'</span></div>
+            <div class="pl-4">],</div>
+            <div class="pl-4"><span class="text-slate-400">motto:</span> <span class="text-emerald-400">'Clean code. Seamless interfaces.'</span></div>
+            <div>};</div>
+            <div class="mt-4"><span class="text-slate-500">// Web sitesi optimize edildi.</span></div>
+            <div><span class="text-pink-500">console</span>.<span class="text-cyan-400">log</span>(developer.motto);</div>
+            <div class="mt-2 text-slate-500">&gt; "Clean code. Seamless interfaces."</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 border-t border-slate-900/60 reveal">
+      <div class="flex flex-col lg:flex-row gap-12 items-start">
+        <div class="lg:w-1/3">
+          <h2 class="text-xs font-bold text-indigo-400 tracking-widest uppercase mb-2">Hakkımda</h2>
+          <p class="text-3xl font-bold font-display text-white">
+            Kodla Tasarlayan, <br>
+            Tasarımı Yaşatan
+          </p>
+        </div>
+        <div class="lg:w-2/3 space-y-6 text-slate-400 text-base leading-relaxed">
+          <p>
+            Dijital dünyaya olan merakım, tasarladığım görsellerin kodla hayat bulduğunu gördüğüm an tutkuya dönüştü. Estetik arayüzler kurgulamayı ve bu arayüzleri kullanıcıyı yormayan, erişilebilir ve son teknoloji standartlarında web uygulamalarına taşımayı amaçlıyorum.
+          </p>
+          <p>
+            Geliştirme süreçlerimde sadece estetiğe değil; temiz kod yapısına, performans optimizasyonlarına, SEO uyumluluğuna ve sürdürülebilirliğe özen gösteriyorum. Fikir aşamasından yayına alma sürecine kadar projelerin her aşamasına entegre olabiliyorum.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 border-t border-slate-900/60 reveal">
+      <div class="mb-12">
+        <h2 class="text-xs font-bold text-indigo-400 tracking-widest uppercase mb-2">Yetenekler</h2>
+        <p class="text-3xl font-bold font-display text-white">Kullandığım Teknolojiler & Araçlar</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Frontend Skills Card -->
+        <div class="glass-panel p-6 rounded-2xl glow-indigo">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="p-2.5 rounded-xl bg-indigo-500/10 text-indigo-400">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            </div>
+            <h3 class="font-display font-semibold text-lg text-white">Frontend Geliştirme</h3>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-center justify-between p-2.5 rounded-lg bg-slate-900/40 border border-slate-800 text-sm">
+              <span class="font-medium text-slate-300">JavaScript (ES6+)</span>
+              <span class="text-xs font-semibold text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded">İleri Düzey</span>
+            </div>
+            <div class="flex items-center justify-between p-2.5 rounded-lg bg-slate-900/40 border border-slate-800 text-sm">
+              <span class="font-medium text-slate-300">React.js & Next.js</span>
+              <span class="text-xs font-semibold text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded">Uzman</span>
+            </div>
+            <div class="flex items-center justify-between p-2.5 rounded-lg bg-slate-900/40 border border-slate-800 text-sm">
+              <span class="font-medium text-slate-300">Tailwind CSS & CSS3</span>
+              <span class="text-xs font-semibold text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded">Uzman</span>
+            </div>
+            <div class="flex items-center justify-between p-2.5 rounded-lg bg-slate-900/40 border border-slate-800 text-sm">
+              <span class="font-medium text-slate-300">HTML5 / Semantik Web</span>
+              <span class="text-xs font-semibold text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded">Uzman</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- UI/UX & Design Card -->
+        <div class="glass-panel p-6 rounded-2xl glow-violet">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="p-2.5 rounded-xl bg-violet-500/10 text-violet-400">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+              </svg>
+            </div>
+            <h3 class="font-display font-semibold text-lg text-white">Tasarım & UI/UX</h3>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-center justify-between p-2.5 rounded-lg bg-slate-900/40 border border-slate-800 text-sm">
+              <span class="font-medium text-slate-300">Figma Arayüz Tasarımı</span>
+              <span class="text-xs font-semibold text-violet-400 bg-violet-500/10 px-2 py-0.5 rounded">İleri Düzey</span>
+            </div>
+            <div class="flex items-center justify-between p-2.5 rounded-lg bg-slate-900/40 border border-slate-800 text-sm">
+              <span class="font-medium text-slate-300">Responsive Layouts</span>
+              <span class="text-xs font-semibold text-violet-400 bg-violet-500/10 px-2 py-0.5 rounded">Uzman</span>
+            </div>
+            <div class="flex items-center justify-between p-2.5 rounded-lg bg-slate-900/40 border border-slate-800 text-sm">
+              <span class="font-medium text-slate-300">Prototipleme</span>
+              <span class="text-xs font-semibold text-violet-400 bg-violet-500/10 px-2 py-0.5 rounded">Orta-İleri</span>
+            </div>
+            <div class="flex items-center justify-between p-2.5 rounded-lg bg-slate-900/40 border border-slate-800 text-sm">
+              <span class="font-medium text-slate-300">Arayüz Animasyonları</span>
+              <span class="text-xs font-semibold text-violet-400 bg-violet-500/10 px-2 py-0.5 rounded">İleri Düzey</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Araçlar & Diğer Card -->
+        <div class="glass-panel p-6 rounded-2xl glow-cyan">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="p-2.5 rounded-xl bg-cyan-500/10 text-cyan-400">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+              </svg>
+            </div>
+            <h3 class="font-display font-semibold text-lg text-white">Araçlar & Metotlar</h3>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-center justify-between p-2.5 rounded-lg bg-slate-900/40 border border-slate-800 text-sm">
+              <span class="font-medium text-slate-300">Git / GitHub İş Akışı</span>
+              <span class="text-xs font-semibold text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded">Uzman</span>
+            </div>
+            <div class="flex items-center justify-between p-2.5 rounded-lg bg-slate-900/40 border border-slate-800 text-sm">
+              <span class="font-medium text-slate-300">npm / Webpack / Vite</span>
+              <span class="text-xs font-semibold text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded">Uzman</span>
+            </div>
+            <div class="flex items-center justify-between p-2.5 rounded-lg bg-slate-900/40 border border-slate-800 text-sm">
+              <span class="font-medium text-slate-300">SEO / Arama Optimizasyonu</span>
+              <span class="text-xs font-semibold text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded">Uzman</span>
+            </div>
+            <div class="flex items-center justify-between p-2.5 rounded-lg bg-slate-900/40 border border-slate-800 text-sm">
+              <span class="font-medium text-slate-300">REST API Entegrasyonu</span>
+              <span class="text-xs font-semibold text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded">İleri Düzey</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Works Section -->
+    <section id="works" class="py-20 border-t border-slate-900/60 reveal">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div>
+          <h2 class="text-xs font-bold text-indigo-400 tracking-widest uppercase mb-2">Çalışmalarım</h2>
+          <p class="text-3xl font-bold font-display text-white">Seçilmiş Son Projeler</p>
+        </div>
+
+        <!-- Filters -->
+        <div class="flex items-center gap-2 p-1.5 rounded-xl bg-slate-900/80 border border-slate-800/80 self-start md:self-auto font-medium text-xs">
+          <button data-filter="all" class="filter-btn px-4 py-2 rounded-lg bg-indigo-600 text-white shadow-lg shadow-indigo-500/20 transition-all duration-300">Tümü</button>
+          <button data-filter="software" class="filter-btn px-4 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800/50 transition-all duration-300">Yazılım</button>
+          <button data-filter="design" class="filter-btn px-4 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800/50 transition-all duration-300">Tasarım</button>
+        </div>
+      </div>
+
+      <!-- Works Grid -->
+      <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-300">
+        
+        <!-- Project Card 1: Software -->
+        <article data-category="software" class="portfolio-item group glass-panel rounded-2xl overflow-hidden hover-lift border border-slate-800/50 hover:border-indigo-500/30">
+          <div class="h-48 bg-gradient-to-br from-indigo-950 via-slate-950 to-violet-950 flex items-center justify-center p-6 border-b border-slate-900/60 relative overflow-hidden">
+            <!-- Sleek SVG Illustration instead of image placeholder -->
+            <svg class="w-full h-full text-indigo-500/20 max-w-[200px]" viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="10" y="10" width="180" height="100" rx="6" stroke-dasharray="2 4" />
+              <circle cx="45" cy="50" r="16" stroke="indigo" stroke-width="2" class="text-indigo-400" />
+              <rect x="75" y="40" width="80" height="8" rx="2" fill="currentColor" />
+              <rect x="75" y="54" width="60" height="6" rx="2" fill="currentColor" />
+              <rect x="25" y="85" width="150" height="12" rx="4" stroke="violet" stroke-width="1" />
+            </svg>
+            <div class="absolute inset-0 bg-slate-950/20 group-hover:bg-slate-950/0 transition-colors duration-300"></div>
+          </div>
+          <div class="p-6 space-y-4">
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="text-[10px] font-bold text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded uppercase tracking-wider">Yazılım</span>
+              <span class="text-[10px] font-bold text-slate-500 bg-slate-800/60 px-2 py-0.5 rounded font-mono">React / Node.js</span>
+            </div>
+            <div>
+              <h3 class="font-display font-semibold text-lg text-white group-hover:text-indigo-400 transition-colors duration-200">DevFlow - Geliştirici Portalı</h3>
+              <p class="text-sm text-slate-400 line-clamp-2 mt-1">Yazılımcılar için kod paylaşımlı, gerçek zamanlı topluluk ve forum platformu.</p>
+            </div>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-semibold text-indigo-400 hover:text-indigo-300 transition-colors">
+              GitHub'da İncele 
+              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project Card 2: Design -->
+        <article data-category="design" class="portfolio-item group glass-panel rounded-2xl overflow-hidden hover-lift border border-slate-800/50 hover:border-violet-500/30">
+          <div class="h-48 bg-gradient-to-br from-violet-950 via-slate-950 to-pink-950 flex items-center justify-center p-6 border-b border-slate-900/60 relative overflow-hidden">
+            <!-- Sleek SVG Illustration -->
+            <svg class="w-full h-full text-violet-500/20 max-w-[130px]" viewBox="0 0 100 150" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="5" y="10" width="90" height="130" rx="14" stroke="violet" stroke-width="2" class="text-violet-400" />
+              <line x1="40" y1="18" x2="60" y2="18" stroke-linecap="round" stroke-width="3" />
+              <rect x="15" y="32" width="70" height="90" rx="8" stroke-dasharray="3 3" />
+              <circle cx="50" cy="70" r="18" stroke="currentColor" />
+              <line x1="32" y1="105" x2="68" y2="105" />
+            </svg>
+            <div class="absolute inset-0 bg-slate-950/20 group-hover:bg-slate-950/0 transition-colors duration-300"></div>
+          </div>
+          <div class="p-6 space-y-4">
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="text-[10px] font-bold text-violet-400 bg-violet-500/10 px-2 py-0.5 rounded uppercase tracking-wider">Tasarım</span>
+              <span class="text-[10px] font-bold text-slate-500 bg-slate-800/60 px-2 py-0.5 rounded font-mono">Figma / UI/UX</span>
+            </div>
+            <div>
+              <h3 class="font-display font-semibold text-lg text-white group-hover:text-violet-400 transition-colors duration-200">CryptoVerse Mobil Cüzdan</h3>
+              <p class="text-sm text-slate-400 line-clamp-2 mt-1">Kripto varlık takibi ve anlık transferler için tasarlanmış minimalist mobil cüzdan arayüzü.</p>
+            </div>
+            <a href="https://figma.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-semibold text-violet-400 hover:text-violet-300 transition-colors">
+              Figma Prototip 
+              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project Card 3: Software -->
+        <article data-category="software" class="portfolio-item group glass-panel rounded-2xl overflow-hidden hover-lift border border-slate-800/50 hover:border-cyan-500/30">
+          <div class="h-48 bg-gradient-to-br from-cyan-950 via-slate-950 to-emerald-950 flex items-center justify-center p-6 border-b border-slate-900/60 relative overflow-hidden">
+            <!-- Sleek SVG Illustration -->
+            <svg class="w-full h-full text-cyan-500/20 max-w-[200px]" viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M20 20h160v80H20z" stroke="cyan" stroke-width="2" class="text-cyan-400" />
+              <path d="M40 50h40M40 70h60M120 40v40" />
+              <circle cx="120" cy="40" r="6" fill="currentColor" />
+              <circle cx="120" cy="80" r="6" fill="currentColor" />
+              <path d="M140 60h20" stroke-dasharray="2 2" />
+            </svg>
+            <div class="absolute inset-0 bg-slate-950/20 group-hover:bg-slate-950/0 transition-colors duration-300"></div>
+          </div>
+          <div class="p-6 space-y-4">
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="text-[10px] font-bold text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded uppercase tracking-wider">Yazılım</span>
+              <span class="text-[10px] font-bold text-slate-500 bg-slate-800/60 px-2 py-0.5 rounded font-mono">Vue.js / Tailwind</span>
+            </div>
+            <div>
+              <h3 class="font-display font-semibold text-lg text-white group-hover:text-cyan-400 transition-colors duration-200">EcoSphere IoT Panel</h3>
+              <p class="text-sm text-slate-400 line-clamp-2 mt-1">Akıllı ev sensörlerinden gelen anlık verileri görselleştiren responsive kontrol paneli.</p>
+            </div>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition-colors">
+              GitHub'da İncele 
+              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project Card 4: Design -->
+        <article data-category="design" class="portfolio-item group glass-panel rounded-2xl overflow-hidden hover-lift border border-slate-800/50 hover:border-indigo-500/30">
+          <div class="h-48 bg-gradient-to-br from-blue-950 via-slate-950 to-indigo-950 flex items-center justify-center p-6 border-b border-slate-900/60 relative overflow-hidden">
+            <!-- Sleek SVG Illustration -->
+            <svg class="w-full h-full text-indigo-500/20 max-w-[200px]" viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="1.5">
+              <polygon points="100,20 160,80 40,80" stroke="indigo" stroke-width="2" class="text-indigo-400" />
+              <circle cx="100" cy="55" r="14" />
+              <line x1="100" y1="20" x2="100" y2="80" stroke-dasharray="3 3" />
+            </svg>
+            <div class="absolute inset-0 bg-slate-950/20 group-hover:bg-slate-950/0 transition-colors duration-300"></div>
+          </div>
+          <div class="p-6 space-y-4">
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="text-[10px] font-bold text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded uppercase tracking-wider">Tasarım</span>
+              <span class="text-[10px] font-bold text-slate-500 bg-slate-800/60 px-2 py-0.5 rounded font-mono">Illustrator / Brand</span>
+            </div>
+            <div>
+              <h3 class="font-display font-semibold text-lg text-white group-hover:text-indigo-400 transition-colors duration-200">NeuralArt Marka Kimliği</h3>
+              <p class="text-sm text-slate-400 line-clamp-2 mt-1">Yapay zeka sanat galerisi girişimi için minimalist logo, tipografi ve kurumsal kimlik çalışması.</p>
+            </div>
+            <a href="https://behance.net" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-semibold text-indigo-400 hover:text-indigo-300 transition-colors">
+              Behance Sunumu 
+              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project Card 5: Software -->
+        <article data-category="software" class="portfolio-item group glass-panel rounded-2xl overflow-hidden hover-lift border border-slate-800/50 hover:border-violet-500/30">
+          <div class="h-48 bg-gradient-to-br from-pink-950 via-slate-950 to-violet-950 flex items-center justify-center p-6 border-b border-slate-900/60 relative overflow-hidden">
+            <!-- Sleek SVG Illustration -->
+            <svg class="w-full h-full text-violet-500/20 max-w-[200px]" viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="20" y="20" width="160" height="80" rx="8" />
+              <path d="M40 45h120M40 60h80M40 75h50" stroke="violet" stroke-width="2" class="text-violet-400" />
+              <circle cx="150" cy="70" r="12" fill="currentColor" />
+            </svg>
+            <div class="absolute inset-0 bg-slate-950/20 group-hover:bg-slate-950/0 transition-colors duration-300"></div>
+          </div>
+          <div class="p-6 space-y-4">
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="text-[10px] font-bold text-violet-400 bg-violet-500/10 px-2 py-0.5 rounded uppercase tracking-wider">Yazılım</span>
+              <span class="text-[10px] font-bold text-slate-500 bg-slate-800/60 px-2 py-0.5 rounded font-mono">Express / PostgreSQL</span>
+            </div>
+            <div>
+              <h3 class="font-display font-semibold text-lg text-white group-hover:text-violet-400 transition-colors duration-200">SaaS Analytics API</h3>
+              <p class="text-sm text-slate-400 line-clamp-2 mt-1">Yüksek trafikli platformlar için Redis önbellekli, dokümante edilmiş loglama ve analitik backend API'si.</p>
+            </div>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-semibold text-violet-400 hover:text-violet-300 transition-colors">
+              GitHub'da İncele 
+              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project Card 6: Design -->
+        <article data-category="design" class="portfolio-item group glass-panel rounded-2xl overflow-hidden hover-lift border border-slate-800/50 hover:border-cyan-500/30">
+          <div class="h-48 bg-gradient-to-br from-emerald-950 via-slate-950 to-cyan-950 flex items-center justify-center p-6 border-b border-slate-900/60 relative overflow-hidden">
+            <!-- Sleek SVG Illustration -->
+            <svg class="w-full h-full text-cyan-500/20 max-w-[200px]" viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="30" y="20" width="60" height="80" rx="4" />
+              <rect x="110" y="20" width="60" height="80" rx="4" stroke="cyan" stroke-width="2" class="text-cyan-400" />
+              <circle cx="60" cy="50" r="10" />
+              <circle cx="140" cy="50" r="10" fill="currentColor" />
+              <line x1="45" y1="80" x2="75" y2="80" />
+              <line x1="125" y1="80" x2="155" y2="80" />
+            </svg>
+            <div class="absolute inset-0 bg-slate-950/20 group-hover:bg-slate-950/0 transition-colors duration-300"></div>
+          </div>
+          <div class="p-6 space-y-4">
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="text-[10px] font-bold text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded uppercase tracking-wider">Tasarım</span>
+              <span class="text-[10px] font-bold text-slate-500 bg-slate-800/60 px-2 py-0.5 rounded font-mono">Figma / Design System</span>
+            </div>
+            <div>
+              <h3 class="font-display font-semibold text-lg text-white group-hover:text-cyan-400 transition-colors duration-200">Minimal E-Ticaret Arayüzü</h3>
+              <p class="text-sm text-slate-400 line-clamp-2 mt-1">Ürün listeleme, detaylı sepet ve minimalist ödeme adımlarına sahip yeni nesil web arayüz tasarımı.</p>
+            </div>
+            <a href="https://figma.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition-colors">
+              Figma Prototip 
+              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 border-t border-slate-900/60 reveal">
+      <div class="mb-12">
+        <h2 class="text-xs font-bold text-indigo-400 tracking-widest uppercase mb-2">İletişim</h2>
+        <p class="text-3xl font-bold font-display text-white">Bir Projeniz mi Var? Görüşelim.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <!-- Contact details -->
+        <div class="lg:col-span-5 space-y-8">
+          <p class="text-slate-400 leading-relaxed text-base">
+            Yeni iş tekliflerine, iş birliklerine veya web tasarımı & geliştirme ile ilgili sorularınıza açığım. Benimle direkt e-posta adresi üzerinden veya sosyal medya kanallarından iletişim kurabilirsiniz.
+          </p>
+
+          <div class="space-y-4">
+            <div class="flex items-center gap-4">
+              <div class="p-3 rounded-xl bg-indigo-500/10 text-indigo-400">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">E-Posta Adresi</p>
+                <div class="flex items-center gap-2 mt-0.5">
+                  <span class="font-semibold text-white">sahinkuruhan@gmail.com</span>
+                  <button id="copy-email-btn" data-email="sahinkuruhan@gmail.com" class="relative text-slate-400 hover:text-white p-1 rounded hover:bg-slate-900 transition-colors focus:outline-none" aria-label="E-postayı Kopyala">
+                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                    </svg>
+                    <span id="copy-tooltip" class="absolute -top-8 left-1/2 -translate-x-1/2 bg-slate-950 text-[10px] text-white py-1 px-2 rounded opacity-0 pointer-events-none transition-all duration-300 font-sans shadow-md border border-slate-800">Kopyala</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact form -->
+        <div class="lg:col-span-7">
+          <form id="contact-form" class="glass-panel p-6 sm:p-8 rounded-2xl space-y-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label for="form-name" class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Ad Soyad</label>
+                <input type="text" id="form-name" placeholder="Adınızı girin" class="w-full bg-slate-900/60 border border-slate-800/80 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/30 transition-all">
+              </div>
+              <div class="space-y-2">
+                <label for="form-email" class="text-xs font-semibold text-slate-400 uppercase tracking-wider">E-Posta</label>
+                <input type="email" id="form-email" placeholder="E-posta adresiniz" class="w-full bg-slate-900/60 border border-slate-800/80 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/30 transition-all">
+              </div>
+            </div>
+            <div class="space-y-2">
+              <label for="form-message" class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Mesaj</label>
+              <textarea id="form-message" rows="5" placeholder="Projeniz hakkında detaylar veya mesajınız..." class="w-full bg-slate-900/60 border border-slate-800/80 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/30 transition-all resize-none"></textarea>
+            </div>
+            <button type="submit" class="w-full px-6 py-3.5 rounded-xl bg-gradient-to-r from-indigo-500 to-violet-500 hover:from-indigo-600 hover:to-violet-600 text-white font-semibold text-sm shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/40 transition-all text-center flex items-center justify-center gap-2">
+              Mesaj Gönder
+              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="border-t border-slate-900/60 py-8 bg-slate-950/60">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-xs text-slate-500 font-medium">
+        &copy; 2026 Şahin Kuruhan. Tüm hakları saklıdır.
+      </p>
+      <div class="flex items-center gap-6 text-xs text-slate-500">
+        <a href="#about" class="hover:text-slate-300 transition-colors">Hakkımda</a>
+        <a href="#skills" class="hover:text-slate-300 transition-colors">Yetenekler</a>
+        <a href="#works" class="hover:text-slate-300 transition-colors">Projelerim</a>
+        <a href="#contact" class="hover:text-slate-300 transition-colors">İletişim</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Custom Script -->
+  <script src="script.js"></script>
+</body>
+</html>
