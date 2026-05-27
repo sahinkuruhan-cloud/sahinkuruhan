@@ -2,6 +2,11 @@
 
 :root {
   scroll-behavior: smooth;
+  --neon-electric: #00D4FF;
+  --neon-electric-dim: rgba(0, 212, 255, 0.18);
+  --neon-electric-mid: rgba(0, 212, 255, 0.40);
+  --neon-glow-text-sm: 0 0 6px rgba(0,212,255,0.8), 0 0 18px rgba(0,212,255,0.4);
+  --neon-glow-text-md: 0 0 8px rgba(0,212,255,0.9), 0 0 25px rgba(0,212,255,0.55);
 }
 
 body {
@@ -264,4 +269,226 @@ h1, h2, h3, h4, h5, h6, .font-display {
 
 .animate-blob-3 {
   animation: float-blob-3 28s infinite ease-in-out;
+}
+
+/* =============================================
+   NEON YARDIMCI SINIFLAR
+   ============================================= */
+
+.neon-heading-gradient {
+  background: linear-gradient(90deg, #818CF8 0%, #00D4FF 50%, #22D3EE 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+  filter: drop-shadow(0 0 12px rgba(0, 212, 255, 0.35));
+}
+
+.neon-label {
+  color: var(--neon-electric);
+  text-shadow: var(--neon-glow-text-sm);
+  letter-spacing: 0.15em;
+}
+
+.glow-neon {
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glow-neon:hover {
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.25), 0 0 60px rgba(0, 212, 255, 0.10);
+  border-color: rgba(0, 212, 255, 0.45);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00D4FF;
+  box-shadow: 0 0 8px rgba(0, 212, 255, 0.55), 0 0 20px rgba(0, 212, 255, 0.25);
+}
+
+/* =============================================
+   TERMINAL YAZIM ANİMASYONU (Saf CSS)
+   ============================================= */
+
+@keyframes typing-line1 { from { width: 0; } to { width: 24ch; } }
+@keyframes typing-line2 { from { width: 0; } to { width: 14ch; } }
+@keyframes typing-line3 { from { width: 0; } to { width: 34ch; } }
+
+@keyframes cursor-blink {
+  0%, 49%  { border-right-color: var(--neon-electric); }
+  50%, 100% { border-right-color: transparent; }
+}
+
+.terminal-typing-window {
+  background: rgba(9, 13, 24, 0.85);
+  border: 1px solid rgba(0, 212, 255, 0.20);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.08), 0 4px 24px rgba(0,0,0,0.6);
+}
+
+.terminal-typing-bar {
+  background: rgba(15, 20, 35, 0.95);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.12);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.terminal-typing-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.terminal-typing-body {
+  padding: 20px 24px;
+  font-family: 'Courier New', 'Consolas', monospace;
+  font-size: 0.8125rem;
+  line-height: 1.75;
+  color: #94a3b8;
+}
+
+.typed-line {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  border-right: 2px solid transparent;
+}
+
+.typed-line-1 {
+  animation: typing-line1 1.7s steps(24, end) 0.3s forwards;
+  color: var(--neon-electric);
+}
+
+.typed-line-2 {
+  animation: typing-line2 1.0s steps(14, end) 2.3s forwards;
+  color: #94a3b8;
+}
+
+.typed-line-3 {
+  animation:
+    typing-line3 2.4s steps(34, end) 3.6s forwards,
+    cursor-blink 0.9s step-end 6.0s infinite;
+  color: #4ade80;
+  border-right: 2px solid transparent;
+}
+
+@media (max-width: 480px) {
+  .terminal-typing-body {
+    font-size: 0.6875rem;
+    padding: 14px 16px;
+  }
+}
+
+/* =============================================
+   NPM PAKET KARTI STİLLERİ
+   ============================================= */
+
+.pkg-card {
+  transition: box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.pkg-card:hover {
+  border-color: rgba(0, 212, 255, 0.50);
+  box-shadow:
+    0 0 0 1px rgba(0, 212, 255, 0.18),
+    0 0 20px rgba(0, 212, 255, 0.22),
+    0 0 50px rgba(0, 212, 255, 0.10),
+    0 8px 32px rgba(0, 0, 0, 0.50);
+}
+
+.pkg-header {
+  background: linear-gradient(135deg,
+    rgba(9, 13, 28, 0.95) 0%,
+    rgba(15, 20, 40, 0.90) 100%);
+  min-height: 110px;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.pkg-version-badge {
+  font-family: 'Courier New', 'Consolas', monospace;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--neon-electric);
+  background: rgba(0, 212, 255, 0.10);
+  border: 1px solid rgba(0, 212, 255, 0.25);
+  padding: 1px 7px;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+}
+
+.pkg-name-line {
+  display: flex;
+  align-items: baseline;
+  margin-top: 10px;
+}
+
+.pkg-prefix {
+  font-family: 'Courier New', 'Consolas', monospace;
+  color: rgba(0, 212, 255, 0.55);
+  font-size: 1rem;
+  font-weight: 700;
+  margin-right: 6px;
+  user-select: none;
+}
+
+.pkg-title {
+  font-family: 'Courier New', 'Consolas', monospace;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  letter-spacing: -0.01em;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+.pkg-card:hover .pkg-title {
+  color: var(--neon-electric);
+  text-shadow: var(--neon-glow-text-sm);
+}
+
+.pkg-install-line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+  padding: 5px 10px;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.pkg-dollar {
+  font-family: 'Courier New', 'Consolas', monospace;
+  font-size: 0.6875rem;
+  color: #4ade80;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.pkg-install-cmd {
+  font-family: 'Courier New', 'Consolas', monospace;
+  font-size: 0.6875rem;
+  color: #94a3b8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pkg-tech-badge {
+  font-family: 'Courier New', 'Consolas', monospace;
+  font-size: 0.625rem;
+  font-weight: 700;
+  color: #64748b;
+  background: rgba(30, 41, 59, 0.70);
+  border: 1px solid rgba(71, 85, 105, 0.40);
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+@media (max-width: 640px) {
+  .pkg-install-cmd { font-size: 0.5625rem; }
+  .pkg-title { font-size: 0.9375rem; }
 }
