@@ -1,0 +1,151 @@
+/* ============================================================
+   LION DENTAL ART STUDIO — Animations
+   ============================================================ */
+
+/* ===================================
+   KEYFRAMES
+=================================== */
+@keyframes ring-rotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes gem-pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1) rotate(0deg); opacity: 0.9; }
+  33%       { transform: translate(-50%, -50%) scale(1.07) rotate(2deg); opacity: 1; }
+  66%       { transform: translate(-50%, -50%) scale(0.97) rotate(-1deg); opacity: 0.95; }
+}
+
+@keyframes dot-float {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50%       { transform: translateY(-10px) scale(0.9); }
+}
+
+@keyframes badge-float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-6px); }
+}
+
+@keyframes scroll-pulse {
+  0%, 100% { transform: scaleY(1); opacity: 1; }
+  50%       { transform: scaleY(0.6); opacity: 0.4; }
+  0%        { transform-origin: top; }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ===================================
+   HERO ENTRANCE ANIMATIONS (.animate-in)
+   Triggered immediately on page load
+=================================== */
+.animate-in {
+  opacity: 0;
+  animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero__eyebrow.animate-in   { animation-delay: 0.1s; }
+.hero__title.animate-in     { animation-delay: 0.25s; }
+.hero__subtitle.animate-in  { animation-delay: 0.42s; }
+.hero__actions.animate-in   { animation-delay: 0.58s; }
+
+.hero__visual.animate-in {
+  animation: scale-in 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 0.3s;
+}
+
+/* ===================================
+   SCROLL ANIMATIONS (.animate-on-scroll)
+   Class added by JS via IntersectionObserver
+=================================== */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered children in grids */
+.why__card.animate-on-scroll:nth-child(1) { transition-delay: 0s; }
+.why__card.animate-on-scroll:nth-child(2) { transition-delay: 0.08s; }
+.why__card.animate-on-scroll:nth-child(3) { transition-delay: 0.16s; }
+.why__card.animate-on-scroll:nth-child(4) { transition-delay: 0.24s; }
+
+.service-card.animate-on-scroll:nth-child(1) { transition-delay: 0s; }
+.service-card.animate-on-scroll:nth-child(2) { transition-delay: 0.06s; }
+.service-card.animate-on-scroll:nth-child(3) { transition-delay: 0.12s; }
+.service-card.animate-on-scroll:nth-child(4) { transition-delay: 0.18s; }
+.service-card.animate-on-scroll:nth-child(5) { transition-delay: 0.24s; }
+.service-card.animate-on-scroll:nth-child(6) { transition-delay: 0.30s; }
+.service-card.animate-on-scroll:nth-child(7) { transition-delay: 0.36s; }
+.service-card.animate-on-scroll:nth-child(8) { transition-delay: 0.42s; }
+
+.workflow__step.animate-on-scroll:nth-child(1) { transition-delay: 0s; }
+.workflow__step.animate-on-scroll:nth-child(3) { transition-delay: 0.1s; }
+.workflow__step.animate-on-scroll:nth-child(5) { transition-delay: 0.2s; }
+.workflow__step.animate-on-scroll:nth-child(7) { transition-delay: 0.3s; }
+.workflow__step.animate-on-scroll:nth-child(9) { transition-delay: 0.4s; }
+
+.gallery__item.animate-on-scroll:nth-child(1) { transition-delay: 0s; }
+.gallery__item.animate-on-scroll:nth-child(2) { transition-delay: 0.08s; }
+.gallery__item.animate-on-scroll:nth-child(3) { transition-delay: 0.16s; }
+.gallery__item.animate-on-scroll:nth-child(4) { transition-delay: 0.24s; }
+.gallery__item.animate-on-scroll:nth-child(5) { transition-delay: 0.32s; }
+
+/* Contact stats stagger */
+.contact__stat:nth-child(1) { transition-delay: 0s; }
+.contact__stat:nth-child(2) { transition-delay: 0.08s; }
+.contact__stat:nth-child(3) { transition-delay: 0.16s; }
+.contact__stat:nth-child(4) { transition-delay: 0.24s; }

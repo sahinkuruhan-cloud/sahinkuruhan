@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lion Dental Art Studio | Diş Protez Laboratuvarı</title>
+  <meta name="description" content="Lion Dental Art Studio – Diş hekimleri için premium zirkonyum kuron, lamine veneer ve CAD/CAM protez çözümleri.">
+  <meta name="keywords" content="diş protez laboratuvarı, zirkonyum kuron, lamine veneer, CAD/CAM, implant protez, dental lab">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Lion Dental Art Studio | Diş Protez Laboratuvarı">
+  <meta property="og:description" content="Sanatla şekillenen gülen yüzler. Premium diş protez çözümleri.">
+  <meta property="og:image" content="assets/images/og-image.jpg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- ==============================
+       HEADER / NAV
+  ============================== -->
+  <header class="nav" id="nav">
+    <div class="nav__container container">
+
+      <a href="#hero" class="nav__logo" aria-label="Lion Dental Art Studio ana sayfa">
+        <svg width="194" height="48" viewBox="0 0 194 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M2 44 L2 26 L8 32 L16 12 L22 26 L28 12 L36 32 L42 26 L42 44 Z" stroke="#C9A96E" stroke-width="1.6" fill="rgba(201,169,110,0.12)" stroke-linejoin="round"/>
+          <path d="M22 39 L18 35 L22 31 L26 35 Z" fill="#C9A96E"/>
+          <circle cx="16" cy="12" r="2.5" fill="#C9A96E"/>
+          <circle cx="28" cy="12" r="2.5" fill="#C9A96E"/>
+          <text x="56" y="27" font-family="'Playfair Display', Georgia, serif" font-size="18" font-weight="700" fill="#1A2744" letter-spacing="0.3" class="logo-text-main">LION DENTAL</text>
+          <text x="57" y="41" font-family="'Inter', system-ui, sans-serif" font-size="7" font-weight="500" fill="#C9A96E" letter-spacing="4.5">ART STUDIO</text>
+        </svg>
+      </a>
+
+      <nav class="nav__links" id="navLinks" aria-label="Ana menü">
+        <a href="#why" class="nav__link" data-tr="Neden Lion?" data-en="Why Lion?">Neden Lion?</a>
+        <a href="#services" class="nav__link" data-tr="Hizmetler" data-en="Services">Hizmetler</a>
+        <a href="#workflow" class="nav__link" data-tr="İş Akışı" data-en="Workflow">İş Akışı</a>
+        <a href="#gallery" class="nav__link" data-tr="Galeri" data-en="Gallery">Galeri</a>
+        <a href="#contact" class="nav__link nav__link--cta btn btn--primary" data-tr="Bize Ulaşın" data-en="Contact Us">Bize Ulaşın</a>
+      </nav>
+
+      <div class="nav__actions">
+        <button class="lang-toggle" id="langToggle" aria-label="Dil değiştir / Switch language">
+          <span id="langActive" class="lang-toggle__active">TR</span>
+          <span class="lang-toggle__sep">/</span>
+          <span id="langOther">EN</span>
+        </button>
+        <button class="nav__hamburger" id="hamburger" aria-label="Menüyü aç" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ==============================
+         HERO
+    ============================== -->
+    <section class="hero" id="hero" aria-label="Karşılama bölümü">
+      <div class="hero__container container">
+
+        <div class="hero__content">
+          <p class="hero__eyebrow animate-in" data-tr="Diş Protez Laboratuvarı" data-en="Dental Prosthetics Laboratory">Diş Protez Laboratuvarı</p>
+          <h1 class="hero__title animate-in">
+            <span data-tr="Sanatla" data-en="Precision">Sanatla</span><br>
+            <i data-tr="Şekillenen" data-en="Meets">Şekillenen</i><br>
+            <span data-tr="Gülen Yüzler." data-en="Artistry.">Gülen Yüzler.</span>
+          </h1>
+          <p class="hero__subtitle animate-in" data-tr="Zirkonyum kurandan lamine veneere, dijital CAD/CAM üretimden implant üstü proteze kadar — hekimlerin güvendiği, hastaların sevdiği çözümler." data-en="From zirconia crowns to laminate veneers, from digital CAD/CAM to implant prosthetics — solutions dentists trust, patients love.">
+            Zirkonyum kurandan lamine veneere, dijital CAD/CAM üretimden implant üstü proteze kadar — hekimlerin güvendiği, hastaların sevdiği çözümler.
+          </p>
+          <div class="hero__actions animate-in">
+            <a href="#services" class="btn btn--primary">
+              <span data-tr="Hizmetlerimizi Keşfedin" data-en="Explore Services">Hizmetlerimizi Keşfedin</span>
+            </a>
+            <a href="https://wa.me/905312212589?text=Merhaba,%20bilgi%20almak%20istiyorum" class="btn btn--outline btn--whatsapp" target="_blank" rel="noopener noreferrer">
+              <svg class="btn__icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+              <span data-tr="WhatsApp ile Ulaşın" data-en="Contact via WhatsApp">WhatsApp ile Ulaşın</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero__visual animate-in" aria-hidden="true">
+          <div class="hero__visual-ring hero__visual-ring--outer"></div>
+          <div class="hero__visual-ring hero__visual-ring--mid"></div>
+          <div class="hero__visual-circle"></div>
+          <div class="hero__visual-gem"></div>
+          <div class="hero__visual-dot hero__visual-dot--1"></div>
+          <div class="hero__visual-dot hero__visual-dot--2"></div>
+          <div class="hero__visual-dot hero__visual-dot--3"></div>
+          <div class="hero__visual-badge">
+            <span class="hero__visual-badge-num">10+</span>
+            <span class="hero__visual-badge-label" data-tr="Yıl Deneyim" data-en="Years of Experience">Yıl Deneyim</span>
+          </div>
+        </div>
+
+      </div>
+      <div class="hero__scroll-hint" aria-hidden="true">
+        <span data-tr="Keşfedin" data-en="Explore">Keşfedin</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ==============================
+         NEDEN LION
+    ============================== -->
+    <section class="why" id="why">
+      <div class="container">
+        <header class="section-header animate-on-scroll">
+          <p class="section-eyebrow" data-tr="Farkımız" data-en="Our Difference">Farkımız</p>
+          <h2 class="section-title" data-tr="Neden Lion Dental Art Studio?" data-en="Why Lion Dental Art Studio?">Neden Lion Dental Art Studio?</h2>
+          <p class="section-subtitle" data-tr="Teknolojiyi sanatla buluşturan yaklaşımımızla, her restorasyonu bir şaheser olarak işliyoruz." data-en="Merging technology with artistry, we craft every restoration as a masterpiece.">Teknolojiyi sanatla buluşturan yaklaşımımızla, her restorasyonu bir şaheser olarak işliyoruz.</p>
+        </header>
+
+        <div class="why__grid">
+
+          <article class="why__card animate-on-scroll">
+            <div class="why__card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3 class="why__card-title" data-tr="Dijital Hassasiyet" data-en="Digital Precision">Dijital Hassasiyet</h3>
+            <p class="why__card-text" data-tr="CAD/CAM teknolojisi ve 3D intraoral tarama ile mikron hassasiyetinde üretim. Her vaka, dijital akışla mükemmele taşınır." data-en="CAD/CAM technology and 3D intraoral scanning for micron-precision production. Every case elevated to perfection through digital workflow.">CAD/CAM teknolojisi ve 3D intraoral tarama ile mikron hassasiyetinde üretim. Her vaka, dijital akışla mükemmele taşınır.</p>
+          </article>
+
+          <article class="why__card animate-on-scroll">
+            <div class="why__card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="why__card-title" data-tr="Kalite Güvencesi" data-en="Quality Assurance">Kalite Güvencesi</h3>
+            <p class="why__card-text" data-tr="Her iş, uzman teknisyenlerimiz tarafından teslimattan önce çok aşamalı kalite kontrolünden geçer. Güvenilir, tutarlı sonuçlar." data-en="Every piece undergoes multi-stage quality control by our expert technicians before delivery. Reliable, consistent results every time.">Her iş, uzman teknisyenlerimiz tarafından teslimattan önce çok aşamalı kalite kontrolünden geçer. Güvenilir, tutarlı sonuçlar.</p>
+          </article>
+
+          <article class="why__card animate-on-scroll">
+            <div class="why__card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h3 class="why__card-title" data-tr="Hızlı Teslimat" data-en="Fast Delivery">Hızlı Teslimat</h3>
+            <p class="why__card-text" data-tr="Express üretim seçeneğiyle acil vakalarınızda yanınızdayız. Söz verilen sürede, eksiksiz teslim." data-en="Express production option for urgent cases. Delivered on time, complete, as promised.">Express üretim seçeneğiyle acil vakalarınızda yanınızdayız. Söz verilen sürede, eksiksiz teslim.</p>
+          </article>
+
+          <article class="why__card animate-on-scroll">
+            <div class="why__card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <h3 class="why__card-title" data-tr="Estetik Sanat" data-en="Aesthetic Art">Estetik Sanat</h3>
+            <p class="why__card-text" data-tr="Her restorasyonda doğal görünüm, renk ve dokuyu yakalamak için sanatsal bir yaklaşım benimsiyoruz. Teknik değil, sanat." data-en="We embrace an artistic approach to capture natural appearance, shade, and texture in every restoration. Not just technical — art.">Her restorasyonda doğal görünüm, renk ve dokuyu yakalamak için sanatsal bir yaklaşım benimsiyoruz. Teknik değil, sanat.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================
+         HİZMETLER
+    ============================== -->
+    <section class="services" id="services">
+      <div class="container">
+        <header class="section-header animate-on-scroll">
+          <p class="section-eyebrow" data-tr="Uzmanlık Alanlarımız" data-en="Our Expertise">Uzmanlık Alanlarımız</p>
+          <h2 class="section-title" data-tr="Hizmetlerimiz" data-en="Our Services">Hizmetlerimiz</h2>
+          <p class="section-subtitle" data-tr="Tam seramikten zirkonyuma, implant üstü protezden hareketli proteze — eksiksiz bir laboratuvar hizmet yelpazesi." data-en="From full-ceramic to zirconia, implant prosthetics to removable dentures — a complete laboratory service range.">Tam seramikten zirkonyuma, implant üstü protezden hareketli proteze — eksiksiz bir laboratuvar hizmet yelpazesi.</p>
+        </header>
+
+        <div class="services__grid">
+
+          <article class="service-card animate-on-scroll">
+            <span class="service-card__num" aria-hidden="true">01</span>
+            <h3 class="service-card__title" data-tr="Zirkonyum Kuron" data-en="Zirconia Crown">Zirkonyum Kuron</h3>
+            <p class="service-card__text" data-tr="Yüksek dayanıklılık ve doğal görünüm. Tam opak, yarı translusent ve yüksek translusent seçenekler." data-en="High strength and natural appearance. Full opaque, semi-translucent and high-translucent options.">Yüksek dayanıklılık ve doğal görünüm. Tam opak, yarı translusent ve yüksek translusent seçenekler.</p>
+            <div class="service-card__bar" aria-hidden="true"></div>
+          </article>
+
+          <article class="service-card animate-on-scroll">
+            <span class="service-card__num" aria-hidden="true">02</span>
+            <h3 class="service-card__title" data-tr="Lamine Veneer" data-en="Laminate Veneer">Lamine Veneer</h3>
+            <p class="service-card__text" data-tr="İnce, minimal invaziv seramik kaplamalar. Doğal diş dokusunu koruyan estetik çözümler." data-en="Thin, minimally invasive ceramic veneers. Aesthetic solutions that preserve natural tooth structure.">İnce, minimal invaziv seramik kaplamalar. Doğal diş dokusunu koruyan estetik çözümler.</p>
+            <div class="service-card__bar" aria-hidden="true"></div>
+          </article>
+
+          <article class="service-card animate-on-scroll">
+            <span class="service-card__num" aria-hidden="true">03</span>
+            <h3 class="service-card__title" data-tr="İmplant Üstü Protez" data-en="Implant Prosthetics">İmplant Üstü Protez</h3>
+            <p class="service-card__text" data-tr="Screw-retained ve cement-retained implant kuronları. Tüm implant sistemleriyle uyumlu üretim." data-en="Screw-retained and cement-retained implant crowns. Compatible with all implant systems.">Screw-retained ve cement-retained implant kuronları. Tüm implant sistemleriyle uyumlu üretim.</p>
+            <div class="service-card__bar" aria-hidden="true"></div>
+          </article>
+
+          <article class="service-card animate-on-scroll">
+            <span class="service-card__num" aria-hidden="true">04</span>
+            <h3 class="service-card__title" data-tr="CAD/CAM Üretim" data-en="CAD/CAM Production">CAD/CAM Üretim</h3>
+            <p class="service-card__text" data-tr="Dijital tasarım ve frezeleme ile üst düzey hassasiyet. İntraoral tarama destekli iş akışı." data-en="Top-tier precision through digital design and milling. Intraoral scanning-supported workflow.">Dijital tasarım ve frezeleme ile üst düzey hassasiyet. İntraoral tarama destekli iş akışı.</p>
+            <div class="service-card__bar" aria-hidden="true"></div>
+          </article>
+
+          <article class="service-card animate-on-scroll">
+            <span class="service-card__num" aria-hidden="true">05</span>
+            <h3 class="service-card__title" data-tr="Tam Seramik Restorasyonlar" data-en="Full Ceramic Restorations">Tam Seramik Restorasyonlar</h3>
+            <p class="service-card__text" data-tr="E.max press ve CAD altyapıları. Tam estetik ihtiyaçlar için metal içermeyen çözümler." data-en="E.max press and CAD frameworks. Metal-free solutions for full aesthetic requirements.">E.max press ve CAD altyapıları. Tam estetik ihtiyaçlar için metal içermeyen çözümler.</p>
+            <div class="service-card__bar" aria-hidden="true"></div>
+          </article>
+
+          <article class="service-card animate-on-scroll">
+            <span class="service-card__num" aria-hidden="true">06</span>
+            <h3 class="service-card__title" data-tr="Porselen Fused Metal" data-en="Porcelain Fused Metal">Porselen Fused Metal</h3>
+            <p class="service-card__text" data-tr="Metal altyapı üzerine porselen kaplama. Uzun vadeli dayanıklılık ve estetik bir arada." data-en="Porcelain fused to metal substructure. Long-term durability and aesthetics combined.">Metal altyapı üzerine porselen kaplama. Uzun vadeli dayanıklılık ve estetik bir arada.</p>
+            <div class="service-card__bar" aria-hidden="true"></div>
+          </article>
+
+          <article class="service-card animate-on-scroll">
+            <span class="service-card__num" aria-hidden="true">07</span>
+            <h3 class="service-card__title" data-tr="Teleskop Protez" data-en="Telescopic Prosthetics">Teleskop Protez</h3>
+            <p class="service-card__text" data-tr="Çift kronlu teleskop sistemleri. Eksik dişlerin tespitli ve estetik çözümü." data-en="Double-crown telescopic systems. A fixed and aesthetic solution for missing teeth.">Çift kronlu teleskop sistemleri. Eksik dişlerin tespitli ve estetik çözümü.</p>
+            <div class="service-card__bar" aria-hidden="true"></div>
+          </article>
+
+          <article class="service-card animate-on-scroll">
+            <span class="service-card__num" aria-hidden="true">08</span>
+            <h3 class="service-card__title" data-tr="Hareketli Protez" data-en="Removable Dentures">Hareketli Protez</h3>
+            <p class="service-card__text" data-tr="Tam ve kısmi hareketli protezler. Fonksiyon ve estetiği ön planda tutan geleneksel protez çözümleri." data-en="Full and partial removable dentures. Traditional prosthetic solutions prioritizing function and aesthetics.">Tam ve kısmi hareketli protezler. Fonksiyon ve estetiği ön planda tutan geleneksel protez çözümleri.</p>
+            <div class="service-card__bar" aria-hidden="true"></div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================
+         DİJİTAL İŞ AKIŞI
+    ============================== -->
+    <section class="workflow" id="workflow">
+      <div class="container">
+        <header class="section-header animate-on-scroll">
+          <p class="section-eyebrow" data-tr="Nasıl Çalışıyoruz?" data-en="How We Work">Nasıl Çalışıyoruz?</p>
+          <h2 class="section-title" data-tr="Dijital İş Akışı" data-en="Digital Workflow">Dijital İş Akışı</h2>
+          <p class="section-subtitle" data-tr="İzlenimden teslimata kadar her adımda dijital teknoloji ve uzman gözü." data-en="Digital technology and expert oversight at every step from impression to delivery.">İzlenimden teslimata kadar her adımda dijital teknoloji ve uzman gözü.</p>
+        </header>
+
+        <div class="workflow__steps">
+
+          <div class="workflow__step animate-on-scroll">
+            <div class="workflow__step-bubble">
+              <span class="workflow__step-num" aria-hidden="true">01</span>
+            </div>
+            <div class="workflow__step-content">
+              <h3 data-tr="İzlenim / Tarama" data-en="Impression / Scanning">İzlenim / Tarama</h3>
+              <p data-tr="Fiziksel ölçü alımı veya dijital intraoral tarama ile vaka verilerinin toplanması." data-en="Case data collection via physical impression or digital intraoral scanning.">Fiziksel ölçü alımı veya dijital intraoral tarama ile vaka verilerinin toplanması.</p>
+            </div>
+          </div>
+
+          <div class="workflow__connector" aria-hidden="true"></div>
+
+          <div class="workflow__step animate-on-scroll">
+            <div class="workflow__step-bubble">
+              <span class="workflow__step-num" aria-hidden="true">02</span>
+            </div>
+            <div class="workflow__step-content">
+              <h3 data-tr="Dijital Tasarım" data-en="Digital Design">Dijital Tasarım</h3>
+              <p data-tr="CAD yazılımıyla restorasyonun 3D tasarımı yapılır, hekim onayına sunulur." data-en="3D restoration design via CAD software, submitted for dentist approval.">CAD yazılımıyla restorasyonun 3D tasarımı yapılır, hekim onayına sunulur.</p>
+            </div>
+          </div>
+
+          <div class="workflow__connector" aria-hidden="true"></div>
+
+          <div class="workflow__step animate-on-scroll">
+            <div class="workflow__step-bubble">
+              <span class="workflow__step-num" aria-hidden="true">03</span>
+            </div>
+            <div class="workflow__step-content">
+              <h3 data-tr="CAD/CAM Üretim" data-en="CAD/CAM Production">CAD/CAM Üretim</h3>
+              <p data-tr="Onaylanan tasarım, frezeleme makinasında hassas biçimde üretilir." data-en="Precision milling of the approved design in our milling machines.">Onaylanan tasarım, frezeleme makinasında hassas biçimde üretilir.</p>
+            </div>
+          </div>
+
+          <div class="workflow__connector" aria-hidden="true"></div>
+
+          <div class="workflow__step animate-on-scroll">
+            <div class="workflow__step-bubble">
+              <span class="workflow__step-num" aria-hidden="true">04</span>
+            </div>
+            <div class="workflow__step-content">
+              <h3 data-tr="Boyama & Pişirme" data-en="Staining & Firing">Boyama & Pişirme</h3>
+              <p data-tr="Renk uyumu için el boyama ve seramik pişirme işlemleriyle doğal görünüm kazandırılır." data-en="Hand-painting and ceramic firing for color matching and natural appearance.">Renk uyumu için el boyama ve seramik pişirme işlemleriyle doğal görünüm kazandırılır.</p>
+            </div>
+          </div>
+
+          <div class="workflow__connector" aria-hidden="true"></div>
+
+          <div class="workflow__step animate-on-scroll">
+            <div class="workflow__step-bubble">
+              <span class="workflow__step-num" aria-hidden="true">05</span>
+            </div>
+            <div class="workflow__step-content">
+              <h3 data-tr="Kalite Kontrol & Teslim" data-en="Quality Check & Delivery">Kalite Kontrol & Teslim</h3>
+              <p data-tr="Çok aşamalı kalite kontrolü sonrası, hazır işin kliniğinize güvenli teslimatı." data-en="After multi-stage quality control, safe delivery of the finished work to your clinic.">Çok aşamalı kalite kontrolü sonrası, hazır işin kliniğinize güvenli teslimatı.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================
+         GALERİ
+    ============================== -->
+    <section class="gallery" id="gallery">
+      <div class="container">
+        <header class="section-header animate-on-scroll">
+          <p class="section-eyebrow" data-tr="Referans Çalışmalar" data-en="Portfolio">Referans Çalışmalar</p>
+          <h2 class="section-title" data-tr="Galeri" data-en="Gallery">Galeri</h2>
+          <p class="section-subtitle" data-tr="Her iş bir sanat eseri. Tamamlanan bazı çalışmalarımızdan seçmeler." data-en="Every piece is a work of art. A selection from our completed works.">Her iş bir sanat eseri. Tamamlanan bazı çalışmalarımızdan seçmeler.</p>
+        </header>
+
+        <div class="gallery__grid">
+
+          <figure class="gallery__item animate-on-scroll">
+            <div class="gallery__img gallery__img--1"></div>
+            <figcaption class="gallery__caption">
+              <span data-tr="Zirkonyum Kuron Seti" data-en="Zirconia Crown Set">Zirkonyum Kuron Seti</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery__item animate-on-scroll">
+            <div class="gallery__img gallery__img--2"></div>
+            <figcaption class="gallery__caption">
+              <span data-tr="Lamine Veneer" data-en="Laminate Veneer">Lamine Veneer</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery__item animate-on-scroll">
+            <div class="gallery__img gallery__img--3"></div>
+            <figcaption class="gallery__caption">
+              <span data-tr="İmplant Üstü Kuron" data-en="Implant Crown">İmplant Üstü Kuron</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery__item gallery__item--wide animate-on-scroll">
+            <div class="gallery__img gallery__img--4"></div>
+            <figcaption class="gallery__caption">
+              <span data-tr="Tam Seramik Restorasyonlar" data-en="Full Ceramic Restorations">Tam Seramik Restorasyonlar</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery__item animate-on-scroll">
+            <div class="gallery__img gallery__img--5"></div>
+            <figcaption class="gallery__caption">
+              <span data-tr="CAD/CAM Üretim" data-en="CAD/CAM Production">CAD/CAM Üretim</span>
+            </figcaption>
+          </figure>
+
+        </div>
+
+        <div class="gallery__cta animate-on-scroll">
+          <a href="https://www.instagram.com/liondentalart/" target="_blank" rel="noopener noreferrer" class="btn btn--outline-dark">
+            <svg class="btn__icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            <span data-tr="Instagram'da Daha Fazla Gör" data-en="See More on Instagram">Instagram'da Daha Fazla Gör</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================
+         İLETİŞİM
+    ============================== -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="contact__inner">
+
+          <div class="contact__content animate-on-scroll">
+            <p class="section-eyebrow" data-tr="Hep Yanınızdayız" data-en="Always Here for You">Hep Yanınızdayız</p>
+            <h2 class="section-title" data-tr="Bize Ulaşın" data-en="Contact Us">Bize Ulaşın</h2>
+            <p class="contact__subtitle" data-tr="Yeni bir vaka için fiyat almak, iş akışı hakkında bilgi edinmek veya tanışmak için iletişime geçin." data-en="Get in touch for a quote on a new case, workflow information, or simply to connect.">Yeni bir vaka için fiyat almak, iş akışı hakkında bilgi edinmek veya tanışmak için iletişime geçin.</p>
+
+            <div class="contact__items">
+
+              <a href="https://wa.me/905312212589?text=Merhaba,%20bilgi%20almak%20istiyorum" class="contact__item contact__item--whatsapp" target="_blank" rel="noopener noreferrer">
+                <div class="contact__item-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                </div>
+                <div class="contact__item-info">
+                  <span class="contact__item-label">WhatsApp</span>
+                  <span class="contact__item-value">+90 531 221 25 89</span>
+                </div>
+                <svg class="contact__item-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+              </a>
+
+              <a href="tel:+905312212589" class="contact__item">
+                <div class="contact__item-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.87a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l.36-.36a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                </div>
+                <div class="contact__item-info">
+                  <span class="contact__item-label" data-tr="Telefon" data-en="Phone">Telefon</span>
+                  <span class="contact__item-value">+90 531 221 25 89</span>
+                </div>
+              </a>
+
+              <div class="contact__item">
+                <div class="contact__item-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div class="contact__item-info">
+                  <span class="contact__item-label" data-tr="Adres" data-en="Address">Adres</span>
+                  <span class="contact__item-value" data-tr="Şehit Fethi Cad., No:102, Pendik, İstanbul / Türkiye" data-en="Şehit Fethi Cad., No:102, Pendik, İstanbul / Turkey">Şehit Fethi Cad., No:102, Pendik, İstanbul / Türkiye</span>
+                </div>
+              </div>
+
+            </div>
+
+            <a href="https://wa.me/905312212589?text=Merhaba,%20bilgi%20almak%20istiyorum" class="btn btn--primary btn--large contact__cta-btn" target="_blank" rel="noopener noreferrer">
+              <svg class="btn__icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+              <span data-tr="Hemen WhatsApp'tan Yazın" data-en="Message Us on WhatsApp">Hemen WhatsApp'tan Yazın</span>
+            </a>
+          </div>
+
+          <div class="contact__stats animate-on-scroll" aria-label="İstatistikler">
+            <div class="contact__stat">
+              <span class="contact__stat-num">200<span class="contact__stat-plus">+</span></span>
+              <span class="contact__stat-label" data-tr="Güvenen Hekim" data-en="Trusting Dentists">Güvenen Hekim</span>
+            </div>
+            <div class="contact__stat">
+              <span class="contact__stat-num">10K<span class="contact__stat-plus">+</span></span>
+              <span class="contact__stat-label" data-tr="Tamamlanan İş" data-en="Completed Cases">Tamamlanan İş</span>
+            </div>
+            <div class="contact__stat">
+              <span class="contact__stat-num">10<span class="contact__stat-plus">+</span></span>
+              <span class="contact__stat-label" data-tr="Yıl Deneyim" data-en="Years Experience">Yıl Deneyim</span>
+            </div>
+            <div class="contact__stat">
+              <span class="contact__stat-num">48H</span>
+              <span class="contact__stat-label" data-tr="Express Teslimat" data-en="Express Delivery">Express Teslimat</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==============================
+       FOOTER
+  ============================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+
+        <div class="footer__brand">
+          <a href="#hero" class="nav__logo" aria-label="Lion Dental Art Studio ana sayfa">
+            <svg width="194" height="48" viewBox="0 0 194 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M2 44 L2 26 L8 32 L16 12 L22 26 L28 12 L36 32 L42 26 L42 44 Z" stroke="#C9A96E" stroke-width="1.6" fill="rgba(201,169,110,0.12)" stroke-linejoin="round"/>
+              <path d="M22 39 L18 35 L22 31 L26 35 Z" fill="#C9A96E"/>
+              <circle cx="16" cy="12" r="2.5" fill="#C9A96E"/>
+              <circle cx="28" cy="12" r="2.5" fill="#C9A96E"/>
+              <text x="56" y="27" font-family="'Playfair Display', Georgia, serif" font-size="18" font-weight="700" fill="#1A2744" letter-spacing="0.3" class="logo-text-main">LION DENTAL</text>
+              <text x="57" y="41" font-family="'Inter', system-ui, sans-serif" font-size="7" font-weight="500" fill="#C9A96E" letter-spacing="4.5">ART STUDIO</text>
+            </svg>
+          </a>
+          <p class="footer__tagline" data-tr="Sanatla şekillenen gülen yüzler." data-en="Crafting perfect smiles with artistry.">Sanatla şekillenen gülen yüzler.</p>
+        </div>
+
+        <nav class="footer__nav" aria-label="Footer menü">
+          <a href="#why" class="footer__link" data-tr="Neden Lion?" data-en="Why Lion?">Neden Lion?</a>
+          <a href="#services" class="footer__link" data-tr="Hizmetler" data-en="Services">Hizmetler</a>
+          <a href="#workflow" class="footer__link" data-tr="İş Akışı" data-en="Workflow">İş Akışı</a>
+          <a href="#gallery" class="footer__link" data-tr="Galeri" data-en="Gallery">Galeri</a>
+          <a href="#contact" class="footer__link" data-tr="İletişim" data-en="Contact">İletişim</a>
+        </nav>
+
+        <div class="footer__social">
+          <a href="https://www.instagram.com/liondentalart/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://wa.me/905312212589?text=Merhaba,%20bilgi%20almak%20istiyorum" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="WhatsApp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2025 Lion Dental Art Studio. <span data-tr="Tüm hakları saklıdır." data-en="All rights reserved.">Tüm hakları saklıdır.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/language.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
