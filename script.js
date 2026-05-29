@@ -121,7 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
 
-      // Retrieve values
       const name = document.getElementById('form-name').value.trim();
       const email = document.getElementById('form-email').value.trim();
       const message = document.getElementById('form-message').value.trim();
@@ -131,9 +130,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // Simulate sending
       const submitBtn = contactForm.querySelector('button[type="submit"]');
-      const originalBtnText = submitBtn.innerHTML;
+      const originalBtnHTML = submitBtn.innerHTML;
       submitBtn.disabled = true;
       submitBtn.innerHTML = `
         <svg class="animate-spin h-5 w-5 text-white inline-block mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -142,12 +140,25 @@ document.addEventListener('DOMContentLoaded', () => {
         </svg> Gönderiliyor...
       `;
 
-      setTimeout(() => {
-        showToast('Mesajınız başarıyla gönderildi! En kısa sürede dönüş yapacağım. 🚀');
-        contactForm.reset();
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = originalBtnText;
-      }, 1500);
+      const templateParams = {
+        from_name: name,
+        reply_to: email,
+        message: message,
+      };
+
+      emailjs.send('service_m6i4gdu', 'template_vvmarfk', templateParams)
+        .then(() => {
+          showToast('Mesajınız başarıyla gönderildi! En kısa sürede dönüş yapacağım. 🚀');
+          contactForm.reset();
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnHTML;
+        })
+        .catch((err) => {
+          console.error('EmailJS Error:', err);
+          showToast('Mesaj gönderilemedi. Lütfen tekrar deneyin. ❌', 'error');
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnHTML;
+        });
     });
   }
 

@@ -49,6 +49,16 @@
 
   <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="style.css?v=1">
+
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init({
+        publicKey: "M7caaedBGGO6y1fe6",
+      });
+    })();
+  </script>
 </head>
 <body class="bg-dark text-slate-100 bg-grid-pattern selection:bg-indigo-500/20 selection:text-indigo-300 min-h-screen relative antialiased">
 
