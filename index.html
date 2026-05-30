@@ -33,10 +33,28 @@
             glass: 'rgba(17, 24, 39, 0.65)',
             accent: {
               emerald: '#10B981',
-              violet: '#8B5CF6',
-              cyan: '#06B6D4',
-              indigo: '#6366F1',
-            }
+              blue: '#2E8BFF',
+              cyan: '#22D3EE',
+            },
+            // Mor tamamen kaldırıldı: indigo & violet rampaları elektrik-mavisi
+            // ramp'ına remap edildi. Böylece mevcut indigo / violet utility
+            // sınıfları (HTML & script.js) otomatik olarak mavi render eder.
+            indigo: {
+              300: '#7DB8FF',
+              400: '#5AA2FF',
+              500: '#2E8BFF',
+              600: '#1E6FE0',
+              700: '#1A5DBE',
+              950: '#0a1a33',
+            },
+            violet: {
+              300: '#7DB8FF',
+              400: '#5AA2FF',
+              500: '#2E8BFF',
+              600: '#1E6FE0',
+              700: '#1A5DBE',
+              950: '#0a1a33',
+            },
           },
           fontFamily: {
             sans: ['Plus Jakarta Sans', 'sans-serif'],
@@ -48,7 +66,7 @@
   </script>
 
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=1">
+  <link rel="stylesheet" href="style.css?v=2">
 
   <!-- EmailJS SDK -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
@@ -63,19 +81,19 @@
 <body class="bg-dark text-slate-100 bg-grid-pattern selection:bg-indigo-500/20 selection:text-indigo-300 min-h-screen relative antialiased">
 
   <!-- Fixed Animated Background Layer -->
-  <div class="bg-animated-wrapper"></div>
+  <div class="bg-animated-wrapper parallax-blob" data-parallax="0.08"></div>
 
   <!-- Background Decorative Glowing Neon Light Streaks -->
-  <div class="absolute top-[5%] left-[-10%] w-[600px] h-[160px] bg-gradient-to-r from-indigo-500/10 to-transparent rounded-full blur-[110px] rotate-[35deg] pointer-events-none -z-10 animate-pulse animate-blob-1"></div>
-  <div class="absolute top-[35%] right-[-10%] w-[700px] h-[180px] bg-gradient-to-r from-violet-500/10 to-transparent rounded-full blur-[120px] -rotate-[35deg] pointer-events-none -z-10 animate-pulse animate-blob-2" style="animation-delay: 2s;"></div>
-  <div class="absolute bottom-[5%] left-[5%] w-[650px] h-[160px] bg-gradient-to-r from-cyan-500/10 to-transparent rounded-full blur-[110px] rotate-[15deg] pointer-events-none -z-10 animate-pulse animate-blob-3" style="animation-delay: 4s;"></div>
+  <div class="parallax-blob absolute top-[5%] left-[-10%] w-[600px] h-[160px] bg-gradient-to-r from-indigo-500/10 to-transparent rounded-full blur-[110px] rotate-[35deg] pointer-events-none -z-10 animate-pulse animate-blob-1" data-parallax="0.18"></div>
+  <div class="parallax-blob absolute top-[35%] right-[-10%] w-[700px] h-[180px] bg-gradient-to-r from-cyan-500/10 to-transparent rounded-full blur-[120px] -rotate-[35deg] pointer-events-none -z-10 animate-pulse animate-blob-2" style="animation-delay: 2s;" data-parallax="0.28"></div>
+  <div class="parallax-blob absolute bottom-[5%] left-[5%] w-[650px] h-[160px] bg-gradient-to-r from-cyan-500/10 to-transparent rounded-full blur-[110px] rotate-[15deg] pointer-events-none -z-10 animate-pulse animate-blob-3" style="animation-delay: 4s;" data-parallax="0.12"></div>
 
   <!-- Header Section -->
   <header id="main-header" class="fixed top-0 left-0 w-full z-40 py-5 transition-all duration-300 glass-navbar">
     <div class="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
       <!-- Logo -->
       <a href="#hero" class="flex items-center group focus:outline-none" id="nav-logo" aria-label="Ana sayfa">
-        <img src="logo.png?v=1" alt="Şahin Kuruhan Logo" class="logo-glow h-20 w-20 object-contain rounded-2xl">
+        <img src="logo.png?v=2" alt="Şahin Kuruhan Logo" class="logo-glow h-20 w-20 object-contain rounded-2xl">
       </a>
 
       <!-- Desktop Navigation -->
@@ -84,7 +102,7 @@
         <a href="#skills" class="nav-link text-sm font-medium text-slate-400 hover:text-slate-200 transition-colors duration-200 relative py-1 after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-indigo-500 after:scale-x-0 after:origin-right hover:after:scale-x-100 hover:after:origin-left after:transition-transform after:duration-300">Yetenekler</a>
         <a href="#works" class="nav-link text-sm font-medium text-slate-400 hover:text-slate-200 transition-colors duration-200 relative py-1 after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-indigo-500 after:scale-x-0 after:origin-right hover:after:scale-x-100 hover:after:origin-left after:transition-transform after:duration-300">Projelerim</a>
         <a href="#contact" class="nav-link text-sm font-medium text-slate-400 hover:text-slate-200 transition-colors duration-200 relative py-1 after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-indigo-500 after:scale-x-0 after:origin-right hover:after:scale-x-100 hover:after:origin-left after:transition-transform after:duration-300">İletişim</a>
-        <a href="#contact" class="px-4.5 py-2 text-xs font-semibold rounded-lg bg-indigo-600/10 hover:bg-indigo-600 border border-indigo-500/20 hover:border-indigo-400 text-indigo-300 hover:text-white shadow-sm hover:shadow-indigo-500/20 hover:shadow-lg transition-all duration-300 hover-lift">
+        <a href="#contact" class="magnetic px-4.5 py-2 text-xs font-semibold rounded-lg bg-indigo-600/10 hover:bg-indigo-600 border border-indigo-500/20 hover:border-indigo-400 text-indigo-300 hover:text-white shadow-sm hover:shadow-indigo-500/20 hover:shadow-lg transition-all duration-300 hover-lift">
           Beraber Çalışalım
         </a>
       </nav>
@@ -129,7 +147,7 @@
 
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] font-display text-white">
           Yaratıcı Fikirleri <br>
-          <span class="bg-gradient-to-r from-indigo-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent animate-gradient">
+          <span class="bg-gradient-to-r from-[#2E8BFF] via-[#3BA4FF] to-[#22D3EE] bg-clip-text text-transparent animate-gradient">
             Koda Dönüştürüyorum.
           </span>
         </h1>
@@ -140,10 +158,10 @@
 
         <!-- CTA Buttons -->
         <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
-          <a href="#works" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-indigo-500 to-violet-500 hover:from-indigo-600 hover:to-violet-600 text-white font-semibold text-sm shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/45 transition-all text-center hover-lift">
+          <a href="#works" class="magnetic px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#2E8BFF] to-[#22D3EE] hover:from-[#1E6FE0] hover:to-[#06B6D4] text-white font-semibold text-sm shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/45 transition-all text-center hover-lift">
             Çalışmalarımı Gör
           </a>
-          <a href="#contact" class="px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-slate-300 hover:text-white font-semibold text-sm transition-all text-center hover-lift">
+          <a href="#contact" class="magnetic px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-slate-300 hover:text-white font-semibold text-sm transition-all text-center hover-lift">
             İletişime Geç
           </a>
         </div>
@@ -188,8 +206,8 @@
             <div class="text-[11px] text-slate-500 font-mono tracking-wide">developer.js</div>
             <div class="w-12"></div>
           </div>
-          <!-- Terminal Content -->
-          <div class="p-6 md:p-8 font-mono text-xs md:text-sm leading-relaxed overflow-x-auto text-indigo-300">
+          <!-- Terminal Content (statik içerik no-JS/reduced-motion yedeği; JS typewriter ile yeniden yazar) -->
+          <div id="terminal-body" class="p-6 md:p-8 font-mono text-xs md:text-sm leading-relaxed overflow-x-auto text-indigo-300">
             <div><span class="text-pink-500">const</span> developer <span class="text-slate-400">=</span> {</div>
             <div class="pl-4"><span class="text-slate-400">name:</span> <span class="text-emerald-400">'Şahin Kuruhan'</span>,</div>
             <div class="pl-4"><span class="text-slate-400">role:</span> <span class="text-emerald-400">'Frontend Developer & Designer'</span>,</div>
@@ -236,10 +254,10 @@
         <p class="text-3xl font-bold font-display text-white">Kullandığım Teknolojiler & Araçlar</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        
+      <div class="reveal-stagger grid grid-cols-1 md:grid-cols-3 gap-8">
+
         <!-- Frontend Skills Card -->
-        <div class="glass-panel p-6 rounded-2xl glow-indigo">
+        <div class="tilt-card glass-panel p-6 rounded-2xl glow-indigo">
           <div class="flex items-center gap-3 mb-6">
             <div class="p-2.5 rounded-xl bg-indigo-500/10 text-indigo-400">
               <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -269,9 +287,9 @@
         </div>
 
         <!-- UI/UX & Design Card -->
-        <div class="glass-panel p-6 rounded-2xl glow-violet">
+        <div class="tilt-card glass-panel p-6 rounded-2xl glow-cyan">
           <div class="flex items-center gap-3 mb-6">
-            <div class="p-2.5 rounded-xl bg-violet-500/10 text-violet-400">
+            <div class="p-2.5 rounded-xl bg-cyan-500/10 text-cyan-400">
               <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
               </svg>
@@ -281,27 +299,27 @@
           <div class="space-y-3">
             <div class="flex items-center justify-between p-2.5 rounded-lg bg-slate-900/40 border border-slate-800 text-sm">
               <span class="font-medium text-slate-300">Figma Arayüz Tasarımı</span>
-              <span class="text-xs font-semibold text-violet-400 bg-violet-500/10 px-2 py-0.5 rounded">İleri Düzey</span>
+              <span class="text-xs font-semibold text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded">İleri Düzey</span>
             </div>
             <div class="flex items-center justify-between p-2.5 rounded-lg bg-slate-900/40 border border-slate-800 text-sm">
               <span class="font-medium text-slate-300">Responsive Layouts</span>
-              <span class="text-xs font-semibold text-violet-400 bg-violet-500/10 px-2 py-0.5 rounded">Uzman</span>
+              <span class="text-xs font-semibold text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded">Uzman</span>
             </div>
             <div class="flex items-center justify-between p-2.5 rounded-lg bg-slate-900/40 border border-slate-800 text-sm">
               <span class="font-medium text-slate-300">Prototipleme</span>
-              <span class="text-xs font-semibold text-violet-400 bg-violet-500/10 px-2 py-0.5 rounded">Orta-İleri</span>
+              <span class="text-xs font-semibold text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded">Orta-İleri</span>
             </div>
             <div class="flex items-center justify-between p-2.5 rounded-lg bg-slate-900/40 border border-slate-800 text-sm">
               <span class="font-medium text-slate-300">Arayüz Animasyonları</span>
-              <span class="text-xs font-semibold text-violet-400 bg-violet-500/10 px-2 py-0.5 rounded">İleri Düzey</span>
+              <span class="text-xs font-semibold text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded">İleri Düzey</span>
             </div>
           </div>
         </div>
 
         <!-- Araçlar & Diğer Card -->
-        <div class="glass-panel p-6 rounded-2xl glow-cyan">
+        <div class="tilt-card glass-panel p-6 rounded-2xl glow-indigo">
           <div class="flex items-center gap-3 mb-6">
-            <div class="p-2.5 rounded-xl bg-cyan-500/10 text-cyan-400">
+            <div class="p-2.5 rounded-xl bg-indigo-500/10 text-indigo-400">
               <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
               </svg>
@@ -311,19 +329,19 @@
           <div class="space-y-3">
             <div class="flex items-center justify-between p-2.5 rounded-lg bg-slate-900/40 border border-slate-800 text-sm">
               <span class="font-medium text-slate-300">Git / GitHub İş Akışı</span>
-              <span class="text-xs font-semibold text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded">Uzman</span>
+              <span class="text-xs font-semibold text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded">Uzman</span>
             </div>
             <div class="flex items-center justify-between p-2.5 rounded-lg bg-slate-900/40 border border-slate-800 text-sm">
               <span class="font-medium text-slate-300">npm / Webpack / Vite</span>
-              <span class="text-xs font-semibold text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded">Uzman</span>
+              <span class="text-xs font-semibold text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded">Uzman</span>
             </div>
             <div class="flex items-center justify-between p-2.5 rounded-lg bg-slate-900/40 border border-slate-800 text-sm">
               <span class="font-medium text-slate-300">SEO / Arama Optimizasyonu</span>
-              <span class="text-xs font-semibold text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded">Uzman</span>
+              <span class="text-xs font-semibold text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded">Uzman</span>
             </div>
             <div class="flex items-center justify-between p-2.5 rounded-lg bg-slate-900/40 border border-slate-800 text-sm">
               <span class="font-medium text-slate-300">REST API Entegrasyonu</span>
-              <span class="text-xs font-semibold text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded">İleri Düzey</span>
+              <span class="text-xs font-semibold text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded">İleri Düzey</span>
             </div>
           </div>
         </div>
@@ -348,18 +366,26 @@
       </div>
 
       <!-- Works Grid -->
-      <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-300">
+      <div id="portfolio-grid" class="reveal-stagger grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-300">
         
         <!-- Project Card 1: Software -->
-        <article data-category="software" class="portfolio-item group glass-panel rounded-2xl overflow-hidden hover-lift border border-slate-800/50 hover:border-indigo-500/30">
-          <div class="h-48 bg-gradient-to-br from-indigo-950 via-slate-950 to-violet-950 flex items-center justify-center p-6 border-b border-slate-900/60 relative overflow-hidden">
-            <!-- Sleek SVG Illustration instead of image placeholder -->
-            <svg class="w-full h-full text-indigo-500/20 max-w-[200px]" viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="10" y="10" width="180" height="100" rx="6" stroke-dasharray="2 4" />
-              <circle cx="45" cy="50" r="16" stroke="indigo" stroke-width="2" class="text-indigo-400" />
-              <rect x="75" y="40" width="80" height="8" rx="2" fill="currentColor" />
-              <rect x="75" y="54" width="60" height="6" rx="2" fill="currentColor" />
-              <rect x="25" y="85" width="150" height="12" rx="4" stroke="violet" stroke-width="1" />
+        <article data-category="software" class="tilt-card portfolio-item group glass-panel rounded-2xl overflow-hidden hover-lift border border-slate-800/50 hover:border-indigo-500/30">
+          <div class="h-48 bg-gradient-to-br from-[#0a1a33] via-slate-950 to-[#06222b] flex items-center justify-center p-6 border-b border-slate-900/60 relative overflow-hidden">
+            <!-- DevFlow: kod paylaşımı / forum akışı motifi -->
+            <svg class="w-full h-full max-w-[210px]" viewBox="0 0 210 130" fill="none" stroke-width="1.6" xmlns="http://www.w3.org/2000/svg">
+              <!-- kod penceresi -->
+              <rect x="14" y="16" width="120" height="78" rx="8" stroke="#2E8BFF" opacity="0.55"/>
+              <line x1="14" y1="30" x2="134" y2="30" stroke="#2E8BFF" opacity="0.3"/>
+              <circle cx="22" cy="23" r="2" fill="#22D3EE"/><circle cx="30" cy="23" r="2" fill="#2E8BFF"/>
+              <path d="M26 44l-8 8 8 8" stroke="#22D3EE"/><path d="M40 60l8-8-8-8" stroke="#22D3EE"/>
+              <line x1="58" y1="44" x2="120" y2="44" stroke="#2E8BFF" opacity="0.6"/>
+              <line x1="58" y1="58" x2="104" y2="58" stroke="#2E8BFF" opacity="0.4"/>
+              <line x1="58" y1="72" x2="116" y2="72" stroke="#2E8BFF" opacity="0.4"/>
+              <!-- forum/yorum baloncukları -->
+              <rect x="120" y="74" width="76" height="34" rx="9" stroke="#22D3EE" opacity="0.7"/>
+              <line x1="132" y1="86" x2="184" y2="86" stroke="#22D3EE" opacity="0.5"/>
+              <line x1="132" y1="96" x2="170" y2="96" stroke="#22D3EE" opacity="0.35"/>
+              <circle cx="150" cy="40" r="7" stroke="#2E8BFF"/><path d="M150 33v14M143 40h14" stroke="#2E8BFF" opacity="0.6"/>
             </svg>
             <div class="absolute inset-0 bg-slate-950/20 group-hover:bg-slate-950/0 transition-colors duration-300"></div>
           </div>
@@ -382,28 +408,34 @@
         </article>
 
         <!-- Project Card 2: Design -->
-        <article data-category="design" class="portfolio-item group glass-panel rounded-2xl overflow-hidden hover-lift border border-slate-800/50 hover:border-violet-500/30">
-          <div class="h-48 bg-gradient-to-br from-violet-950 via-slate-950 to-pink-950 flex items-center justify-center p-6 border-b border-slate-900/60 relative overflow-hidden">
-            <!-- Sleek SVG Illustration -->
-            <svg class="w-full h-full text-violet-500/20 max-w-[130px]" viewBox="0 0 100 150" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="5" y="10" width="90" height="130" rx="14" stroke="violet" stroke-width="2" class="text-violet-400" />
-              <line x1="40" y1="18" x2="60" y2="18" stroke-linecap="round" stroke-width="3" />
-              <rect x="15" y="32" width="70" height="90" rx="8" stroke-dasharray="3 3" />
-              <circle cx="50" cy="70" r="18" stroke="currentColor" />
-              <line x1="32" y1="105" x2="68" y2="105" />
+        <article data-category="design" class="tilt-card portfolio-item group glass-panel rounded-2xl overflow-hidden hover-lift border border-slate-800/50 hover:border-cyan-500/30">
+          <div class="h-48 bg-gradient-to-br from-[#06222b] via-slate-950 to-[#0a1a33] flex items-center justify-center p-6 border-b border-slate-900/60 relative overflow-hidden">
+            <!-- CryptoVerse: mobil cüzdan + bakiye grafiği -->
+            <svg class="w-full h-full max-w-[120px]" viewBox="0 0 100 150" fill="none" stroke-width="1.6" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="8" width="84" height="134" rx="16" stroke="#22D3EE" opacity="0.7"/>
+              <line x1="40" y1="17" x2="60" y2="17" stroke="#22D3EE" stroke-linecap="round" stroke-width="3"/>
+              <!-- bakiye kartı -->
+              <rect x="18" y="30" width="64" height="34" rx="8" fill="#2E8BFF" opacity="0.12" stroke="#2E8BFF" opacity="0.6"/>
+              <line x1="26" y1="42" x2="58" y2="42" stroke="#7DB8FF" opacity="0.8"/>
+              <line x1="26" y1="52" x2="44" y2="52" stroke="#7DB8FF" opacity="0.4"/>
+              <!-- mini grafik -->
+              <path d="M18 110l12-14 12 8 14-20 12 10 14-16" stroke="#22D3EE" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- coin -->
+              <circle cx="68" cy="82" r="9" stroke="#2E8BFF"/><path d="M68 76v12M64 82h8" stroke="#2E8BFF" opacity="0.7"/>
+              <line x1="20" y1="128" x2="80" y2="128" stroke="#22D3EE" opacity="0.3"/>
             </svg>
             <div class="absolute inset-0 bg-slate-950/20 group-hover:bg-slate-950/0 transition-colors duration-300"></div>
           </div>
           <div class="p-6 space-y-4">
             <div class="flex items-center gap-2 flex-wrap">
-              <span class="text-[10px] font-bold text-violet-400 bg-violet-500/10 px-2 py-0.5 rounded uppercase tracking-wider">Tasarım</span>
+              <span class="text-[10px] font-bold text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded uppercase tracking-wider">Tasarım</span>
               <span class="text-[10px] font-bold text-slate-500 bg-slate-800/60 px-2 py-0.5 rounded font-mono">Figma / UI/UX</span>
             </div>
             <div>
-              <h3 class="font-display font-semibold text-lg text-white group-hover:text-violet-400 transition-colors duration-200">CryptoVerse Mobil Cüzdan</h3>
+              <h3 class="font-display font-semibold text-lg text-white group-hover:text-cyan-400 transition-colors duration-200">CryptoVerse Mobil Cüzdan</h3>
               <p class="text-sm text-slate-400 line-clamp-2 mt-1">Kripto varlık takibi ve anlık transferler için tasarlanmış minimalist mobil cüzdan arayüzü.</p>
             </div>
-            <a href="https://figma.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-semibold text-violet-400 hover:text-violet-300 transition-colors">
+            <a href="https://figma.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition-colors">
               Figma Prototip 
               <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -413,15 +445,21 @@
         </article>
 
         <!-- Project Card 3: Software -->
-        <article data-category="software" class="portfolio-item group glass-panel rounded-2xl overflow-hidden hover-lift border border-slate-800/50 hover:border-cyan-500/30">
-          <div class="h-48 bg-gradient-to-br from-cyan-950 via-slate-950 to-emerald-950 flex items-center justify-center p-6 border-b border-slate-900/60 relative overflow-hidden">
-            <!-- Sleek SVG Illustration -->
-            <svg class="w-full h-full text-cyan-500/20 max-w-[200px]" viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M20 20h160v80H20z" stroke="cyan" stroke-width="2" class="text-cyan-400" />
-              <path d="M40 50h40M40 70h60M120 40v40" />
-              <circle cx="120" cy="40" r="6" fill="currentColor" />
-              <circle cx="120" cy="80" r="6" fill="currentColor" />
-              <path d="M140 60h20" stroke-dasharray="2 2" />
+        <article data-category="software" class="tilt-card portfolio-item group glass-panel rounded-2xl overflow-hidden hover-lift border border-slate-800/50 hover:border-cyan-500/30">
+          <div class="h-48 bg-gradient-to-br from-[#06222b] via-slate-950 to-[#0a1a33] flex items-center justify-center p-6 border-b border-slate-900/60 relative overflow-hidden">
+            <!-- EcoSphere: IoT kontrol paneli / sensör verisi -->
+            <svg class="w-full h-full max-w-[210px]" viewBox="0 0 210 130" fill="none" stroke-width="1.6" xmlns="http://www.w3.org/2000/svg">
+              <rect x="14" y="16" width="182" height="98" rx="8" stroke="#22D3EE" opacity="0.55"/>
+              <line x1="14" y1="34" x2="196" y2="34" stroke="#22D3EE" opacity="0.3"/>
+              <!-- canlı veri grafiği -->
+              <path d="M28 84l18-18 16 10 18-26 16 16 18-12" stroke="#22D3EE" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- sensör düğümleri -->
+              <circle cx="28" cy="84" r="3" fill="#2E8BFF"/><circle cx="80" cy="50" r="3" fill="#2E8BFF"/><circle cx="114" cy="76" r="3" fill="#2E8BFF"/>
+              <!-- gösterge kartları -->
+              <rect x="150" y="46" width="34" height="22" rx="4" stroke="#2E8BFF" opacity="0.6"/>
+              <rect x="150" y="74" width="34" height="22" rx="4" stroke="#2E8BFF" opacity="0.4"/>
+              <circle cx="167" cy="57" r="6" stroke="#22D3EE"/>
+              <line x1="156" y1="85" x2="178" y2="85" stroke="#7DB8FF" opacity="0.6"/>
             </svg>
             <div class="absolute inset-0 bg-slate-950/20 group-hover:bg-slate-950/0 transition-colors duration-300"></div>
           </div>
@@ -444,13 +482,25 @@
         </article>
 
         <!-- Project Card 4: Design -->
-        <article data-category="design" class="portfolio-item group glass-panel rounded-2xl overflow-hidden hover-lift border border-slate-800/50 hover:border-indigo-500/30">
-          <div class="h-48 bg-gradient-to-br from-blue-950 via-slate-950 to-indigo-950 flex items-center justify-center p-6 border-b border-slate-900/60 relative overflow-hidden">
-            <!-- Sleek SVG Illustration -->
-            <svg class="w-full h-full text-indigo-500/20 max-w-[200px]" viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="1.5">
-              <polygon points="100,20 160,80 40,80" stroke="indigo" stroke-width="2" class="text-indigo-400" />
-              <circle cx="100" cy="55" r="14" />
-              <line x1="100" y1="20" x2="100" y2="80" stroke-dasharray="3 3" />
+        <article data-category="design" class="tilt-card portfolio-item group glass-panel rounded-2xl overflow-hidden hover-lift border border-slate-800/50 hover:border-indigo-500/30">
+          <div class="h-48 bg-gradient-to-br from-[#0a1a33] via-slate-950 to-[#06222b] flex items-center justify-center p-6 border-b border-slate-900/60 relative overflow-hidden">
+            <!-- NeuralArt: nöral ağ düğümleri / marka kimliği -->
+            <svg class="w-full h-full max-w-[200px]" viewBox="0 0 200 120" fill="none" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
+              <!-- bağlantılar -->
+              <g stroke="#2E8BFF" opacity="0.45">
+                <line x1="34" y1="40" x2="100" y2="28"/><line x1="34" y1="40" x2="100" y2="60"/>
+                <line x1="34" y1="80" x2="100" y2="60"/><line x1="34" y1="80" x2="100" y2="92"/>
+                <line x1="100" y1="28" x2="166" y2="44"/><line x1="100" y1="60" x2="166" y2="44"/>
+                <line x1="100" y1="60" x2="166" y2="78"/><line x1="100" y1="92" x2="166" y2="78"/>
+              </g>
+              <!-- düğümler -->
+              <circle cx="34" cy="40" r="7" stroke="#22D3EE" fill="#06222b"/>
+              <circle cx="34" cy="80" r="7" stroke="#22D3EE" fill="#06222b"/>
+              <circle cx="100" cy="28" r="8" stroke="#2E8BFF" fill="#0a1a33"/>
+              <circle cx="100" cy="60" r="9" stroke="#2E8BFF" fill="#0a1a33"/>
+              <circle cx="100" cy="92" r="8" stroke="#2E8BFF" fill="#0a1a33"/>
+              <circle cx="166" cy="44" r="7" stroke="#22D3EE" fill="#06222b"/>
+              <circle cx="166" cy="78" r="7" stroke="#22D3EE" fill="#06222b"/>
             </svg>
             <div class="absolute inset-0 bg-slate-950/20 group-hover:bg-slate-950/0 transition-colors duration-300"></div>
           </div>
@@ -473,26 +523,37 @@
         </article>
 
         <!-- Project Card 5: Software -->
-        <article data-category="software" class="portfolio-item group glass-panel rounded-2xl overflow-hidden hover-lift border border-slate-800/50 hover:border-violet-500/30">
-          <div class="h-48 bg-gradient-to-br from-pink-950 via-slate-950 to-violet-950 flex items-center justify-center p-6 border-b border-slate-900/60 relative overflow-hidden">
-            <!-- Sleek SVG Illustration -->
-            <svg class="w-full h-full text-violet-500/20 max-w-[200px]" viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="20" y="20" width="160" height="80" rx="8" />
-              <path d="M40 45h120M40 60h80M40 75h50" stroke="violet" stroke-width="2" class="text-violet-400" />
-              <circle cx="150" cy="70" r="12" fill="currentColor" />
+        <article data-category="software" class="tilt-card portfolio-item group glass-panel rounded-2xl overflow-hidden hover-lift border border-slate-800/50 hover:border-indigo-500/30">
+          <div class="h-48 bg-gradient-to-br from-[#0a1a33] via-slate-950 to-[#06222b] flex items-center justify-center p-6 border-b border-slate-900/60 relative overflow-hidden">
+            <!-- SaaS Analytics API: endpoint katmanları + veritabanı/önbellek -->
+            <svg class="w-full h-full max-w-[210px]" viewBox="0 0 210 130" fill="none" stroke-width="1.6" xmlns="http://www.w3.org/2000/svg">
+              <!-- endpoint listesi -->
+              <rect x="16" y="20" width="92" height="20" rx="5" stroke="#2E8BFF" opacity="0.7"/>
+              <rect x="16" y="48" width="92" height="20" rx="5" stroke="#2E8BFF" opacity="0.5"/>
+              <rect x="16" y="76" width="92" height="20" rx="5" stroke="#2E8BFF" opacity="0.35"/>
+              <circle cx="28" cy="30" r="3" fill="#22D3EE"/><circle cx="28" cy="58" r="3" fill="#22D3EE"/><circle cx="28" cy="86" r="3" fill="#22D3EE"/>
+              <line x1="40" y1="30" x2="98" y2="30" stroke="#7DB8FF" opacity="0.5"/>
+              <line x1="40" y1="58" x2="90" y2="58" stroke="#7DB8FF" opacity="0.4"/>
+              <line x1="40" y1="86" x2="84" y2="86" stroke="#7DB8FF" opacity="0.3"/>
+              <!-- akış okları -->
+              <path d="M114 58h22" stroke="#22D3EE" stroke-dasharray="3 3"/><path d="M132 53l6 5-6 5" stroke="#22D3EE"/>
+              <!-- veritabanı silindiri -->
+              <ellipse cx="166" cy="44" rx="22" ry="7" stroke="#22D3EE"/>
+              <path d="M144 44v34c0 4 10 7 22 7s22-3 22-7V44" stroke="#22D3EE"/>
+              <path d="M144 61c0 4 10 7 22 7s22-3 22-7" stroke="#22D3EE" opacity="0.5"/>
             </svg>
             <div class="absolute inset-0 bg-slate-950/20 group-hover:bg-slate-950/0 transition-colors duration-300"></div>
           </div>
           <div class="p-6 space-y-4">
             <div class="flex items-center gap-2 flex-wrap">
-              <span class="text-[10px] font-bold text-violet-400 bg-violet-500/10 px-2 py-0.5 rounded uppercase tracking-wider">Yazılım</span>
+              <span class="text-[10px] font-bold text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded uppercase tracking-wider">Yazılım</span>
               <span class="text-[10px] font-bold text-slate-500 bg-slate-800/60 px-2 py-0.5 rounded font-mono">Express / PostgreSQL</span>
             </div>
             <div>
-              <h3 class="font-display font-semibold text-lg text-white group-hover:text-violet-400 transition-colors duration-200">SaaS Analytics API</h3>
+              <h3 class="font-display font-semibold text-lg text-white group-hover:text-indigo-400 transition-colors duration-200">SaaS Analytics API</h3>
               <p class="text-sm text-slate-400 line-clamp-2 mt-1">Yüksek trafikli platformlar için Redis önbellekli, dokümante edilmiş loglama ve analitik backend API'si.</p>
             </div>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-semibold text-violet-400 hover:text-violet-300 transition-colors">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-semibold text-indigo-400 hover:text-indigo-300 transition-colors">
               GitHub'da İncele 
               <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -502,16 +563,24 @@
         </article>
 
         <!-- Project Card 6: Design -->
-        <article data-category="design" class="portfolio-item group glass-panel rounded-2xl overflow-hidden hover-lift border border-slate-800/50 hover:border-cyan-500/30">
-          <div class="h-48 bg-gradient-to-br from-emerald-950 via-slate-950 to-cyan-950 flex items-center justify-center p-6 border-b border-slate-900/60 relative overflow-hidden">
-            <!-- Sleek SVG Illustration -->
-            <svg class="w-full h-full text-cyan-500/20 max-w-[200px]" viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="30" y="20" width="60" height="80" rx="4" />
-              <rect x="110" y="20" width="60" height="80" rx="4" stroke="cyan" stroke-width="2" class="text-cyan-400" />
-              <circle cx="60" cy="50" r="10" />
-              <circle cx="140" cy="50" r="10" fill="currentColor" />
-              <line x1="45" y1="80" x2="75" y2="80" />
-              <line x1="125" y1="80" x2="155" y2="80" />
+        <article data-category="design" class="tilt-card portfolio-item group glass-panel rounded-2xl overflow-hidden hover-lift border border-slate-800/50 hover:border-cyan-500/30">
+          <div class="h-48 bg-gradient-to-br from-[#06222b] via-slate-950 to-[#0a1a33] flex items-center justify-center p-6 border-b border-slate-900/60 relative overflow-hidden">
+            <!-- Minimal E-Ticaret: ürün kartları + sepet -->
+            <svg class="w-full h-full max-w-[200px]" viewBox="0 0 200 120" fill="none" stroke-width="1.6" xmlns="http://www.w3.org/2000/svg">
+              <!-- ürün kartları -->
+              <rect x="22" y="22" width="50" height="64" rx="6" stroke="#2E8BFF" opacity="0.55"/>
+              <rect x="22" y="22" width="50" height="34" rx="6" fill="#2E8BFF" opacity="0.1"/>
+              <circle cx="47" cy="39" r="9" stroke="#22D3EE"/>
+              <line x1="30" y1="66" x2="64" y2="66" stroke="#7DB8FF" opacity="0.6"/>
+              <line x1="30" y1="76" x2="52" y2="76" stroke="#7DB8FF" opacity="0.35"/>
+              <rect x="84" y="22" width="50" height="64" rx="6" stroke="#22D3EE" opacity="0.7"/>
+              <rect x="84" y="22" width="50" height="34" rx="6" fill="#22D3EE" opacity="0.1"/>
+              <path d="M99 39l8 8 12-14" stroke="#22D3EE" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="92" y1="66" x2="126" y2="66" stroke="#7DB8FF" opacity="0.6"/>
+              <line x1="92" y1="76" x2="114" y2="76" stroke="#7DB8FF" opacity="0.35"/>
+              <!-- sepet -->
+              <path d="M150 30h8l6 38h22l6-26h-30" stroke="#2E8BFF" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="168" cy="78" r="4" stroke="#22D3EE"/><circle cx="184" cy="78" r="4" stroke="#22D3EE"/>
             </svg>
             <div class="absolute inset-0 bg-slate-950/20 group-hover:bg-slate-950/0 transition-colors duration-300"></div>
           </div>
@@ -534,7 +603,7 @@
         </article>
 
         <!-- Project Card 7: Lion Dental Art Studio -->
-        <article data-category="design" class="portfolio-item group glass-panel rounded-2xl overflow-hidden hover-lift border border-slate-800/50 hover:border-amber-500/30">
+        <article data-category="design" class="tilt-card portfolio-item group glass-panel rounded-2xl overflow-hidden hover-lift border border-slate-800/50 hover:border-amber-500/30">
           <div class="h-48 bg-gradient-to-br from-amber-950 via-slate-950 to-yellow-950 flex items-center justify-center p-6 border-b border-slate-900/60 relative overflow-hidden">
             <svg class="w-full h-full max-w-[180px]" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
               <!-- Crown shape -->
@@ -626,7 +695,7 @@
               <label for="form-message" class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Mesaj</label>
               <textarea id="form-message" rows="5" placeholder="Projeniz hakkında detaylar veya mesajınız..." class="w-full bg-slate-900/60 border border-slate-800/80 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/30 transition-all resize-none"></textarea>
             </div>
-            <button type="submit" class="w-full px-6 py-3.5 rounded-xl bg-gradient-to-r from-indigo-500 to-violet-500 hover:from-indigo-600 hover:to-violet-600 text-white font-semibold text-sm shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/40 transition-all text-center flex items-center justify-center gap-2">
+            <button type="submit" class="magnetic w-full px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#2E8BFF] to-[#22D3EE] hover:from-[#1E6FE0] hover:to-[#06B6D4] text-white font-semibold text-sm shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/40 transition-all text-center flex items-center justify-center gap-2">
               Mesaj Gönder
               <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -655,6 +724,6 @@
   </footer>
 
   <!-- Custom Script -->
-  <script src="script.js?v=1"></script>
+  <script src="script.js?v=2"></script>
 </body>
 </html>

@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // --- Erişilebilirlik: hareketi azalt bayrağı ---
+  const reduceMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const finePointerQuery = window.matchMedia('(pointer: fine)');
+  const prefersReducedMotion = reduceMotionQuery.matches;
+
   // --- Mobile Menu Toggle ---
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
@@ -231,4 +236,156 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   sections.forEach(sec => activeLinkObserver.observe(sec));
+
+  // --- Hero Terminal: Typewriter Animasyonu ---
+  // Söz dizimi renklendirmesi token bazında korunur.
+  const terminalLines = [
+    { tokens: [{ t: 'const', c: 'text-pink-500' }, { t: ' developer ' }, { t: '=', c: 'text-slate-400' }, { t: ' {' }] },
+    { indent: 'pl-4', tokens: [{ t: 'name:', c: 'text-slate-400' }, { t: ' ' }, { t: "'Şahin Kuruhan'", c: 'text-emerald-400' }, { t: ',' }] },
+    { indent: 'pl-4', tokens: [{ t: 'role:', c: 'text-slate-400' }, { t: ' ' }, { t: "'Frontend Developer & Designer'", c: 'text-emerald-400' }, { t: ',' }] },
+    { indent: 'pl-4', tokens: [{ t: 'experience:', c: 'text-slate-400' }, { t: ' ' }, { t: '4', c: 'text-cyan-400' }, { t: ', ' }, { t: '// in years', c: 'text-slate-500' }] },
+    { indent: 'pl-4', tokens: [{ t: 'skills:', c: 'text-slate-400' }, { t: ' [' }] },
+    { indent: 'pl-8', tokens: [{ t: "'JavaScript'", c: 'text-emerald-400' }, { t: ', ' }, { t: "'React.js'", c: 'text-emerald-400' }, { t: ', ' }, { t: "'CSS/Tailwind'", c: 'text-emerald-400' }, { t: ',' }] },
+    { indent: 'pl-8', tokens: [{ t: "'UI/UX Design'", c: 'text-emerald-400' }, { t: ', ' }, { t: "'Git'", c: 'text-emerald-400' }, { t: ', ' }, { t: "'Figma'", c: 'text-emerald-400' }] },
+    { indent: 'pl-4', tokens: [{ t: '],' }] },
+    { indent: 'pl-4', tokens: [{ t: 'motto:', c: 'text-slate-400' }, { t: ' ' }, { t: "'Clean code. Seamless interfaces.'", c: 'text-emerald-400' }] },
+    { tokens: [{ t: '};' }] },
+    { extra: 'mt-4', tokens: [{ t: '// Web sitesi optimize edildi.', c: 'text-slate-500' }] },
+    { tokens: [{ t: 'console', c: 'text-pink-500' }, { t: '.' }, { t: 'log', c: 'text-cyan-400' }, { t: '(developer.motto);' }] },
+    { extra: 'mt-2 text-slate-500', tokens: [{ t: '> "Clean code. Seamless interfaces."' }] },
+  ];
+
+  const terminalBody = document.getElementById('terminal-body');
+  if (terminalBody) {
+    // DOM iskeletini bir kez kur: satır div'leri + boş token span'leri
+    const charQueue = []; // { span, char }
+    terminalLines.forEach((line) => {
+      const lineEl = document.createElement('div');
+      lineEl.className = ['term-line', line.indent, line.extra].filter(Boolean).join(' ');
+      line.tokens.forEach((tok) => {
+        const span = document.createElement('span');
+        if (tok.c) span.className = tok.c;
+        lineEl.appendChild(span);
+        for (const ch of tok.t) charQueue.push({ span, char: ch });
+      });
+      terminalBody.appendChild(lineEl);
+    });
+
+    if (prefersReducedMotion) {
+      // Hareket azaltılmışsa: tüm metni anında doldur, imleç yok
+      charQueue.forEach((q) => { q.span.textContent += q.char; });
+    } else {
+      const cursor = document.createElement('span');
+      cursor.className = 'terminal-cursor';
+      terminalBody.appendChild(cursor);
+
+      let started = false;
+      const typeNext = (i) => {
+        if (i >= charQueue.length) {
+          // İmleci son satırın sonuna sabitle
+          charQueue[charQueue.length - 1].span.parentElement.appendChild(cursor);
+          return;
+        }
+        const { span, char } = charQueue[i];
+        span.textContent += char;
+        span.parentElement.appendChild(cursor); // imleç yazım konumunda
+        // Satır sonunda (yeni paragrafa geçişte) hafif duraklama
+        const next = charQueue[i + 1];
+        const lineBreak = next && next.span.parentElement !== span.parentElement;
+        const delay = lineBreak ? 140 : 16 + Math.random() * 14;
+        setTimeout(() => typeNext(i + 1), delay);
+      };
+
+      // Hero görünür olunca bir kez başlat (üst-fold olduğu için anında çalışır)
+      const heroEl = document.getElementById('hero');
+      if (heroEl) {
+        const typeObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && !started) {
+              started = true;
+              typeNext(0);
+              typeObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.25 });
+        typeObserver.observe(heroEl);
+      } else {
+        typeNext(0);
+      }
+    }
+  }
+
+  // --- Scroll: Kademeli (stagger) Reveal ---
+  const staggerContainers = document.querySelectorAll('.reveal-stagger');
+  if (staggerContainers.length) {
+    const staggerObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          Array.from(entry.target.children).forEach((child, i) => {
+            child.style.transitionDelay = prefersReducedMotion ? '0ms' : `${i * 85}ms`;
+          });
+          entry.target.classList.add('active');
+          staggerObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0, rootMargin: '0px 0px -10% 0px' });
+    staggerContainers.forEach((el) => staggerObserver.observe(el));
+  }
+
+  // --- Mikro Etkileşim: Manyetik Butonlar (yalnız hassas işaretçi + hareket açık) ---
+  if (!prefersReducedMotion && finePointerQuery.matches) {
+    document.querySelectorAll('.magnetic').forEach((el) => {
+      el.addEventListener('mousemove', (e) => {
+        const r = el.getBoundingClientRect();
+        const x = (e.clientX - r.left - r.width / 2) * 0.25;
+        const y = (e.clientY - r.top - r.height / 2) * 0.35;
+        el.style.transform = `translate(${x}px, ${y}px)`;
+      });
+      el.addEventListener('mouseleave', () => { el.style.transform = ''; });
+    });
+
+    // --- Mikro Etkileşim: Kart imleç spotlight + hafif 3B tilt ---
+    document.querySelectorAll('.tilt-card').forEach((card) => {
+      let raf = null;
+      card.addEventListener('mousemove', (e) => {
+        const r = card.getBoundingClientRect();
+        const px = (e.clientX - r.left) / r.width;
+        const py = (e.clientY - r.top) / r.height;
+        card.style.setProperty('--mx', `${px * 100}%`);
+        card.style.setProperty('--my', `${py * 100}%`);
+        if (raf) cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(() => {
+          const rx = (0.5 - py) * 6;
+          const ry = (px - 0.5) * 6;
+          card.style.transform = `perspective(800px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-4px)`;
+        });
+      });
+      card.addEventListener('mouseleave', () => {
+        if (raf) cancelAnimationFrame(raf);
+        card.style.transform = '';
+      });
+    });
+  }
+
+  // --- Scroll-linked Parallax (hafif) ---
+  if (!prefersReducedMotion) {
+    const parallaxEls = document.querySelectorAll('[data-parallax]');
+    if (parallaxEls.length) {
+      let ticking = false;
+      const applyParallax = () => {
+        const y = window.scrollY;
+        parallaxEls.forEach((el) => {
+          const speed = parseFloat(el.dataset.parallax) || 0.1;
+          el.style.transform = `translate3d(0, ${(y * speed).toFixed(1)}px, 0)`;
+        });
+        ticking = false;
+      };
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          requestAnimationFrame(applyParallax);
+          ticking = true;
+        }
+      }, { passive: true });
+    }
+  }
 });

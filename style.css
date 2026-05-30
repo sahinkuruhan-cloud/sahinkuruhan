@@ -2,6 +2,17 @@
 
 :root {
   scroll-behavior: smooth;
+
+  /* ============================================
+     RENK SİSTEMİ — Tek merkez (elektrik mavisi + cyan)
+     ============================================ */
+  --accent-primary: #2E8BFF;        /* elektrik mavisi (ana) */
+  --accent-primary-strong: #1E6FE0; /* hover/koyu */
+  --accent-secondary: #22D3EE;      /* cyan */
+  --accent-text: #7DB8FF;           /* koyu zeminde AA-uyumlu açık mavi */
+  --accent-glow: rgba(46, 139, 255, 0.45);
+  --accent-glow-soft: rgba(46, 139, 255, 0.18);
+  --cyan-glow: rgba(34, 211, 238, 0.18);
 }
 
 body {
@@ -44,13 +55,13 @@ h1, h2, h3, h4, h5, h6, .font-display {
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #6366f1; /* Indigo accent */
+  background: var(--accent-primary); /* Elektrik mavisi accent */
 }
 
 /* Custom Text Selection */
 ::selection {
-  background-color: rgba(99, 102, 241, 0.25); /* Indigo accent with transparency */
-  color: #a5b4fc;
+  background-color: var(--accent-glow-soft);
+  color: var(--accent-text);
 }
 
 /* Custom Glassmorphism */
@@ -77,28 +88,29 @@ h1, h2, h3, h4, h5, h6, .font-display {
   border-color: rgba(16, 185, 129, 0.4);
 }
 
+/* glow-violet sınıf adı korunur; renk maviye eşlenir (mor tamamen kaldırıldı) */
 .glow-violet {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .glow-violet:hover {
-  box-shadow: 0 0 25px rgba(139, 92, 246, 0.18);
-  border-color: rgba(139, 92, 246, 0.4);
+  box-shadow: 0 0 25px var(--accent-glow-soft);
+  border-color: rgba(46, 139, 255, 0.4);
 }
 
 .glow-cyan {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .glow-cyan:hover {
-  box-shadow: 0 0 25px rgba(6, 182, 212, 0.18);
-  border-color: rgba(6, 182, 212, 0.4);
+  box-shadow: 0 0 25px var(--cyan-glow);
+  border-color: rgba(34, 211, 238, 0.4);
 }
 
 .glow-indigo {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .glow-indigo:hover {
-  box-shadow: 0 0 25px rgba(99, 102, 241, 0.18);
-  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 0 25px var(--accent-glow-soft);
+  border-color: rgba(46, 139, 255, 0.4);
 }
 
 /* Dynamic background grid effect */
@@ -280,14 +292,14 @@ h1, h2, h3, h4, h5, h6, .font-display {
 @keyframes logo-pulse-glow {
   0%, 100% {
     box-shadow:
-      0 0 10px rgba(139, 92, 246, 0.35),
-      0 0 22px rgba(6, 182, 212, 0.20),
+      0 0 10px rgba(46, 139, 255, 0.35),
+      0 0 22px rgba(34, 211, 238, 0.20),
       inset 0 1px 0 rgba(255,255,255,0.08);
   }
   50% {
     box-shadow:
-      0 0 22px rgba(139, 92, 246, 0.60),
-      0 0 44px rgba(6, 182, 212, 0.35),
+      0 0 22px rgba(46, 139, 255, 0.60),
+      0 0 44px rgba(34, 211, 238, 0.35),
       inset 0 1px 0 rgba(255,255,255,0.12);
   }
 }
@@ -304,8 +316,8 @@ h1, h2, h3, h4, h5, h6, .font-display {
 
   /* Neon glow kutusu — violet & cyan çift katman */
   box-shadow:
-    0 0 10px rgba(139, 92, 246, 0.35),
-    0 0 22px rgba(6, 182, 212, 0.20),
+    0 0 10px rgba(46, 139, 255, 0.35),
+    0 0 22px rgba(34, 211, 238, 0.20),
     inset 0 1px 0 rgba(255, 255, 255, 0.08);
 
   /* Nabız animasyonu */
@@ -334,9 +346,9 @@ h1, h2, h3, h4, h5, h6, .font-display {
   padding: 2px;
   background: linear-gradient(
     135deg,
-    rgba(139, 92, 246, 0.7),   /* violet */
-    rgba(99, 102, 241, 0.5),   /* indigo */
-    rgba(6, 182, 212, 0.7)     /* cyan */
+    rgba(46, 139, 255, 0.7),   /* elektrik mavisi */
+    rgba(59, 164, 255, 0.5),   /* açık mavi */
+    rgba(34, 211, 238, 0.7)    /* cyan */
   );
   background-size: 200% 200%;
   animation: logo-border-spin 5s ease infinite;
@@ -353,9 +365,134 @@ h1, h2, h3, h4, h5, h6, .font-display {
 .group:hover .logo-glow {
   transform: translateY(-3px) scale(1.07);
   box-shadow:
-    0 0 28px rgba(139, 92, 246, 0.70),
-    0 0 56px rgba(6, 182, 212, 0.45),
+    0 0 28px rgba(46, 139, 255, 0.70),
+    0 0 56px rgba(34, 211, 238, 0.45),
     0 8px 32px rgba(0, 0, 0, 0.40),
     inset 0 1px 0 rgba(255, 255, 255, 0.14);
   filter: brightness(1.12) saturate(1.25);
+}
+
+/* ============================================
+   HERO TERMINAL — Typewriter & yanıp sönen imleç
+   ============================================ */
+.terminal-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 1.05em;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  background: var(--accent-secondary);
+  box-shadow: 0 0 8px var(--cyan-glow);
+  animation: terminal-blink 1s steps(1) infinite;
+}
+
+@keyframes terminal-blink {
+  0%, 50%   { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
+/* Yazım esnasında satırların boş yer kaplamaması için */
+#terminal-body .term-line {
+  white-space: pre-wrap;
+}
+
+/* ============================================
+   MİKRO ETKİLEŞİM — Manyetik buton
+   ============================================ */
+.magnetic {
+  /* JS translate uygular; geçiş yumuşatma */
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform;
+}
+
+/* ============================================
+   MİKRO ETKİLEŞİM — Kart imleç spotlight + tilt
+   ============================================ */
+.tilt-card {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* İmleci takip eden radial spotlight katmanı */
+.tilt-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  background: radial-gradient(
+    320px circle at var(--mx, 50%) var(--my, 50%),
+    var(--accent-glow-soft),
+    transparent 60%
+  );
+  z-index: 1;
+}
+
+.tilt-card:hover::before {
+  opacity: 1;
+}
+
+/* Spotlight kart içeriğinin üstüne binmesin */
+.tilt-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ============================================
+   SCROLL — Kademeli reveal (stagger)
+   ============================================ */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.reveal-stagger.active > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Parallax katmanları — JS translate uygular */
+.parallax-blob {
+  will-change: transform;
+}
+
+/* ============================================
+   ERİŞİLEBİLİRLİK — Hareketi azalt
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal,
+  .reveal-stagger > * {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .terminal-cursor {
+    display: none;
+  }
+
+  /* Manyetik / tilt / parallax dönüşümleri sıfırlanır */
+  .magnetic,
+  .tilt-card,
+  .parallax-blob {
+    transform: none !important;
+  }
+
+  .tilt-card::before {
+    display: none;
+  }
 }
