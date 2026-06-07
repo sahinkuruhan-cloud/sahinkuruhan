@@ -19,6 +19,22 @@
       }
     });
 
+    // Translate aria-labels (data-aria-tr / data-aria-en)
+    document.querySelectorAll('[data-aria-tr][data-aria-en]').forEach(function (el) {
+      const label = el.dataset[lang === 'en' ? 'ariaEn' : 'ariaTr'];
+      if (label !== undefined) {
+        el.setAttribute('aria-label', label);
+      }
+    });
+
+    // Translate image alt text (data-alt-tr / data-alt-en)
+    document.querySelectorAll('[data-alt-tr][data-alt-en]').forEach(function (el) {
+      const altText = el.dataset[lang === 'en' ? 'altEn' : 'altTr'];
+      if (altText !== undefined) {
+        el.setAttribute('alt', altText);
+      }
+    });
+
     // Update page <title>
     const titleEl = document.querySelector('title');
     if (titleEl) {
@@ -42,6 +58,9 @@
       activeLabelEl.textContent = lang.toUpperCase();
       otherLabelEl.textContent  = lang === 'tr' ? 'EN' : 'TR';
     }
+
+    // Notify other modules (e.g. hamburger label) that language changed
+    document.dispatchEvent(new CustomEvent('languagechange:lds', { detail: { lang: lang } }));
   }
 
   function toggleLanguage() {

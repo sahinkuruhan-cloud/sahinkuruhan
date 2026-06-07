@@ -29,23 +29,61 @@
   /* ===================================
      MOBILE MENU
   =================================== */
+  var mobileNavQuery = window.matchMedia('(max-width: 900px)');
+
+  function isMobileNav() {
+    return mobileNavQuery.matches;
+  }
+
+  function navFocusables() {
+    return navLinks
+      ? Array.prototype.slice.call(navLinks.querySelectorAll('.nav__link'))
+      : [];
+  }
+
+  // Keep the off-screen overlay out of the tab order on mobile when closed
+  function syncNavInert() {
+    if (!navLinks) return;
+    var shouldBeInert = isMobileNav() && !navLinks.classList.contains('is-open');
+    if (shouldBeInert) {
+      navLinks.setAttribute('inert', '');
+    } else {
+      navLinks.removeAttribute('inert');
+    }
+  }
+
+  function updateHamburgerLabel(isOpen) {
+    if (!hamburger) return;
+    var lang = document.documentElement.lang === 'en' ? 'en' : 'tr';
+    var key = (isOpen ? 'labelClose' : 'labelOpen') + (lang === 'en' ? 'En' : 'Tr');
+    var label = hamburger.dataset[key];
+    if (label) hamburger.setAttribute('aria-label', label);
+  }
+
   function openMenu() {
     navLinks.classList.add('is-open');
     hamburger.classList.add('is-active');
     hamburger.setAttribute('aria-expanded', 'true');
+    updateHamburgerLabel(true);
     document.body.style.overflow = 'hidden';
+    syncNavInert();
+    var focusables = navFocusables();
+    if (focusables.length) focusables[0].focus();
   }
 
-  function closeMenu() {
+  function closeMenu(returnFocus) {
     navLinks.classList.remove('is-open');
     hamburger.classList.remove('is-active');
     hamburger.setAttribute('aria-expanded', 'false');
+    updateHamburgerLabel(false);
     document.body.style.overflow = '';
+    syncNavInert();
+    if (returnFocus && hamburger) hamburger.focus();
   }
 
   function toggleMenu() {
     if (navLinks.classList.contains('is-open')) {
-      closeMenu();
+      closeMenu(true);
     } else {
       openMenu();
     }
@@ -57,22 +95,56 @@
 
   // Close mobile menu when any nav link is clicked
   if (navLinks) {
-    navLinks.querySelectorAll('.nav__link').forEach(function (link) {
+    navFocusables().forEach(function (link) {
       link.addEventListener('click', function () {
         if (navLinks.classList.contains('is-open')) {
-          closeMenu();
+          closeMenu(false);
         }
       });
     });
   }
 
-  // Close menu on Escape key
+  // Keyboard handling: Escape closes, Tab is trapped while the menu is open
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && navLinks && navLinks.classList.contains('is-open')) {
-      closeMenu();
-      if (hamburger) hamburger.focus();
+    if (!navLinks || !navLinks.classList.contains('is-open')) return;
+
+    if (e.key === 'Escape') {
+      closeMenu(true);
+      return;
+    }
+
+    if (e.key === 'Tab') {
+      var focusables = navFocusables();
+      if (!focusables.length) return;
+      var first = focusables[0];
+      var last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
     }
   });
+
+  // Re-evaluate inert state when crossing the mobile breakpoint
+  if (mobileNavQuery.addEventListener) {
+    mobileNavQuery.addEventListener('change', function () {
+      if (!isMobileNav() && navLinks.classList.contains('is-open')) {
+        closeMenu(false);
+      }
+      syncNavInert();
+    });
+  }
+
+  // Keep the hamburger label in sync when the language toggle fires
+  document.addEventListener('languagechange:lds', function () {
+    updateHamburgerLabel(navLinks && navLinks.classList.contains('is-open'));
+  });
+
+  syncNavInert();
+  updateHamburgerLabel(false);
 
   /* ===================================
      SMOOTH SCROLL (for older browsers)
