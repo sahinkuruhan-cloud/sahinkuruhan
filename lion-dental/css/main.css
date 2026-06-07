@@ -15,13 +15,14 @@
   --clr-gold-light:   #E8D5A3;
   --clr-gold-dark:    #A8874E;
   --clr-text:         #2C3040;
-  --clr-text-muted:   #6B7280;
-  --clr-text-light:   #9CA3AF;
+  --clr-text-muted:   #555E70;  /* WCAG AA (≥4.5:1) on pearl/white */
+  --clr-text-light:   #707889;  /* AA on pearl for small UI text */
   --clr-border:       #E8E5DF;
   --clr-border-light: #F0EDE8;
 
   /* Typography */
   --font-heading: 'Cormorant Garamond', Georgia, serif;
+  --font-display: 'Playfair Display', Georgia, serif;
   --font-body:    'Inter', system-ui, -apple-system, sans-serif;
 
   /* Spacing */
@@ -108,6 +109,48 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
 }
 
+/* === FOCUS RINGS (keyboard only) === */
+:focus-visible {
+  outline: 2px solid var(--clr-gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Suppress the default ring for pointer users; keep it for keyboard */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* On dark surfaces, use the lighter gold for the ring */
+.workflow :focus-visible,
+.contact :focus-visible,
+.footer :focus-visible,
+.nav__links.is-open :focus-visible,
+.lightbox :focus-visible {
+  outline-color: var(--clr-gold-light);
+}
+
+/* === SKIP LINK === */
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 50%;
+  transform: translate(-50%, -150%);
+  z-index: 1000;
+  background-color: var(--clr-navy);
+  color: var(--clr-white);
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--ease-base);
+}
+
+.skip-link:focus {
+  transform: translate(-50%, 0);
+}
+
 /* === CONTAINER === */
 .container {
   width: 100%;
@@ -121,30 +164,58 @@ section {
   padding: var(--space-xl) 0;
 }
 
+/* Editorial rhythm: let the "showcase" sections breathe more on desktop */
+@media (min-width: 1025px) {
+  .why,
+  .gallery {
+    padding-block: var(--space-2xl);
+  }
+}
+
 /* === SECTION HEADER (shared pattern) === */
 .section-header {
   text-align: center;
-  margin-bottom: var(--space-lg);
-  max-width: 700px;
+  max-width: 720px;
   margin-inline: auto;
   margin-bottom: var(--space-lg);
 }
 
+/* Editorial eyebrow: gold hairlines flanking an uppercase label */
 .section-eyebrow {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
   font-family: var(--font-body);
   font-size: 0.6875rem;
   font-weight: 600;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--clr-gold);
-  margin-bottom: 0.75rem;
+  color: var(--clr-gold-dark);
+  margin-bottom: 1rem;
+}
+
+.section-eyebrow::before,
+.section-eyebrow::after {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background-color: currentColor;
+  opacity: 0.55;
 }
 
 .section-title {
-  font-size: clamp(1.875rem, 4vw, 2.875rem);
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: 400;
   color: var(--clr-navy);
   margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+/* Editorial accent: italic gold word inside any section title */
+.section-title em,
+.section-title i {
+  font-style: italic;
+  color: var(--clr-gold);
 }
 
 .section-subtitle {

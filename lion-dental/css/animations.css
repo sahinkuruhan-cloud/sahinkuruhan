@@ -28,8 +28,13 @@
 
 @keyframes scroll-pulse {
   0%, 100% { transform: scaleY(1); opacity: 1; }
-  50%       { transform: scaleY(0.6); opacity: 0.4; }
-  0%        { transform-origin: top; }
+  50%      { transform: scaleY(0.6); opacity: 0.4; }
+}
+
+@keyframes wa-pulse {
+  0%   { transform: scale(1); opacity: 0.5; }
+  70%  { transform: scale(1.7); opacity: 0; }
+  100% { transform: scale(1.7); opacity: 0; }
 }
 
 @keyframes fade-up {
@@ -92,8 +97,9 @@
 
 .hero__eyebrow.animate-in   { animation-delay: 0.1s; }
 .hero__title.animate-in     { animation-delay: 0.25s; }
-.hero__subtitle.animate-in  { animation-delay: 0.42s; }
-.hero__actions.animate-in   { animation-delay: 0.58s; }
+.hero__rule.animate-in      { animation-delay: 0.45s; }
+.hero__subtitle.animate-in  { animation-delay: 0.55s; }
+.hero__actions.animate-in   { animation-delay: 0.68s; }
 
 .hero__visual.animate-in {
   animation: scale-in 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
