@@ -7,17 +7,61 @@
   <meta name="description" content="Lion Dental Art Studio – Diş hekimleri için premium zirkonyum kuron, lamine veneer ve CAD/CAM protez çözümleri.">
   <meta name="keywords" content="diş protez laboratuvarı, zirkonyum kuron, lamine veneer, CAD/CAM, implant protez, dental lab">
   <meta name="robots" content="index, follow">
+  <meta name="author" content="Lion Dental Art Studio">
+  <meta name="theme-color" content="#1A2744">
+  <link rel="canonical" href="https://sahinkuruhan.com/lion-dental/">
+  <link rel="alternate" hreflang="tr" href="https://sahinkuruhan.com/lion-dental/">
+  <link rel="alternate" hreflang="en" href="https://sahinkuruhan.com/lion-dental/?lang=en">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/favicon.svg">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:url" content="https://sahinkuruhan.com/lion-dental/">
+  <meta property="og:site_name" content="Lion Dental Art Studio">
   <meta property="og:title" content="Lion Dental Art Studio | Diş Protez Laboratuvarı">
   <meta property="og:description" content="Sanatla şekillenen gülen yüzler. Premium diş protez çözümleri.">
-  <meta property="og:image" content="assets/images/og-image.jpg">
+  <meta property="og:image" content="assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Lion Dental Art Studio | Diş Protez Laboratuvarı">
+  <meta name="twitter:description" content="Sanatla şekillenen gülen yüzler. Premium diş protez çözümleri.">
+  <meta name="twitter:image" content="assets/og-image.png">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dentist",
+    "name": "Lion Dental Art Studio",
+    "description": "Diş hekimleri için premium zirkonyum kuron, lamine veneer ve CAD/CAM protez laboratuvarı.",
+    "image": "https://sahinkuruhan.com/lion-dental/assets/og-image.png",
+    "url": "https://sahinkuruhan.com/lion-dental/",
+    "telephone": "+905312212589",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Şehit Fethi Cad. No:102",
+      "addressLocality": "Pendik",
+      "addressRegion": "İstanbul",
+      "addressCountry": "TR"
+    },
+    "sameAs": [
+      "https://www.instagram.com/liondentalart/"
+    ]
+  }
+  </script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/main.css">
@@ -25,6 +69,8 @@
   <link rel="stylesheet" href="css/animations.css">
 </head>
 <body>
+
+  <a href="#main" class="skip-link" data-tr="İçeriğe geç" data-en="Skip to content">İçeriğe geç</a>
 
   <!-- ==============================
        HEADER / NAV
@@ -57,7 +103,9 @@
           <span class="lang-toggle__sep">/</span>
           <span id="langOther">EN</span>
         </button>
-        <button class="nav__hamburger" id="hamburger" aria-label="Menüyü aç" aria-expanded="false">
+        <button class="nav__hamburger" id="hamburger" aria-label="Menüyü aç" aria-expanded="false" aria-controls="navLinks"
+                data-label-open-tr="Menüyü aç" data-label-open-en="Open menu"
+                data-label-close-tr="Menüyü kapat" data-label-close-en="Close menu">
           <span></span>
           <span></span>
           <span></span>
@@ -67,7 +115,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main" tabindex="-1">
 
     <!-- ==============================
          HERO
@@ -82,6 +130,7 @@
             <i data-tr="Şekillenen" data-en="Meets">Şekillenen</i><br>
             <span data-tr="Gülen Yüzler." data-en="Artistry.">Gülen Yüzler.</span>
           </h1>
+          <div class="hero__rule animate-in" aria-hidden="true"></div>
           <p class="hero__subtitle animate-in" data-tr="Zirkonyum krondan lamine veneere, dijital CAD/CAM üretimden implant üstü proteze kadar — hekimlerin güvendiği, hastaların sevdiği çözümler." data-en="From zirconia crowns to laminate veneers, from digital CAD/CAM to implant prosthetics — solutions dentists trust, patients love.">
             Zirkonyum krondan lamine veneere, dijital CAD/CAM üretimden implant üstü proteze kadar — hekimlerin güvendiği, hastaların sevdiği çözümler.
           </p>
@@ -97,15 +146,16 @@
         </div>
 
         <div class="hero__visual animate-in" aria-hidden="true">
-          <div class="hero__visual-ring hero__visual-ring--outer"></div>
-          <div class="hero__visual-ring hero__visual-ring--mid"></div>
-          <div class="hero__visual-circle"></div>
-          <div class="hero__visual-gem"></div>
+          <div class="hero__arch">
+            <span class="hero__arch-mark">L</span>
+            <div class="hero__visual-ring hero__visual-ring--mid"></div>
+            <div class="hero__visual-gem"></div>
+          </div>
           <div class="hero__visual-dot hero__visual-dot--1"></div>
           <div class="hero__visual-dot hero__visual-dot--2"></div>
           <div class="hero__visual-dot hero__visual-dot--3"></div>
           <div class="hero__visual-badge">
-            <span class="hero__visual-badge-num">10+</span>
+            <span class="hero__visual-badge-num">10<i>+</i></span>
             <span class="hero__visual-badge-label" data-tr="Yıl Deneyim" data-en="Years of Experience">Yıl Deneyim</span>
           </div>
         </div>
@@ -327,40 +377,45 @@
 
         <div class="gallery__grid">
 
-          <figure class="gallery__item animate-on-scroll">
-            <div class="gallery__img gallery__img--1"></div>
-            <figcaption class="gallery__caption">
-              <span data-tr="Zirkonyum Kuron Seti" data-en="Zirconia Crown Set">Zirkonyum Kuron Seti</span>
-            </figcaption>
-          </figure>
+          <button type="button" class="gallery__item animate-on-scroll"
+                  data-full="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1400&q=80">
+            <img class="gallery__img" loading="lazy" decoding="async" width="600" height="260"
+                 src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80"
+                 alt="Zirkonyum kuron seti" data-alt-tr="Zirkonyum kuron seti" data-alt-en="Zirconia crown set">
+            <span class="gallery__caption" data-tr="Zirkonyum Kuron Seti" data-en="Zirconia Crown Set">Zirkonyum Kuron Seti</span>
+          </button>
 
-          <figure class="gallery__item animate-on-scroll">
-            <div class="gallery__img gallery__img--2"></div>
-            <figcaption class="gallery__caption">
-              <span data-tr="Lamine Veneer" data-en="Laminate Veneer">Lamine Veneer</span>
-            </figcaption>
-          </figure>
+          <button type="button" class="gallery__item animate-on-scroll"
+                  data-full="https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?auto=format&fit=crop&w=1400&q=80">
+            <img class="gallery__img" loading="lazy" decoding="async" width="600" height="260"
+                 src="https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?auto=format&fit=crop&w=600&q=80"
+                 alt="Lamine veneer çalışması" data-alt-tr="Lamine veneer çalışması" data-alt-en="Laminate veneer work">
+            <span class="gallery__caption" data-tr="Lamine Veneer" data-en="Laminate Veneer">Lamine Veneer</span>
+          </button>
 
-          <figure class="gallery__item animate-on-scroll">
-            <div class="gallery__img gallery__img--3"></div>
-            <figcaption class="gallery__caption">
-              <span data-tr="İmplant Üstü Kuron" data-en="Implant Crown">İmplant Üstü Kuron</span>
-            </figcaption>
-          </figure>
+          <button type="button" class="gallery__item animate-on-scroll"
+                  data-full="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1400&q=80">
+            <img class="gallery__img" loading="lazy" decoding="async" width="600" height="260"
+                 src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=600&q=80"
+                 alt="İmplant üstü kuron" data-alt-tr="İmplant üstü kuron" data-alt-en="Implant-supported crown">
+            <span class="gallery__caption" data-tr="İmplant Üstü Kuron" data-en="Implant Crown">İmplant Üstü Kuron</span>
+          </button>
 
-          <figure class="gallery__item gallery__item--wide animate-on-scroll">
-            <div class="gallery__img gallery__img--4"></div>
-            <figcaption class="gallery__caption">
-              <span data-tr="Tam Seramik Restorasyonlar" data-en="Full Ceramic Restorations">Tam Seramik Restorasyonlar</span>
-            </figcaption>
-          </figure>
+          <button type="button" class="gallery__item gallery__item--wide animate-on-scroll"
+                  data-full="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1600&q=80">
+            <img class="gallery__img" loading="lazy" decoding="async" width="1200" height="260"
+                 src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1200&q=80"
+                 alt="Tam seramik restorasyonlar" data-alt-tr="Tam seramik restorasyonlar" data-alt-en="Full ceramic restorations">
+            <span class="gallery__caption" data-tr="Tam Seramik Restorasyonlar" data-en="Full Ceramic Restorations">Tam Seramik Restorasyonlar</span>
+          </button>
 
-          <figure class="gallery__item animate-on-scroll">
-            <div class="gallery__img gallery__img--5"></div>
-            <figcaption class="gallery__caption">
-              <span data-tr="CAD/CAM Üretim" data-en="CAD/CAM Production">CAD/CAM Üretim</span>
-            </figcaption>
-          </figure>
+          <button type="button" class="gallery__item animate-on-scroll"
+                  data-full="https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=1400&q=80">
+            <img class="gallery__img" loading="lazy" decoding="async" width="600" height="260"
+                 src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=600&q=80"
+                 alt="CAD/CAM dijital üretim" data-alt-tr="CAD/CAM dijital üretim" data-alt-en="CAD/CAM digital production">
+            <span class="gallery__caption" data-tr="CAD/CAM Üretim" data-en="CAD/CAM Production">CAD/CAM Üretim</span>
+          </button>
 
         </div>
 
@@ -446,6 +501,15 @@
           </div>
 
         </div>
+
+        <div class="contact__map animate-on-scroll">
+          <iframe
+            title="Lion Dental Art Studio konum haritası"
+            src="https://www.google.com/maps?q=%C5%9Eehit%20Fethi%20Caddesi%20No%3A102%20Pendik%20%C4%B0stanbul&output=embed"
+            width="100%" height="100%" style="border:0;"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen></iframe>
+        </div>
       </div>
     </section>
 
@@ -497,9 +561,39 @@
     </div>
   </footer>
 
+  <!-- ==============================
+       WHATSAPP FLOATING BUTTON
+  ============================== -->
+  <a href="https://wa.me/905312212589?text=Merhaba,%20bilgi%20almak%20istiyorum"
+     class="wa-float" target="_blank" rel="noopener noreferrer"
+     aria-label="WhatsApp ile yazın" data-aria-tr="WhatsApp ile yazın" data-aria-en="Message us on WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    <span class="wa-float__pulse" aria-hidden="true"></span>
+  </a>
+
+  <!-- ==============================
+       LIGHTBOX
+  ============================== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Galeri görüntüleyici" hidden>
+    <button type="button" class="lightbox__close" id="lightboxClose" aria-label="Kapat / Close">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <button type="button" class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Önceki / Previous">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <figure class="lightbox__figure">
+      <img class="lightbox__img" id="lightboxImg" src="" alt="">
+      <figcaption class="lightbox__caption" id="lightboxCaption"></figcaption>
+    </figure>
+    <button type="button" class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Sonraki / Next">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+  </div>
+
   <!-- Scripts -->
   <script src="js/language.js"></script>
   <script src="js/animations.js"></script>
+  <script src="js/gallery.js"></script>
   <script src="js/main.js"></script>
 
 </body>
