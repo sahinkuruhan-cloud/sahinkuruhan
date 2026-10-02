@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Numira mobil uygulaması için gizlilik politikası: hangi veriler işlenir, hangileri cihazdan hiç çıkmaz.">
+  <meta name="robots" content="index, follow">
+  <title>Numira | Gizlilik Politikası</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            dark: '#030712',
+            numira: { gece: '#0E0D1F', altin: '#D9B36C', lila: '#B9A8E8' },
+            accent: { emerald: '#10B981', blue: '#2E8BFF', cyan: '#22D3EE' },
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="style.css?v=2">
+  <style>
+    /* Politika sayfasına özgü küçük eklemeler; site genelini etkilemesin
+       diye style.css'e değil buraya yazıldı. */
+    .pol-table { border-collapse: collapse; width: 100%; }
+    .pol-table th, .pol-table td {
+      border: 1px solid rgb(30 41 59 / 0.9);
+      padding: 0.6rem 0.75rem;
+      text-align: left;
+      vertical-align: top;
+      font-size: 0.8125rem;
+      line-height: 1.5;
+    }
+    .pol-table th { background: rgb(15 23 42 / 0.6); color: #e2e8f0; font-weight: 600; }
+    .pol-table td { color: #94a3b8; }
+    .pol-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .pol-table code { font-size: 0.75rem; }
+  </style>
+</head>
+<body class="bg-dark text-slate-100 bg-grid-pattern min-h-screen antialiased">
+
+  <div class="bg-animated-wrapper" style="opacity:0.6"></div>
+
+  <header class="border-b border-slate-900/60 py-5">
+    <div class="max-w-3xl mx-auto px-6 flex items-center justify-between gap-4">
+      <a href="index.html" class="flex items-center gap-3 group" aria-label="Ana sayfaya dön">
+        <img src="logo.png?v=2" alt="Şahin Kuruhan Logo" class="h-10 w-10 object-contain rounded-xl">
+        <span class="text-sm font-semibold text-slate-300 group-hover:text-white transition-colors">sahinkuruhan.com</span>
+      </a>
+      <a href="index.html#works" class="text-xs font-semibold text-slate-400 hover:text-white transition-colors whitespace-nowrap">← Çalışmalarıma Dön</a>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-6 py-16">
+    <div class="glass-panel rounded-2xl p-8 sm:p-10 space-y-8">
+
+      <div>
+        <span class="text-[10px] font-bold text-numira-altin bg-amber-500/10 px-2 py-0.5 rounded uppercase tracking-wider">Yazılım / Mobil Uygulama</span>
+        <h1 class="text-3xl sm:text-4xl font-bold font-display text-white mt-4">Numira Gizlilik Politikası</h1>
+        <p class="text-sm text-slate-500 mt-2">Son güncelleme: 3 Ekim 2026 &middot; Uygulama sürümü 1.0.0</p>
+      </div>
+
+      <p class="text-slate-400 leading-relaxed">
+        Bu politika, <strong class="text-slate-200">Numira</strong> mobil uygulamasının (paket adı:
+        <code class="text-numira-altin bg-slate-900/60 px-1.5 py-0.5 rounded font-mono text-sm">com.numira</code>)
+        hangi verileri işlediğini, bu verilerin nereye gittiğini ve hangilerinin cihazınızdan hiç çıkmadığını
+        açıklar. Veri sorumlusu: <strong class="text-slate-200">Şahin Kuruhan</strong> (bireysel geliştirici,
+        Türkiye) &mdash; iletişim <a href="mailto:sahinkuruhan@gmail.com" class="text-numira-altin hover:text-amber-300 font-semibold">sahinkuruhan@gmail.com</a>.
+      </p>
+
+      <!-- ÖZET -->
+      <section class="space-y-3">
+        <h2 class="text-xl font-semibold font-display text-white">Özet</h2>
+        <p class="text-slate-400 leading-relaxed">
+          Numira doğum tarihinizden üç basamaklı bir sayı ve buna bağlı yorum metinleri üretir.
+          <strong class="text-slate-200">Girdiğiniz doğum tarihi hiçbir zaman cihazınızdan dışarı gönderilmez
+          ve hiçbir yere kaydedilmez</strong> &mdash; uygulama kapanınca silinir. Uygulama hesap açtırmaz, ad,
+          e-posta, telefon veya adres istemez.
+        </p>
+        <p class="text-slate-400 leading-relaxed">
+          Buna karşılık uygulama reklam, analiz ve satın alma hizmetleri kullanır; bunlar cihazınızdan
+          <strong class="text-slate-200">reklam kimliği, cihaz/uygulama bilgileri ve kullanım olayları</strong>
+          toplar. Aşağıdaki tablolar neyin nereye gittiğini kalem kalem gösterir.
+        </p>
+      </section>
+
+      <!-- TABLO 1: NE NEREYE GIDER -->
+      <section class="space-y-3">
+        <h2 class="text-xl font-semibold font-display text-white">Hangi veri nereye gider?</h2>
+        <div class="pol-wrap">
+          <table class="pol-table">
+            <thead>
+              <tr><th>Veri</th><th>Nerede durur</th><th>Dışarı çıkar mı?</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-slate-200">Doğum tarihiniz (gün / ay / yıl)</td>
+                <td>Yalnızca uygulama açıkken cihazın geçici belleğinde</td>
+                <td><strong class="text-numira-altin">Hayır.</strong> Kaydedilmez, gönderilmez, uygulama kapanınca silinir.</td>
+              </tr>
+              <tr>
+                <td class="text-slate-200">Partnerin doğum tarihi (İlişki Sinerjisi)</td>
+                <td>Yalnızca uygulama açıkken geçici bellekte</td>
+                <td><strong class="text-numira-altin">Hayır.</strong> Kaydedilmez, gönderilmez.</td>
+              </tr>
+              <tr>
+                <td class="text-slate-200">Annenizin beklediği cinsiyet (isteğe bağlı soru)</td>
+                <td>Yalnızca uygulama açıkken geçici bellekte</td>
+                <td><strong class="text-numira-altin">Hayır.</strong> Kaydedilmez, gönderilmez.</td>
+              </tr>
+              <tr>
+                <td class="text-slate-200">Cinsiyet seçiminiz</td>
+                <td>Uygulama açıkken geçici bellekte</td>
+                <td><strong class="text-amber-300">Kısmen.</strong> Hangi metnin gösterileceğini belirler; analiz hizmetine olay etiketi olarak (<code>kadin</code>/<code>erkek</code>) gönderilir.</td>
+              </tr>
+              <tr>
+                <td class="text-slate-200">Üretilen üç basamaklı sayı</td>
+                <td>Hesaplanır, saklanmaz</td>
+                <td><strong class="text-amber-300">Kısmen.</strong> Analiz hizmetine olay parametresi olarak gönderilir. Bu sayıdan doğum tarihiniz geri hesaplanamaz; binlerce farklı tarih aynı sayıyı üretir.</td>
+              </tr>
+              <tr>
+                <td class="text-slate-200">Jeton bakiyeniz, açtığınız bölümler, günlük bonus tarihi</td>
+                <td>Cihazda yerel depolama; sunucu sürümünde ayrıca Firestore'da anonim kimliğe bağlı</td>
+                <td><strong class="text-slate-300">Evet</strong> (yalnızca bakiye bilgisi; doğum tarihi veya yorum içeriği değil).</td>
+              </tr>
+              <tr>
+                <td class="text-slate-200">Anonim kullanıcı kimliği</td>
+                <td>Cihazda ve sunucuda</td>
+                <td><strong class="text-slate-300">Evet.</strong> Rastgele üretilmiş bir dizidir; kimliğinizle ilişkilendirilemez.</td>
+              </tr>
+              <tr>
+                <td class="text-slate-200">Reklam kimliği (Advertising ID), cihaz modeli, işletim sistemi, ülke, uygulama sürümü</td>
+                <td>Reklam ve analiz hizmetlerinde</td>
+                <td><strong class="text-slate-300">Evet.</strong> Google tarafından toplanır; ayrıntı aşağıda.</td>
+              </tr>
+              <tr>
+                <td class="text-slate-200">Ad, e-posta, telefon, adres, kişiler, konum, fotoğraf, kamera, mikrofon, sağlık verisi</td>
+                <td>&mdash;</td>
+                <td><strong class="text-numira-altin">Hiç toplanmaz.</strong> Uygulama bu izinlerin hiçbirini istemez.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- DOGUM TARIHI -->
+      <section class="space-y-3">
+        <h2 class="text-xl font-semibold font-display text-white">Doğum tarihiniz hakkında ayrıca</h2>
+        <p class="text-slate-400 leading-relaxed">
+          Doğum tarihi hassas bir veridir, bu yüzden uygulama bilerek onu hiç saklamaz. Teknik olarak tarih,
+          uygulama çalışırken yalnızca geçici bellekte (RAM) tutulur: hesaplama yapılır, metinler gösterilir ve
+          uygulamayı kapattığınızda veri kaybolur. Bir veritabanına, dosyaya ya da cihaz ayarlarına yazılmaz.
+        </p>
+        <ul class="list-disc list-inside text-slate-400 space-y-1.5 pl-2">
+          <li>Uygulamayı her açtığınızda tarihi yeniden girmeniz bunun sonucudur; bu bir eksiklik değil, bilinçli bir tasarım tercihidir.</li>
+          <li>Profil ekranında tarihi değiştirmeniz de yalnızca o oturumu etkiler.</li>
+          <li>Analiz hizmetine giden tek türev bilgi, üç basamaklı sayı ve cinsiyet etiketidir; tam tarih hiçbir koşulda gönderilmez.</li>
+        </ul>
+      </section>
+
+      <!-- UCUNCU TARAF -->
+      <section class="space-y-3">
+        <h2 class="text-xl font-semibold font-display text-white">Kullanılan üçüncü taraf hizmetler</h2>
+        <p class="text-slate-400 leading-relaxed">
+          Aşağıdaki hizmetler kendi gizlilik politikaları kapsamında veri işler. Bu hizmetlere giden veriler
+          üzerinde kendi politikalarının da geçerli olduğunu belirtmek isteriz.
+        </p>
+        <div class="pol-wrap">
+          <table class="pol-table">
+            <thead>
+              <tr><th>Hizmet</th><th>Ne için</th><th>İşlediği veri</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-slate-200">Google AdMob</td>
+                <td>Yalnızca sizin "Reklam izle" düğmesine basmanızla açılan ödüllü reklam</td>
+                <td>Reklam kimliği, cihaz ve ağ bilgileri, reklam etkileşimi. <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" class="text-numira-altin hover:text-amber-300">Politika</a></td>
+              </tr>
+              <tr>
+                <td class="text-slate-200">Firebase Analytics</td>
+                <td>Hangi bölümlerin kullanıldığını ölçmek</td>
+                <td>Takma adlı uygulama örneği kimliği, cihaz modeli, işletim sistemi, ülke, uygulama sürümü ve aşağıda listelenen olaylar. <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer" class="text-numira-altin hover:text-amber-300">Politika</a></td>
+              </tr>
+              <tr>
+                <td class="text-slate-200">Firebase Authentication</td>
+                <td>Jeton bakiyesini bir kimliğe bağlamak</td>
+                <td>Yalnızca <strong class="text-slate-300">anonim</strong> oturum: rastgele bir kimlik dizisi. E-posta, şifre, telefon veya sosyal hesap kullanılmaz.</td>
+              </tr>
+              <tr>
+                <td class="text-slate-200">Cloud Firestore + Cloud Functions</td>
+                <td>Jeton bakiyesini sunucuda tutmak ve kurallarını uygulamak</td>
+                <td><code>users/{kimlik}</code> altında yalnızca bakiye, ücretsiz analiz hakkı, açılmış bölüm listesi ve son bonus tarihi.</td>
+              </tr>
+              <tr>
+                <td class="text-slate-200">RevenueCat</td>
+                <td>Uygulama içi satın almayı yönetmek</td>
+                <td>Anonim kullanıcı kimliği, satın alma kaydı, cihaz/platform bilgisi. <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener noreferrer" class="text-numira-altin hover:text-amber-300">Politika</a></td>
+              </tr>
+              <tr>
+                <td class="text-slate-200">Google Play Faturalandırma</td>
+                <td>Ödemenin alınması</td>
+                <td>Ödeme tamamen Google Play üzerinden yürür. <strong class="text-slate-300">Numira kart bilgilerinizi görmez, almaz ve saklamaz.</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="text-numira-altin hover:text-amber-300">Politika</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- OLCULEN OLAYLAR -->
+      <section class="space-y-3">
+        <h2 class="text-xl font-semibold font-display text-white">Ölçülen olayların tam listesi</h2>
+        <p class="text-slate-400 leading-relaxed">
+          Analiz hizmetine gönderilen olaylar bunlardan fazlası değildir:
+        </p>
+        <div class="pol-wrap">
+          <table class="pol-table">
+            <thead>
+              <tr><th>Olay</th><th>Ne zaman</th><th>Gönderilen parametreler</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code class="text-numira-lila">numiran_goruntulendi</code></td><td>Sonuç ekranı açıldığında</td><td>cinsiyet etiketi, üç basamaklı sayı</td></tr>
+              <tr><td><code class="text-numira-lila">modul_acildi</code></td><td>Bir analiz bölümü açıldığında</td><td>cinsiyet etiketi, bölüm adı</td></tr>
+              <tr><td><code class="text-numira-lila">kart_paylasildi</code></td><td>Paylaşım kartı paylaşıldığında</td><td>cinsiyet etiketi, kart türü</td></tr>
+              <tr><td><code class="text-numira-lila">jeton_harcandi</code></td><td>Jeton harcandığında</td><td>cinsiyet etiketi, bölüm adı, harcanan miktar</td></tr>
+              <tr><td><code class="text-numira-lila">reklam_izlendi</code></td><td>Ödüllü reklam tamamlandığında</td><td>cinsiyet etiketi</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-slate-400 leading-relaxed text-sm">
+          Yorum metinlerinin içeriği, doğum tarihi veya partner bilgisi bu olayların hiçbirinde yer almaz.
+        </p>
+      </section>
+
+      <!-- REKLAM KIMLIGI -->
+      <section class="space-y-3">
+        <h2 class="text-xl font-semibold font-display text-white">Reklamlar ve reklam kimliği</h2>
+        <p class="text-slate-400 leading-relaxed">
+          Uygulamada araya giren (tam ekran, kendiliğinden açılan) reklam yoktur. Tek reklam biçimi
+          <strong class="text-slate-200">ödüllü reklamdır</strong> ve yalnızca siz "Reklam izle" düğmesine
+          bastığınızda açılır; karşılığında jeton kazanırsınız.
+        </p>
+        <p class="text-slate-400 leading-relaxed">
+          Reklam gösterimi için uygulama Android'in reklam kimliğine
+          (<code class="text-slate-300 bg-slate-900/60 px-1.5 py-0.5 rounded font-mono text-xs">AD_ID</code>) erişim izni bildirir.
+          Bu kimliği cihaz ayarlarından dilediğiniz zaman sıfırlayabilir veya kişiselleştirilmiş reklamları
+          kapatabilirsiniz: <em class="text-slate-300">Ayarlar &rarr; Google &rarr; Tüm hizmetler &rarr; Reklamlar</em>.
+          Avrupa Birliği ve Birleşik Krallık'taki kullanıcılara, kişiselleştirilmiş reklam ve ölçüm için
+          Google'ın onay çerçevesi üzerinden ayrıca onay sorulur; onay vermemeniz uygulamayı kullanmanızı engellemez.
+        </p>
+      </section>
+
+      <!-- SATIN ALMA -->
+      <section class="space-y-3">
+        <h2 class="text-xl font-semibold font-display text-white">Uygulama içi satın alma</h2>
+        <p class="text-slate-400 leading-relaxed">
+          Detaylı analizler jetonla açılır. Jeton; günlük bonus, ödüllü reklam ya da isteğe bağlı satın alma ile
+          elde edilir. Satın alma akışının tamamı Google Play tarafından yürütülür; ödeme bilgileriniz Numira'ya
+          hiçbir aşamada iletilmez. Uygulama yalnızca "satın alma başarılı" sonucunu ve kaç jeton eklendiğini öğrenir.
+        </p>
+      </section>
+
+      <!-- PAYLASIM -->
+      <section class="space-y-3">
+        <h2 class="text-xl font-semibold font-display text-white">Paylaşım kartları</h2>
+        <p class="text-slate-400 leading-relaxed">
+          Sonucunuzu görsel bir kart olarak paylaşabilirsiniz. Kart, cihazınızın geçici klasörüne bir resim
+          dosyası olarak yazılır ve ardından <strong class="text-slate-200">cihazınızın sistem paylaşım menüsüne</strong>
+          verilir. Kartın nereye gideceğini tamamen siz seçersiniz; uygulama kendi adına hiçbir yere yüklemez.
+          Kartta yalnızca üç basamaklı sayı ve kısa yorum bulunur, doğum tarihiniz yazılmaz.
+        </p>
+      </section>
+
+      <!-- IZINLER -->
+      <section class="space-y-3">
+        <h2 class="text-xl font-semibold font-display text-white">Uygulamanın bildirdiği izinler</h2>
+        <p class="text-slate-400 leading-relaxed">
+          Aşağıdaki liste, uygulama paketinde bildirilen izinlerin tamamıdır. Hiçbiri sizden ayrıca onay
+          istemeyen, düşük riskli sistem izinleridir; kamera, konum, kişiler, mikrofon ve depolama izni
+          <strong class="text-slate-200">yoktur</strong>.
+        </p>
+        <div class="space-y-3">
+          <div class="p-3 rounded-lg bg-slate-900/40 border border-slate-800">
+            <p class="text-sm font-semibold text-slate-200">İnternet ve ağ durumu</p>
+            <p class="text-sm text-slate-400 mt-1"><code class="text-xs">INTERNET</code>, <code class="text-xs">ACCESS_NETWORK_STATE</code> &mdash; reklam, analiz, jeton bakiyesi ve satın alma için gereklidir.</p>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-900/40 border border-slate-800">
+            <p class="text-sm font-semibold text-slate-200">Reklam kimliği</p>
+            <p class="text-sm text-slate-400 mt-1"><code class="text-xs">AD_ID</code>, <code class="text-xs">ACCESS_ADSERVICES_AD_ID</code>, <code class="text-xs">ACCESS_ADSERVICES_ATTRIBUTION</code>, <code class="text-xs">ACCESS_ADSERVICES_TOPICS</code> &mdash; ödüllü reklamın gösterilmesi ve ölçülmesi için reklam SDK'si tarafından bildirilir.</p>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-900/40 border border-slate-800">
+            <p class="text-sm font-semibold text-slate-200">Faturalandırma</p>
+            <p class="text-sm text-slate-400 mt-1"><code class="text-xs">com.android.vending.BILLING</code> &mdash; jeton paketlerinin Google Play üzerinden satın alınması için.</p>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-900/40 border border-slate-800">
+            <p class="text-sm font-semibold text-slate-200">Arka plan çalışması</p>
+            <p class="text-sm text-slate-400 mt-1"><code class="text-xs">WAKE_LOCK</code>, <code class="text-xs">FOREGROUND_SERVICE</code>, <code class="text-xs">RECEIVE</code> (Google Play Hizmetleri), <code class="text-xs">READ_GSERVICES</code>, <code class="text-xs">BIND_GET_INSTALL_REFERRER_SERVICE</code> &mdash; reklam, analiz ve Google Play kitaplıklarının kendi iç işleyişi için bildirilir; uygulama bunların hiçbirini kendi kodunda kullanmaz.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SAKLAMA -->
+      <section class="space-y-3">
+        <h2 class="text-xl font-semibold font-display text-white">Veriler ne kadar saklanır?</h2>
+        <ul class="list-disc list-inside text-slate-400 space-y-1.5 pl-2">
+          <li><strong class="text-slate-200">Doğum tarihi, partner tarihi, beklenti yanıtı:</strong> uygulama kapanana kadar; saklanmaz.</li>
+          <li><strong class="text-slate-200">Jeton bakiyesi ve açılmış bölümler:</strong> uygulamayı silene kadar cihazda. Sunucu kaydı, silme talebinize kadar.</li>
+          <li><strong class="text-slate-200">Analiz verileri:</strong> Firebase Analytics'in saklama süresi uyarınca (en fazla 14 ay).</li>
+          <li><strong class="text-slate-200">Satın alma kayıtları:</strong> yasal muhasebe yükümlülükleri gereği Google ve RevenueCat tarafından saklanır.</li>
+        </ul>
+      </section>
+
+      <!-- HAKLAR -->
+      <section class="space-y-3">
+        <h2 class="text-xl font-semibold font-display text-white">Haklarınız ve veri silme</h2>
+        <p class="text-slate-400 leading-relaxed">
+          6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) ve &mdash; Avrupa Birliği'nde bulunuyorsanız &mdash;
+          GDPR kapsamında; verilerinize erişme, düzeltilmesini, silinmesini veya işlenmesinin kısıtlanmasını isteme
+          ve işlemeye itiraz etme haklarına sahipsiniz.
+        </p>
+        <ul class="list-disc list-inside text-slate-400 space-y-1.5 pl-2">
+          <li><strong class="text-slate-200">Cihazdaki verileri silmek:</strong> uygulamayı kaldırmanız yeterlidir; yerel kimlik ve jeton kaydı cihazdan silinir.</li>
+          <li><strong class="text-slate-200">Sunucudaki kaydı silmek:</strong> <a href="mailto:sahinkuruhan@gmail.com?subject=Numira%20veri%20silme%20talebi" class="text-numira-altin hover:text-amber-300 font-semibold">sahinkuruhan@gmail.com</a> adresine yazmanız yeterlidir; talep en geç 30 gün içinde yerine getirilir. Uygulama hesap açtırmadığı için kimliğinizi ispat etmeniz gerekmez; talebinizde uygulama içinde görünen anonim kimliği belirtmeniz işlemi hızlandırır.</li>
+          <li><strong class="text-slate-200">Analizden çıkmak:</strong> cihaz ayarlarından reklam kişiselleştirmesini kapatmanız ölçümü de sınırlar.</li>
+        </ul>
+        <p class="text-slate-400 leading-relaxed text-sm">
+          Doğum tarihiniz hiç kaydedilmediği için, o veriye ilişkin bir silme talebine konu olacak kayıt
+          baştan oluşmaz.
+        </p>
+      </section>
+
+      <!-- GUVENLIK -->
+      <section class="space-y-3">
+        <h2 class="text-xl font-semibold font-display text-white">Veri güvenliği</h2>
+        <p class="text-slate-400 leading-relaxed">
+          Sunucuyla yapılan bütün iletişim HTTPS/TLS ile şifrelenir. Jeton bakiyesi sunucu tarafında tutulduğunda
+          istemci yalnızca okuma yetkisine sahiptir; bakiyeyi değiştiren bütün işlemler sunucu üzerinde doğrulanır.
+          Bununla birlikte, internet üzerinden yapılan hiçbir aktarımın %100 güvenli olduğunun garanti
+          edilemeyeceğini belirtmek isteriz.
+        </p>
+      </section>
+
+      <!-- YURT DISI -->
+      <section class="space-y-3">
+        <h2 class="text-xl font-semibold font-display text-white">Yurt dışına aktarım</h2>
+        <p class="text-slate-400 leading-relaxed">
+          Kullanılan Google ve RevenueCat hizmetleri sunucularını Türkiye dışında (başta Amerika Birleşik
+          Devletleri ve Avrupa Birliği olmak üzere) işletir. Bu nedenle yukarıda listelenen veriler yurt dışında
+          işlenebilir. Bu sağlayıcılar aktarımları kendi standart sözleşme hükümleri çerçevesinde yürütür.
+        </p>
+      </section>
+
+      <!-- COCUKLAR -->
+      <section class="space-y-3">
+        <h2 class="text-xl font-semibold font-display text-white">Çocukların gizliliği</h2>
+        <p class="text-slate-400 leading-relaxed">
+          Numira 13 yaş altı çocuklara yönelik değildir ve bilerek bu yaş grubundan veri toplamaz. Uygulama
+          ayrıca ad, e-posta gibi doğrudan tanımlayıcı hiçbir bilgi istemez. 13 yaş altı bir çocuğa ait veri
+          işlendiğini düşünüyorsanız bize yazın, ilgili kaydı sileriz.
+        </p>
+      </section>
+
+      <!-- EGLENCE -->
+      <section class="space-y-3">
+        <h2 class="text-xl font-semibold font-display text-white">İçeriğin niteliği</h2>
+        <p class="text-slate-400 leading-relaxed">
+          Uygulamanın ürettiği yorumlar <strong class="text-slate-200">eğlence amaçlıdır</strong>; bilimsel,
+          tıbbi, psikolojik veya finansal bir değerlendirme ya da tavsiye değildir. Bu not gizlilikle ilgili
+          olmasa da, metinlerin nasıl okunması gerektiğini açıkça belirtmek için buraya eklenmiştir.
+        </p>
+      </section>
+
+      <!-- DEGISIKLIK -->
+      <section class="space-y-3">
+        <h2 class="text-xl font-semibold font-display text-white">Politika değişiklikleri</h2>
+        <p class="text-slate-400 leading-relaxed">
+          Uygulamaya yeni bir özellik eklendiğinde (örneğin bulut yedekleme veya hesap oluşturma) bu politika
+          güncellenir ve yukarıdaki "Son güncelleme" tarihi değişir. Güncel sürüm her zaman bu adreste yayınlanır.
+        </p>
+      </section>
+
+      <!-- ILETISIM -->
+      <section class="space-y-3">
+        <h2 class="text-xl font-semibold font-display text-white">İletişim</h2>
+        <p class="text-slate-400 leading-relaxed">
+          Gizlilikle ilgili her soru ve talep için:
+          <a href="mailto:sahinkuruhan@gmail.com" class="text-numira-altin hover:text-amber-300 font-semibold">sahinkuruhan@gmail.com</a>
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="border-t border-slate-900/60 py-8">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <p class="text-xs text-slate-500 font-medium">&copy; 2026 Şahin Kuruhan. Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
