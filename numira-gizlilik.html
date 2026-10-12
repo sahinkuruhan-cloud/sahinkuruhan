@@ -65,7 +65,7 @@
       <div>
         <span class="text-[10px] font-bold text-numira-altin bg-amber-500/10 px-2 py-0.5 rounded uppercase tracking-wider">Yazılım / Mobil Uygulama</span>
         <h1 class="text-3xl sm:text-4xl font-bold font-display text-white mt-4">Numira Gizlilik Politikası</h1>
-        <p class="text-sm text-slate-500 mt-2">Son güncelleme: 3 Ekim 2026 &middot; Uygulama sürümü 1.0.0</p>
+        <p class="text-sm text-slate-500 mt-2">Son güncelleme: 12 Ekim 2026 &middot; Uygulama sürümü 1.0.0</p>
       </div>
 
       <p class="text-slate-400 leading-relaxed">
@@ -132,6 +132,11 @@
                 <td><strong class="text-slate-300">Evet</strong> (yalnızca bakiye bilgisi; doğum tarihi veya yorum içeriği değil).</td>
               </tr>
               <tr>
+                <td class="text-slate-200">"Reklamsız Numira" satın alındı mı bilgisi</td>
+                <td>Google Play ve RevenueCat'te satın alma kaydı olarak; mağaza bağlantısı kurulmamış deneme sürümlerinde yalnızca cihazda</td>
+                <td><strong class="text-slate-300">Evet</strong> (yalnızca satın alma kaydı; ödeme bilgisi değil).</td>
+              </tr>
+              <tr>
                 <td class="text-slate-200">Anonim kullanıcı kimliği</td>
                 <td>Cihazda ve sunucuda</td>
                 <td><strong class="text-slate-300">Evet.</strong> Rastgele üretilmiş bir dizidir; kimliğinizle ilişkilendirilemez.</td>
@@ -181,13 +186,18 @@
             <tbody>
               <tr>
                 <td class="text-slate-200">Google AdMob</td>
-                <td>Yalnızca sizin "Reklam izle" düğmesine basmanızla açılan ödüllü reklam</td>
+                <td>"Reklam izle" düğmesiyle açılan ödüllü reklam, analiz bölümlerine geçerken gösterilen geçiş reklamı ve AB/BK/İsviçre'de reklam onayının toplanması (Google User Messaging Platform)</td>
                 <td>Reklam kimliği, cihaz ve ağ bilgileri, reklam etkileşimi. <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" class="text-numira-altin hover:text-amber-300">Politika</a></td>
               </tr>
               <tr>
                 <td class="text-slate-200">Firebase Analytics</td>
                 <td>Hangi bölümlerin kullanıldığını ölçmek</td>
                 <td>Takma adlı uygulama örneği kimliği, cihaz modeli, işletim sistemi, ülke, uygulama sürümü ve aşağıda listelenen olaylar. <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer" class="text-numira-altin hover:text-amber-300">Politika</a></td>
+              </tr>
+              <tr>
+                <td class="text-slate-200">Firebase Remote Config</td>
+                <td>Reklam sıklığı gibi ayarları yeni sürüm çıkarmadan değiştirmek</td>
+                <td>Firebase kurulum kimliği (rastgele, uygulamaya özgü), uygulama sürümü, ülke ve dil. Kişisel veri veya doğum tarihi gönderilmez. <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer" class="text-numira-altin hover:text-amber-300">Politika</a></td>
               </tr>
               <tr>
                 <td class="text-slate-200">Firebase Authentication</td>
@@ -243,17 +253,34 @@
       <section class="space-y-3">
         <h2 class="text-xl font-semibold font-display text-white">Reklamlar ve reklam kimliği</h2>
         <p class="text-slate-400 leading-relaxed">
-          Uygulamada araya giren (tam ekran, kendiliğinden açılan) reklam yoktur. Tek reklam biçimi
-          <strong class="text-slate-200">ödüllü reklamdır</strong> ve yalnızca siz "Reklam izle" düğmesine
-          bastığınızda açılır; karşılığında jeton kazanırsınız.
+          Uygulamada iki reklam biçimi vardır:
+        </p>
+        <ul class="list-disc pl-5 space-y-2 text-slate-400 leading-relaxed">
+          <li>
+            <strong class="text-slate-200">Ödüllü reklam:</strong> yalnızca siz "Reklam izle" ya da günlük
+            bonusu "iki katına çıkar" düğmesine bastığınızda açılır; karşılığında jeton kazanırsınız.
+          </li>
+          <li>
+            <strong class="text-slate-200">Geçiş reklamı:</strong> Numiran ekranından henüz açmadığınız bir
+            analiz bölümüne (Kişisel Analiz, Kader Analizi, İlişki Sinerjisi) geçerken, bölüm açılmadan önce
+            tam ekran gösterilebilir. Reklamı kapattığınızda bölüm açılır. İki tam ekran reklam arasında en az
+            iki dakika geçer; jetonla açtığınız bölümlere giderken ve "Reklamsız Numira"yı satın aldıysanız bu reklam hiç gösterilmez. Reklam yüklenemezse
+            bölüm beklemeden açılır.
+          </li>
+        </ul>
+        <p class="text-slate-400 leading-relaxed">
+          Uygulama açılırken, içerik okunurken ya da paylaşım sırasında reklam gösterilmez; banner reklam yoktur.
         </p>
         <p class="text-slate-400 leading-relaxed">
           Reklam gösterimi için uygulama Android'in reklam kimliğine
           (<code class="text-slate-300 bg-slate-900/60 px-1.5 py-0.5 rounded font-mono text-xs">AD_ID</code>) erişim izni bildirir.
           Bu kimliği cihaz ayarlarından dilediğiniz zaman sıfırlayabilir veya kişiselleştirilmiş reklamları
           kapatabilirsiniz: <em class="text-slate-300">Ayarlar &rarr; Google &rarr; Tüm hizmetler &rarr; Reklamlar</em>.
-          Avrupa Birliği ve Birleşik Krallık'taki kullanıcılara, kişiselleştirilmiş reklam ve ölçüm için
-          Google'ın onay çerçevesi üzerinden ayrıca onay sorulur; onay vermemeniz uygulamayı kullanmanızı engellemez.
+          Avrupa Ekonomik Alanı, Birleşik Krallık ve İsviçre'deki kullanıcılara uygulama ilk açıldığında,
+          kişiselleştirilmiş reklam ve ölçüm için Google'ın onay platformu (User Messaging Platform) üzerinden
+          onay sorulur. Onay vermemeniz uygulamayı kullanmanızı engellemez; onay alınmadan reklam isteği yapılmaz.
+          Kararınızı dilediğiniz zaman <em class="text-slate-300">Profil &rarr; Reklam gizlilik seçenekleri</em>
+          bölümünden değiştirebilirsiniz.
         </p>
       </section>
 
@@ -261,9 +288,12 @@
       <section class="space-y-3">
         <h2 class="text-xl font-semibold font-display text-white">Uygulama içi satın alma</h2>
         <p class="text-slate-400 leading-relaxed">
-          Detaylı analizler jetonla açılır. Jeton; günlük bonus, ödüllü reklam ya da isteğe bağlı satın alma ile
+          Detaylı analizler jetonla açılır; geçiş reklamı içeriği açmaz. Jeton; günlük bonus, ödüllü reklam ya da isteğe bağlı satın alma ile
           elde edilir. Satın alma akışının tamamı Google Play tarafından yürütülür; ödeme bilgileriniz Numira'ya
           hiçbir aşamada iletilmez. Uygulama yalnızca "satın alma başarılı" sonucunu ve kaç jeton eklendiğini öğrenir.
+          Tek seferlik "Reklamsız Numira" satın alımı geçiş reklamlarını kaldırır; ödüllü reklam isteğe bağlı kalır.
+          Bu satın alım Google Play hesabınıza bağlıdır; yeni bir cihazda <em class="text-slate-300">Profil &rarr;
+          Satın alımları geri yükle</em> ile geri gelir.
         </p>
       </section>
 
@@ -293,7 +323,7 @@
           </div>
           <div class="p-3 rounded-lg bg-slate-900/40 border border-slate-800">
             <p class="text-sm font-semibold text-slate-200">Reklam kimliği</p>
-            <p class="text-sm text-slate-400 mt-1"><code class="text-xs">AD_ID</code>, <code class="text-xs">ACCESS_ADSERVICES_AD_ID</code>, <code class="text-xs">ACCESS_ADSERVICES_ATTRIBUTION</code>, <code class="text-xs">ACCESS_ADSERVICES_TOPICS</code> &mdash; ödüllü reklamın gösterilmesi ve ölçülmesi için reklam SDK'si tarafından bildirilir.</p>
+            <p class="text-sm text-slate-400 mt-1"><code class="text-xs">AD_ID</code>, <code class="text-xs">ACCESS_ADSERVICES_AD_ID</code>, <code class="text-xs">ACCESS_ADSERVICES_ATTRIBUTION</code>, <code class="text-xs">ACCESS_ADSERVICES_TOPICS</code> &mdash; reklamların gösterilmesi ve ölçülmesi için reklam SDK'si tarafından bildirilir.</p>
           </div>
           <div class="p-3 rounded-lg bg-slate-900/40 border border-slate-800">
             <p class="text-sm font-semibold text-slate-200">Faturalandırma</p>
