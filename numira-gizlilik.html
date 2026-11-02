@@ -65,7 +65,7 @@
       <div>
         <span class="text-[10px] font-bold text-numira-altin bg-amber-500/10 px-2 py-0.5 rounded uppercase tracking-wider">Yazılım / Mobil Uygulama</span>
         <h1 class="text-3xl sm:text-4xl font-bold font-display text-white mt-4">Numira Gizlilik Politikası</h1>
-        <p class="text-sm text-slate-500 mt-2">Son güncelleme: 12 Ekim 2026 &middot; Uygulama sürümü 1.0.0</p>
+        <p class="text-sm text-slate-500 mt-2">Son güncelleme: 2 Kasım 2026 &middot; Uygulama sürümü 1.0.0 (14)</p>
       </div>
 
       <p class="text-slate-400 leading-relaxed">
@@ -86,9 +86,13 @@
           e-posta, telefon veya adres istemez.
         </p>
         <p class="text-slate-400 leading-relaxed">
-          Buna karşılık uygulama reklam, analiz ve satın alma hizmetleri kullanır; bunlar cihazınızdan
-          <strong class="text-slate-200">reklam kimliği, cihaz/uygulama bilgileri ve kullanım olayları</strong>
-          toplar. Aşağıdaki tablolar neyin nereye gittiğini kalem kalem gösterir.
+          Uygulamanın şu anki sürümünde dışarıya veri gönderen tek hizmet <strong class="text-slate-200">Google
+          AdMob</strong> reklam altyapısıdır. AdMob, reklam gösterebilmek ve ölçebilmek için cihazınızdan
+          <strong class="text-slate-200">IP adresi (yaklaşık konum çıkarımı için), reklam ve uygulama set
+          kimlikleri, reklam ve uygulama etkileşimleri ile performans/tanılama bilgileri</strong> toplar ve
+          Google'a iletir. Uygulamanın kendi analiz (ölçüm) katmanı, sunucu bağlantısı ve uygulama içi satın
+          alma bu sürümde <strong class="text-slate-200">etkin değildir</strong>; uygulama kendi adına hiçbir
+          kullanım olayı göndermez. Aşağıdaki tablolar neyin nereye gittiğini kalem kalem gösterir.
         </p>
       </section>
 
@@ -119,35 +123,50 @@
               <tr>
                 <td class="text-slate-200">Cinsiyet seçiminiz</td>
                 <td>Uygulama açıkken geçici bellekte</td>
-                <td><strong class="text-amber-300">Kısmen.</strong> Hangi metnin gösterileceğini belirler; analiz hizmetine olay etiketi olarak (<code>kadin</code>/<code>erkek</code>) gönderilir.</td>
+                <td><strong class="text-numira-altin">Hayır.</strong> Yalnızca hangi metnin gösterileceğini belirler; kaydedilmez, gönderilmez.</td>
               </tr>
               <tr>
                 <td class="text-slate-200">Üretilen üç basamaklı sayı</td>
                 <td>Hesaplanır, saklanmaz</td>
-                <td><strong class="text-amber-300">Kısmen.</strong> Analiz hizmetine olay parametresi olarak gönderilir. Bu sayıdan doğum tarihiniz geri hesaplanamaz; binlerce farklı tarih aynı sayıyı üretir.</td>
+                <td><strong class="text-numira-altin">Hayır.</strong> Ekranda ve paylaşım kartında gösterilir; hiçbir hizmete gönderilmez.</td>
               </tr>
               <tr>
                 <td class="text-slate-200">Jeton bakiyeniz, açtığınız bölümler, günlük bonus tarihi</td>
-                <td>Cihazda yerel depolama; sunucu sürümünde ayrıca Firestore'da anonim kimliğe bağlı</td>
-                <td><strong class="text-slate-300">Evet</strong> (yalnızca bakiye bilgisi; doğum tarihi veya yorum içeriği değil).</td>
+                <td>Yalnızca cihazda yerel depolama</td>
+                <td><strong class="text-numira-altin">Hayır.</strong> Şu anki sürümde sunucuya gönderilmez. Android yedeklemesi açıksa cihazınızın Google hesabı yedeğine dahil olabilir.</td>
               </tr>
               <tr>
-                <td class="text-slate-200">"Reklamsız Numira" satın alındı mı bilgisi</td>
-                <td>Google Play ve RevenueCat'te satın alma kaydı olarak; mağaza bağlantısı kurulmamış deneme sürümlerinde yalnızca cihazda</td>
-                <td><strong class="text-slate-300">Evet</strong> (yalnızca satın alma kaydı; ödeme bilgisi değil).</td>
+                <td class="text-slate-200">İlk detaylı analizin görüntülendiği bilgisi (tek bir evet/hayır işareti)</td>
+                <td>Cihazda yerel depolama</td>
+                <td><strong class="text-numira-altin">Hayır.</strong> Yalnızca ilk analiz görülene kadar geçiş reklamını ertelemek için kullanılır; hangi bölümün ya da tarihin görüldüğü yazılmaz, gönderilmez.</td>
               </tr>
               <tr>
-                <td class="text-slate-200">Anonim kullanıcı kimliği</td>
-                <td>Cihazda ve sunucuda</td>
-                <td><strong class="text-slate-300">Evet.</strong> Rastgele üretilmiş bir dizidir; kimliğinizle ilişkilendirilemez.</td>
+                <td class="text-slate-200">Uygulamanın ürettiği rastgele yerel kimlik</td>
+                <td>Yalnızca cihazda yerel depolama</td>
+                <td><strong class="text-numira-altin">Hayır.</strong> Kişiyle ilişkilendirilmeyen rastgele bir dizidir; bu sürümde hiçbir hizmete gönderilmez.</td>
               </tr>
               <tr>
-                <td class="text-slate-200">Reklam kimliği (Advertising ID), cihaz modeli, işletim sistemi, ülke, uygulama sürümü</td>
-                <td>Reklam ve analiz hizmetlerinde</td>
-                <td><strong class="text-slate-300">Evet.</strong> Google tarafından toplanır; ayrıntı aşağıda.</td>
+                <td class="text-slate-200">Reklam kimliği (Advertising ID) ve uygulama set kimliği</td>
+                <td>Google AdMob</td>
+                <td><strong class="text-slate-300">Evet.</strong> Reklam SDK'si tarafından toplanır ve Google'a iletilir; ayrıntı aşağıda.</td>
               </tr>
               <tr>
-                <td class="text-slate-200">Ad, e-posta, telefon, adres, kişiler, konum, fotoğraf, kamera, mikrofon, sağlık verisi</td>
+                <td class="text-slate-200">IP adresi ve buradan çıkarılan yaklaşık konum</td>
+                <td>Google AdMob</td>
+                <td><strong class="text-slate-300">Evet.</strong> Reklam isteğiyle birlikte gider; uygulama konum izni istemez, kesin konum alınmaz.</td>
+              </tr>
+              <tr>
+                <td class="text-slate-200">Reklam ve uygulama etkileşimleri (ör. uygulama açılışı, reklam gösterimi, dokunma, video izleme)</td>
+                <td>Google AdMob</td>
+                <td><strong class="text-slate-300">Evet.</strong> Reklam ölçümü, analiz ve sahtekârlığı önleme için.</td>
+              </tr>
+              <tr>
+                <td class="text-slate-200">Uygulama ve SDK performansı / tanılama (ör. açılış süresi, takılma oranı, enerji kullanımı), cihaz modeli, işletim sistemi, uygulama sürümü</td>
+                <td>Google AdMob</td>
+                <td><strong class="text-slate-300">Evet.</strong> Reklam altyapısının çalışması ve ölçümü için.</td>
+              </tr>
+              <tr>
+                <td class="text-slate-200">Ad, e-posta, telefon, adres, kişiler, kesin (GPS) konum, fotoğraf, kamera, mikrofon, sağlık verisi</td>
                 <td>&mdash;</td>
                 <td><strong class="text-numira-altin">Hiç toplanmaz.</strong> Uygulama bu izinlerin hiçbirini istemez.</td>
               </tr>
@@ -167,7 +186,7 @@
         <ul class="list-disc list-inside text-slate-400 space-y-1.5 pl-2">
           <li>Uygulamayı her açtığınızda tarihi yeniden girmeniz bunun sonucudur; bu bir eksiklik değil, bilinçli bir tasarım tercihidir.</li>
           <li>Profil ekranında tarihi değiştirmeniz de yalnızca o oturumu etkiler.</li>
-          <li>Analiz hizmetine giden tek türev bilgi, üç basamaklı sayı ve cinsiyet etiketidir; tam tarih hiçbir koşulda gönderilmez.</li>
+          <li>Tam tarih, üç basamaklı sayı, cinsiyet seçimi ve yorum içerikleri hiçbir hizmete gönderilmez; reklam isteklerinde de yer almaz.</li>
         </ul>
       </section>
 
@@ -187,65 +206,32 @@
               <tr>
                 <td class="text-slate-200">Google AdMob</td>
                 <td>"Reklam izle" düğmesiyle açılan ödüllü reklam, analiz bölümlerine geçerken gösterilen geçiş reklamı ve AB/BK/İsviçre'de reklam onayının toplanması (Google User Messaging Platform)</td>
-                <td>Reklam kimliği, cihaz ve ağ bilgileri, reklam etkileşimi. <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" class="text-numira-altin hover:text-amber-300">Politika</a></td>
+                <td>IP adresi (yaklaşık konum çıkarımı için), reklam kimliği ve uygulama set kimliği, reklam ve uygulama etkileşimleri, uygulama/SDK performansı ve tanılama bilgileri, cihaz ve ağ bilgileri. Google bu verileri reklam, analiz ve sahtekârlığı önleme amacıyla işler ve aktarım sırasında şifreler. AdMob'un yaptığı bu ölçüm, Google'ın kendi reklam ölçümüdür; uygulamanın kendi analiz katmanından ayrıdır. <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" class="text-numira-altin hover:text-amber-300">Politika</a></td>
               </tr>
-              <tr>
-                <td class="text-slate-200">Firebase Analytics</td>
-                <td>Hangi bölümlerin kullanıldığını ölçmek</td>
-                <td>Takma adlı uygulama örneği kimliği, cihaz modeli, işletim sistemi, ülke, uygulama sürümü ve aşağıda listelenen olaylar. <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer" class="text-numira-altin hover:text-amber-300">Politika</a></td>
-              </tr>
-              <tr>
-                <td class="text-slate-200">Firebase Remote Config</td>
-                <td>Reklam sıklığı gibi ayarları yeni sürüm çıkarmadan değiştirmek</td>
-                <td>Firebase kurulum kimliği (rastgele, uygulamaya özgü), uygulama sürümü, ülke ve dil. Kişisel veri veya doğum tarihi gönderilmez. <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer" class="text-numira-altin hover:text-amber-300">Politika</a></td>
-              </tr>
-              <tr>
-                <td class="text-slate-200">Firebase Authentication</td>
-                <td>Jeton bakiyesini bir kimliğe bağlamak</td>
-                <td>Yalnızca <strong class="text-slate-300">anonim</strong> oturum: rastgele bir kimlik dizisi. E-posta, şifre, telefon veya sosyal hesap kullanılmaz.</td>
-              </tr>
-              <tr>
-                <td class="text-slate-200">Cloud Firestore + Cloud Functions</td>
-                <td>Jeton bakiyesini sunucuda tutmak ve kurallarını uygulamak</td>
-                <td><code>users/{kimlik}</code> altında yalnızca bakiye, ücretsiz analiz hakkı, açılmış bölüm listesi ve son bonus tarihi.</td>
-              </tr>
-              <tr>
-                <td class="text-slate-200">RevenueCat</td>
-                <td>Uygulama içi satın almayı yönetmek</td>
-                <td>Anonim kullanıcı kimliği, satın alma kaydı, cihaz/platform bilgisi. <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener noreferrer" class="text-numira-altin hover:text-amber-300">Politika</a></td>
-              </tr>
-              <tr>
-                <td class="text-slate-200">Google Play Faturalandırma</td>
-                <td>Ödemenin alınması</td>
-                <td>Ödeme tamamen Google Play üzerinden yürür. <strong class="text-slate-300">Numira kart bilgilerinizi görmez, almaz ve saklamaz.</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="text-numira-altin hover:text-amber-300">Politika</a></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <!-- OLCULEN OLAYLAR -->
-      <section class="space-y-3">
-        <h2 class="text-xl font-semibold font-display text-white">Ölçülen olayların tam listesi</h2>
-        <p class="text-slate-400 leading-relaxed">
-          Analiz hizmetine gönderilen olaylar bunlardan fazlası değildir:
-        </p>
-        <div class="pol-wrap">
-          <table class="pol-table">
-            <thead>
-              <tr><th>Olay</th><th>Ne zaman</th><th>Gönderilen parametreler</th></tr>
-            </thead>
-            <tbody>
-              <tr><td><code class="text-numira-lila">numiran_goruntulendi</code></td><td>Sonuç ekranı açıldığında</td><td>cinsiyet etiketi, üç basamaklı sayı</td></tr>
-              <tr><td><code class="text-numira-lila">modul_acildi</code></td><td>Bir analiz bölümü açıldığında</td><td>cinsiyet etiketi, bölüm adı</td></tr>
-              <tr><td><code class="text-numira-lila">kart_paylasildi</code></td><td>Paylaşım kartı paylaşıldığında</td><td>cinsiyet etiketi, kart türü</td></tr>
-              <tr><td><code class="text-numira-lila">jeton_harcandi</code></td><td>Jeton harcandığında</td><td>cinsiyet etiketi, bölüm adı, harcanan miktar</td></tr>
-              <tr><td><code class="text-numira-lila">reklam_izlendi</code></td><td>Ödüllü reklam tamamlandığında</td><td>cinsiyet etiketi</td></tr>
             </tbody>
           </table>
         </div>
         <p class="text-slate-400 leading-relaxed text-sm">
-          Yorum metinlerinin içeriği, doğum tarihi veya partner bilgisi bu olayların hiçbirinde yer almaz.
+          <strong class="text-slate-300">Şu anki sürümde etkin olmayan hizmetler:</strong> Firebase (Analytics,
+          Remote Config, Authentication, Firestore, Cloud Functions) ve RevenueCat uygulama paketinde
+          kütüphane olarak bulunur, ancak yapılandırılmadıkları için başlatılmaz ve veri göndermez. Jeton
+          paketleri ve "Reklamsız Numira" satın alımı bu sürümde sunulmaz. Bu hizmetlerden biri
+          etkinleştirildiğinde bu politika, ilgili hizmetin işlediği verilerle birlikte önceden güncellenir.
+        </p>
+      </section>
+
+      <!-- OLCULEN OLAYLAR -->
+      <section class="space-y-3">
+        <h2 class="text-xl font-semibold font-display text-white">Uygulamanın kendi ölçümü</h2>
+        <p class="text-slate-400 leading-relaxed">
+          Uygulamanın kendi analiz (ölçüm) katmanı bu sürümde <strong class="text-slate-200">kapalıdır</strong>:
+          uygulama hiçbir kullanım olayını kendi adına bir analiz hizmetine göndermez. Bu durum, yukarıda
+          açıklanan Google AdMob'un reklam gösterimi için yaptığı kendi ölçümünü kapsamaz.
+        </p>
+        <p class="text-slate-400 leading-relaxed text-sm">
+          Kendi ölçüm katmanı ileride açılırsa, gönderilecek olayların ve parametrelerin tam listesi bu
+          bölümde önceden yayınlanır; doğum tarihi, üç basamaklı sayı, partner bilgisi ve yorum içerikleri bu
+          olaylarda yer almaz.
         </p>
       </section>
 
@@ -263,9 +249,10 @@
           <li>
             <strong class="text-slate-200">Geçiş reklamı:</strong> Numiran ekranından henüz açmadığınız bir
             analiz bölümüne (Kişisel Analiz, Kader Analizi, İlişki Sinerjisi) geçerken, bölüm açılmadan önce
-            tam ekran gösterilebilir. Reklamı kapattığınızda bölüm açılır. İki tam ekran reklam arasında en az
-            iki dakika geçer; jetonla açtığınız bölümlere giderken ve "Reklamsız Numira"yı satın aldıysanız bu reklam hiç gösterilmez. Reklam yüklenemezse
-            bölüm beklemeden açılır.
+            tam ekran gösterilebilir. Reklamı kapattığınızda bölüm açılır. İlk ücretsiz detaylı analiziniz
+            ekranda görülene kadar geçiş reklamı gösterilmez. İki tam ekran reklam arasında en az iki dakika
+            geçer; açtığınız bölümlere giderken bu reklam hiç gösterilmez. Reklam yüklenemezse bölüm beklemeden
+            açılır.
           </li>
         </ul>
         <p class="text-slate-400 leading-relaxed">
@@ -278,9 +265,12 @@
           kapatabilirsiniz: <em class="text-slate-300">Ayarlar &rarr; Google &rarr; Tüm hizmetler &rarr; Reklamlar</em>.
           Avrupa Ekonomik Alanı, Birleşik Krallık ve İsviçre'deki kullanıcılara uygulama ilk açıldığında,
           kişiselleştirilmiş reklam ve ölçüm için Google'ın onay platformu (User Messaging Platform) üzerinden
-          onay sorulur. Onay vermemeniz uygulamayı kullanmanızı engellemez; onay alınmadan reklam isteği yapılmaz.
+          onay sorulur. Onay vermemeniz uygulamayı kullanmanızı engellemez; onay süreci tamamlanmadan reklam
+          isteği yapılmaz. Onay vermediğinizde Google, tercihinize göre kişiselleştirilmemiş ya da sınırlı
+          reklam gösterebilir; bu durumda reklam kimliği gibi bazı verilerin aktarımı sınırlanabilir.
           Kararınızı dilediğiniz zaman <em class="text-slate-300">Profil &rarr; Reklam gizlilik seçenekleri</em>
-          bölümünden değiştirebilirsiniz.
+          bölümünden değiştirebilirsiniz; uygulama her reklam yükleme ve gösteriminden önce güncel tercihinizi
+          kontrol eder.
         </p>
       </section>
 
@@ -288,12 +278,12 @@
       <section class="space-y-3">
         <h2 class="text-xl font-semibold font-display text-white">Uygulama içi satın alma</h2>
         <p class="text-slate-400 leading-relaxed">
-          Detaylı analizler jetonla açılır; geçiş reklamı içeriği açmaz. Jeton; günlük bonus, ödüllü reklam ya da isteğe bağlı satın alma ile
-          elde edilir. Satın alma akışının tamamı Google Play tarafından yürütülür; ödeme bilgileriniz Numira'ya
-          hiçbir aşamada iletilmez. Uygulama yalnızca "satın alma başarılı" sonucunu ve kaç jeton eklendiğini öğrenir.
-          Tek seferlik "Reklamsız Numira" satın alımı geçiş reklamlarını kaldırır; ödüllü reklam isteğe bağlı kalır.
-          Bu satın alım Google Play hesabınıza bağlıdır; yeni bir cihazda <em class="text-slate-300">Profil &rarr;
-          Satın alımları geri yükle</em> ile geri gelir.
+          Detaylı analizler jetonla açılır; geçiş reklamı içeriği açmaz. Bu sürümde jeton yalnızca günlük
+          bonus ve isteğe bağlı ödüllü reklamla kazanılır; <strong class="text-slate-200">uygulama içi satın
+          alma (jeton paketleri, "Reklamsız Numira") şu anda sunulmaz</strong> ve ödeme bilgisi işlenmez.
+          Uygulama paketi Google Play faturalandırma iznini bildirir, ancak bu sürümde kullanmaz. Satın alma
+          ileride açıldığında, ödeme akışının tamamı Google Play tarafından yürütülecek ve bu bölüm önceden
+          güncellenecektir.
         </p>
       </section>
 
@@ -319,7 +309,7 @@
         <div class="space-y-3">
           <div class="p-3 rounded-lg bg-slate-900/40 border border-slate-800">
             <p class="text-sm font-semibold text-slate-200">İnternet ve ağ durumu</p>
-            <p class="text-sm text-slate-400 mt-1"><code class="text-xs">INTERNET</code>, <code class="text-xs">ACCESS_NETWORK_STATE</code> &mdash; reklam, analiz, jeton bakiyesi ve satın alma için gereklidir.</p>
+            <p class="text-sm text-slate-400 mt-1"><code class="text-xs">INTERNET</code>, <code class="text-xs">ACCESS_NETWORK_STATE</code> &mdash; bu sürümde yalnızca reklamların yüklenmesi ve gösterilmesi için kullanılır.</p>
           </div>
           <div class="p-3 rounded-lg bg-slate-900/40 border border-slate-800">
             <p class="text-sm font-semibold text-slate-200">Reklam kimliği</p>
@@ -327,11 +317,11 @@
           </div>
           <div class="p-3 rounded-lg bg-slate-900/40 border border-slate-800">
             <p class="text-sm font-semibold text-slate-200">Faturalandırma</p>
-            <p class="text-sm text-slate-400 mt-1"><code class="text-xs">com.android.vending.BILLING</code> &mdash; jeton paketlerinin Google Play üzerinden satın alınması için.</p>
+            <p class="text-sm text-slate-400 mt-1"><code class="text-xs">com.android.vending.BILLING</code> &mdash; satın alma kitaplığı tarafından bildirilir; bu sürümde satın alma sunulmadığı için kullanılmaz.</p>
           </div>
           <div class="p-3 rounded-lg bg-slate-900/40 border border-slate-800">
             <p class="text-sm font-semibold text-slate-200">Arka plan çalışması</p>
-            <p class="text-sm text-slate-400 mt-1"><code class="text-xs">WAKE_LOCK</code>, <code class="text-xs">FOREGROUND_SERVICE</code>, <code class="text-xs">RECEIVE</code> (Google Play Hizmetleri), <code class="text-xs">READ_GSERVICES</code>, <code class="text-xs">BIND_GET_INSTALL_REFERRER_SERVICE</code> &mdash; reklam, analiz ve Google Play kitaplıklarının kendi iç işleyişi için bildirilir; uygulama bunların hiçbirini kendi kodunda kullanmaz.</p>
+            <p class="text-sm text-slate-400 mt-1"><code class="text-xs">WAKE_LOCK</code>, <code class="text-xs">FOREGROUND_SERVICE</code>, <code class="text-xs">RECEIVE</code> (Google Play Hizmetleri), <code class="text-xs">READ_GSERVICES</code>, <code class="text-xs">BIND_GET_INSTALL_REFERRER_SERVICE</code> &mdash; reklam ve Google Play kitaplıklarının kendi iç işleyişi için bildirilir (bir kısmı pakette bulunan ama bu sürümde başlatılmayan kitaplıklardan gelir); uygulama bunların hiçbirini kendi kodunda kullanmaz.</p>
           </div>
         </div>
       </section>
@@ -341,9 +331,8 @@
         <h2 class="text-xl font-semibold font-display text-white">Veriler ne kadar saklanır?</h2>
         <ul class="list-disc list-inside text-slate-400 space-y-1.5 pl-2">
           <li><strong class="text-slate-200">Doğum tarihi, partner tarihi, beklenti yanıtı:</strong> uygulama kapanana kadar; saklanmaz.</li>
-          <li><strong class="text-slate-200">Jeton bakiyesi ve açılmış bölümler:</strong> uygulamayı silene kadar cihazda. Sunucu kaydı, silme talebinize kadar.</li>
-          <li><strong class="text-slate-200">Analiz verileri:</strong> Firebase Analytics'in saklama süresi uyarınca (en fazla 14 ay).</li>
-          <li><strong class="text-slate-200">Satın alma kayıtları:</strong> yasal muhasebe yükümlülükleri gereği Google ve RevenueCat tarafından saklanır.</li>
+          <li><strong class="text-slate-200">Jeton bakiyesi, açılmış bölümler ve ilk analiz işareti:</strong> uygulamayı silene kadar yalnızca cihazda; sunucu kaydı tutulmaz.</li>
+          <li><strong class="text-slate-200">Reklam verileri:</strong> Google AdMob tarafından Google'ın kendi saklama politikaları uyarınca saklanır.</li>
         </ul>
       </section>
 
@@ -356,9 +345,9 @@
           ve işlemeye itiraz etme haklarına sahipsiniz.
         </p>
         <ul class="list-disc list-inside text-slate-400 space-y-1.5 pl-2">
-          <li><strong class="text-slate-200">Cihazdaki verileri silmek:</strong> uygulamayı kaldırmanız yeterlidir; yerel kimlik ve jeton kaydı cihazdan silinir.</li>
-          <li><strong class="text-slate-200">Sunucudaki kaydı silmek:</strong> <!--email_off--><a href="mailto:sahinkuruhan@gmail.com?subject=Numira%20veri%20silme%20talebi" class="text-numira-altin hover:text-amber-300 font-semibold">sahinkuruhan@gmail.com</a><!--/email_off--> adresine yazmanız yeterlidir; talep en geç 30 gün içinde yerine getirilir. Uygulama hesap açtırmadığı için kimliğinizi ispat etmeniz gerekmez; talebinizde uygulama içinde görünen anonim kimliği belirtmeniz işlemi hızlandırır.</li>
-          <li><strong class="text-slate-200">Analizden çıkmak:</strong> cihaz ayarlarından reklam kişiselleştirmesini kapatmanız ölçümü de sınırlar.</li>
+          <li><strong class="text-slate-200">Cihazdaki verileri silmek:</strong> uygulamayı kaldırmanız ya da uygulama verilerini temizlemeniz yeterlidir; jeton kaydı cihazdan silinir. Bu sürümde sunucuda tutulan bir Numira kaydı yoktur.</li>
+          <li><strong class="text-slate-200">Reklam kimliği:</strong> cihaz ayarlarından reklam kimliğinizi sıfırlayabilir ya da silebilirsiniz (<em class="text-slate-300">Ayarlar &rarr; Google &rarr; Tüm hizmetler &rarr; Reklamlar</em>). Google'ın işlediği reklam verileri için Google'ın gizlilik araçları geçerlidir.</li>
+          <li><strong class="text-slate-200">Soru ve talepler:</strong> <!--email_off--><a href="mailto:sahinkuruhan@gmail.com?subject=Numira%20veri%20talebi" class="text-numira-altin hover:text-amber-300 font-semibold">sahinkuruhan@gmail.com</a><!--/email_off--> adresine yazabilirsiniz; talepler en geç 30 gün içinde yanıtlanır.</li>
         </ul>
         <p class="text-slate-400 leading-relaxed text-sm">
           Doğum tarihiniz hiç kaydedilmediği için, o veriye ilişkin bir silme talebine konu olacak kayıt
@@ -370,9 +359,8 @@
       <section class="space-y-3">
         <h2 class="text-xl font-semibold font-display text-white">Veri güvenliği</h2>
         <p class="text-slate-400 leading-relaxed">
-          Sunucuyla yapılan bütün iletişim HTTPS/TLS ile şifrelenir. Jeton bakiyesi sunucu tarafında tutulduğunda
-          istemci yalnızca okuma yetkisine sahiptir; bakiyeyi değiştiren bütün işlemler sunucu üzerinde doğrulanır.
-          Bununla birlikte, internet üzerinden yapılan hiçbir aktarımın %100 güvenli olduğunun garanti
+          Reklam SDK'sinin topladığı veriler aktarım sırasında TLS ile şifrelenir. Uygulamanın kendi verileri
+          (jeton bakiyesi, açılmış bölümler) bu sürümde yalnızca cihazda tutulur. Bununla birlikte, internet üzerinden yapılan hiçbir aktarımın %100 güvenli olduğunun garanti
           edilemeyeceğini belirtmek isteriz.
         </p>
       </section>
@@ -381,9 +369,9 @@
       <section class="space-y-3">
         <h2 class="text-xl font-semibold font-display text-white">Yurt dışına aktarım</h2>
         <p class="text-slate-400 leading-relaxed">
-          Kullanılan Google ve RevenueCat hizmetleri sunucularını Türkiye dışında (başta Amerika Birleşik
+          Kullanılan Google AdMob hizmeti sunucularını Türkiye dışında (başta Amerika Birleşik
           Devletleri ve Avrupa Birliği olmak üzere) işletir. Bu nedenle yukarıda listelenen veriler yurt dışında
-          işlenebilir. Bu sağlayıcılar aktarımları kendi standart sözleşme hükümleri çerçevesinde yürütür.
+          işlenebilir. Google bu aktarımları kendi standart sözleşme hükümleri çerçevesinde yürütür.
         </p>
       </section>
 
@@ -392,8 +380,9 @@
         <h2 class="text-xl font-semibold font-display text-white">Çocukların gizliliği</h2>
         <p class="text-slate-400 leading-relaxed">
           Numira 13 yaş altı çocuklara yönelik değildir ve bilerek bu yaş grubundan veri toplamaz. Uygulama
-          ayrıca ad, e-posta gibi doğrudan tanımlayıcı hiçbir bilgi istemez. 13 yaş altı bir çocuğa ait veri
-          işlendiğini düşünüyorsanız bize yazın, ilgili kaydı sileriz.
+          ayrıca ad, e-posta gibi doğrudan tanımlayıcı hiçbir bilgi istemez ve kendi sunucusunda kullanıcı kaydı
+          tutmaz. Cihazdaki veriler uygulama kaldırılınca silinir; reklam verileri için Google'ın araçları
+          geçerlidir. Bu konudaki sorularınız için bize yazabilirsiniz.
         </p>
       </section>
 
