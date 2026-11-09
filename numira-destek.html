@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Numira mobil uygulaması için destek: iletişim, jetonlar, ücretsiz analiz, paylaşım ve veri silme hakkında sık sorulan sorular.">
+  <meta name="robots" content="index, follow">
+  <title>Numira | Destek</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            dark: '#030712',
+            numira: { gece: '#0E0D1F', altin: '#D9B36C', lila: '#B9A8E8' },
+            accent: { emerald: '#10B981', blue: '#2E8BFF', cyan: '#22D3EE' },
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="style.css?v=2">
+</head>
+<body class="bg-dark text-slate-100 bg-grid-pattern min-h-screen antialiased">
+
+  <div class="bg-animated-wrapper" style="opacity:0.6"></div>
+
+  <header class="border-b border-slate-900/60 py-5">
+    <div class="max-w-3xl mx-auto px-6 flex items-center justify-between gap-4">
+      <a href="index.html" class="flex items-center gap-3 group" aria-label="Ana sayfaya dön">
+        <img src="logo.png?v=2" alt="Şahin Kuruhan Logo" class="h-10 w-10 object-contain rounded-xl">
+        <span class="text-sm font-semibold text-slate-300 group-hover:text-white transition-colors">sahinkuruhan.com</span>
+      </a>
+      <a href="numira-gizlilik.html" class="text-xs font-semibold text-slate-400 hover:text-white transition-colors whitespace-nowrap">Gizlilik Politikası</a>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-6 py-16">
+    <div class="glass-panel rounded-2xl p-8 sm:p-10 space-y-8">
+
+      <div>
+        <span class="text-[10px] font-bold text-numira-altin bg-amber-500/10 px-2 py-0.5 rounded uppercase tracking-wider">Yazılım / Mobil Uygulama</span>
+        <h1 class="text-3xl sm:text-4xl font-bold font-display text-white mt-4">Numira Destek</h1>
+        <p class="text-slate-400 leading-relaxed mt-3">Numira hakkındaki soruların ve yaşadığın sorunlar için bu sayfayı kullanabilirsin.</p>
+      </div>
+
+      <section class="space-y-3">
+        <h2 class="text-xl font-semibold font-display text-white">İletişim</h2>
+        <p class="text-slate-400 leading-relaxed">
+          E-posta:
+          <!--email_off--><a href="mailto:numiraapp@gmail.com?subject=Numira%20destek" class="text-numira-altin hover:text-amber-300 font-semibold">numiraapp@gmail.com</a><!--/email_off-->
+        </p>
+        <p class="text-slate-400 leading-relaxed text-sm">
+          Yazarken cihaz modelini, işletim sistemi sürümünü ve sorunu kısaca belirtmen yeterli.
+          <strong class="text-slate-300">Doğum tarihini paylaşmana gerek yok.</strong>
+        </p>
+      </section>
+
+      <section class="space-y-5">
+        <h2 class="text-xl font-semibold font-display text-white">Sık sorulan sorular</h2>
+
+        <div class="space-y-1.5">
+          <h3 class="font-semibold text-slate-200">Hesap açmam gerekiyor mu?</h3>
+          <p class="text-slate-400 leading-relaxed">Hayır. Numira hesap açtırmaz; ad, e-posta ya da telefon istemez.</p>
+        </div>
+
+        <div class="space-y-1.5">
+          <h3 class="font-semibold text-slate-200">İlk detaylı analizi nasıl ücretsiz açarım?</h3>
+          <p class="text-slate-400 leading-relaxed">Numiran ekranında bir analiz bölümünü seç, "Detaylı analizi aç"a ve ardından "Ücretsiz aç"a dokun. Bu hak bir kez kullanılır ve jeton değildir; bakiyen değişmez.</p>
+        </div>
+
+        <div class="space-y-1.5">
+          <h3 class="font-semibold text-slate-200">Jeton nasıl kazanılır?</h3>
+          <p class="text-slate-400 leading-relaxed">Her gün uygulamayı ilk açışında 1 jeton hediye edilir. Android sürümünde isteğe bağlı ödüllü reklamla da jeton kazanılabilir; iOS sürümünde reklam yoktur. Kişisel Analiz ve Kader Analizi'nin detayları 3 jeton, İlişki Sinerjisi'nin detayları 5 jetondur. Uygulamada satın alma yoktur.</p>
+        </div>
+
+        <div class="space-y-1.5">
+          <h3 class="font-semibold text-slate-200">Doğum tarihimi neden her açılışta yeniden giriyorum?</h3>
+          <p class="text-slate-400 leading-relaxed">Doğum tarihin bilerek hiçbir yere kaydedilmez ve uygulama kapanınca silinir. Bu bir hata değil, gizlilik için yapılmış bir tercihtir.</p>
+        </div>
+
+        <div class="space-y-1.5">
+          <h3 class="font-semibold text-slate-200">Uygulamayı silersem jetonlarım korunur mu?</h3>
+          <p class="text-slate-400 leading-relaxed">Jeton bakiyen ve açtığın bölümler yalnızca cihazında tutulur; sunucuda bir kayıt yoktur. Uygulamayı silersen bu kayıt cihazdan silinir ve bizim tarafımızdan geri yüklenemez.</p>
+        </div>
+
+        <div class="space-y-1.5">
+          <h3 class="font-semibold text-slate-200">Paylaşım kartımı nasıl kaydederim?</h3>
+          <p class="text-slate-400 leading-relaxed">"Kartı paylaş"a dokun ve açılan menüden hedefi seç. iOS'ta "Görüntüyü Kaydet"i seçtiğinde sistem bir kez Fotoğraflar'a ekleme izni sorar; Numira fotoğraflarını okumaz. Kartta doğum tarihin yazmaz.</p>
+        </div>
+
+        <div class="space-y-1.5">
+          <h3 class="font-semibold text-slate-200">Verilerimi nasıl silerim?</h3>
+          <p class="text-slate-400 leading-relaxed">Uygulamayı silmen cihazdaki jeton kaydını kaldırır. Cihaz yedeğinde kalan kopyalar yedekleme ayarlarına bağlıdır. Ayrıntılar <a href="numira-gizlilik.html" class="text-numira-altin hover:text-amber-300 font-semibold">Gizlilik Politikası</a>'nda yer alır.</p>
+        </div>
+
+        <div class="space-y-1.5">
+          <h3 class="font-semibold text-slate-200">Yorumlar ne kadar güvenilir?</h3>
+          <p class="text-slate-400 leading-relaxed">Numira'nın yorumları eğlence amaçlıdır; bilimsel, tıbbi, psikolojik ya da finansal bir değerlendirme veya tavsiye değildir.</p>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="border-t border-slate-900/60 py-8">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <p class="text-xs text-slate-500 font-medium">&copy; 2026 Şahin Kuruhan. Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

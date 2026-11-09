@@ -65,15 +65,15 @@
       <div>
         <span class="text-[10px] font-bold text-numira-altin bg-amber-500/10 px-2 py-0.5 rounded uppercase tracking-wider">Yazılım / Mobil Uygulama</span>
         <h1 class="text-3xl sm:text-4xl font-bold font-display text-white mt-4">Numira Gizlilik Politikası</h1>
-        <p class="text-sm text-slate-500 mt-2">Son güncelleme: 2 Kasım 2026 &middot; Uygulama sürümü 1.0.0 (14)</p>
+        <p class="text-sm text-slate-500 mt-2">Son güncelleme: 9 Kasım 2026 &middot; Android 1.0.0 (14) &middot; iOS 1.0.0 (19)</p>
       </div>
 
       <p class="text-slate-400 leading-relaxed">
-        Bu politika, <strong class="text-slate-200">Numira</strong> mobil uygulamasının (paket adı:
+        Bu politika, <strong class="text-slate-200">Numira</strong> mobil uygulamasının Android (Google Play) ve iOS (App Store) sürümlerinin (iki platformda da uygulama kimliği:
         <code class="text-numira-altin bg-slate-900/60 px-1.5 py-0.5 rounded font-mono text-sm">com.numiraapp.app</code>)
         hangi verileri işlediğini, bu verilerin nereye gittiğini ve hangilerinin cihazınızdan hiç çıkmadığını
         açıklar. Veri sorumlusu: <strong class="text-slate-200">Şahin Kuruhan</strong> (bireysel geliştirici,
-        Türkiye) &mdash; iletişim <!--email_off--><a href="mailto:sahinkuruhan@gmail.com" class="text-numira-altin hover:text-amber-300 font-semibold">sahinkuruhan@gmail.com</a><!--/email_off-->.
+        Türkiye) &mdash; iletişim <!--email_off--><a href="mailto:numiraapp@gmail.com" class="text-numira-altin hover:text-amber-300 font-semibold">numiraapp@gmail.com</a><!--/email_off-->.
       </p>
 
       <!-- ÖZET -->
@@ -86,7 +86,9 @@
           e-posta, telefon veya adres istemez.
         </p>
         <p class="text-slate-400 leading-relaxed">
-          Uygulamanın şu anki sürümünde dışarıya veri gönderen tek hizmet <strong class="text-slate-200">Google
+          İki platform farklı çalışır. <strong class="text-slate-200">iOS sürümünde reklam yoktur</strong>;
+          uygulama reklam, analiz ve satın alma hizmetlerini başlatmaz. Aşağıdaki AdMob açıklamaları yalnızca Android
+          sürümü içindir. <strong class="text-slate-200">Android</strong> sürümünde dışarıya veri gönderen tek hizmet <strong class="text-slate-200">Google
           AdMob</strong> reklam altyapısıdır. AdMob, reklam gösterebilmek ve ölçebilmek için cihazınızdan
           <strong class="text-slate-200">IP adresi (yaklaşık konum çıkarımı için), reklam ve uygulama set
           kimlikleri, reklam ve uygulama etkileşimleri ile performans/tanılama bilgileri</strong> toplar ve
@@ -94,6 +96,55 @@
           alma bu sürümde <strong class="text-slate-200">etkin değildir</strong>; uygulama kendi adına hiçbir
           kullanım olayı göndermez. Aşağıdaki tablolar neyin nereye gittiğini kalem kalem gösterir.
         </p>
+      </section>
+
+      <!-- PLATFORMLAR -->
+      <section class="space-y-3">
+        <h2 class="text-xl font-semibold font-display text-white">Platformlara göre özet</h2>
+        <div class="pol-wrap">
+          <table class="pol-table">
+            <thead>
+              <tr><th>Konu</th><th>Android (Google Play)</th><th>iOS (App Store)</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-slate-200">Reklam</td>
+                <td>Ödüllü ve geçiş reklamı (Google AdMob)</td>
+                <td><strong class="text-numira-altin">Yok.</strong></td>
+              </tr>
+              <tr>
+                <td class="text-slate-200">Üçüncü taraf hizmete giden veri</td>
+                <td>AdMob: IP adresi ve yaklaşık konum, reklam ve uygulama set kimliği, etkileşimler, performans ve tanılama</td>
+                <td>Uygulama reklam, analiz ve satın alma hizmetlerini başlatmaz ve bu hizmetlere kendi kodundan veri göndermez.</td>
+              </tr>
+              <tr>
+                <td class="text-slate-200">Reklam kimliği ve izleme</td>
+                <td>Reklam kimliği kullanılır; AEA, Birleşik Krallık ve İsviçre'de onay formu gösterilir</td>
+                <td>Uygulama reklam kimliği (IDFA) istemez, izleme izni sormaz.</td>
+              </tr>
+              <tr>
+                <td class="text-slate-200">Jeton kazanma</td>
+                <td>Günlük bonus ve isteğe bağlı ödüllü reklam</td>
+                <td>Günlük bonus</td>
+              </tr>
+              <tr>
+                <td class="text-slate-200">Uygulama içi satın alma</td>
+                <td>Sunulmaz</td>
+                <td>Sunulmaz</td>
+              </tr>
+              <tr>
+                <td class="text-slate-200">Cihazda kalan bilgiler</td>
+                <td>Jeton kaydı, ilk analiz işareti, rastgele yerel kimlik</td>
+                <td>Aynı</td>
+              </tr>
+              <tr>
+                <td class="text-slate-200">Paylaşım kartı</td>
+                <td>QR kodu ve Google Play bağlantısı içerir</td>
+                <td>Yalnızca görsel; QR kodu ve bağlantı yoktur</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
 
       <!-- TABLO 1: NE NEREYE GIDER -->
@@ -133,12 +184,12 @@
               <tr>
                 <td class="text-slate-200">Jeton bakiyeniz, açtığınız bölümler, günlük bonus tarihi</td>
                 <td>Yalnızca cihazda yerel depolama</td>
-                <td><strong class="text-numira-altin">Hayır.</strong> Şu anki sürümde sunucuya gönderilmez. Android yedeklemesi açıksa cihazınızın Google hesabı yedeğine dahil olabilir.</td>
+                <td><strong class="text-numira-altin">Hayır.</strong> Şu anki sürümde sunucuya gönderilmez. Android yedeklemesi açıksa cihazınızın Google hesabı yedeğine, iOS'ta cihazınızın iCloud ya da bilgisayar yedeğine dahil olabilir.</td>
               </tr>
               <tr>
                 <td class="text-slate-200">İlk detaylı analizin görüntülendiği bilgisi (tek bir evet/hayır işareti)</td>
                 <td>Cihazda yerel depolama</td>
-                <td><strong class="text-numira-altin">Hayır.</strong> Yalnızca ilk analiz görülene kadar geçiş reklamını ertelemek için kullanılır; hangi bölümün ya da tarihin görüldüğü yazılmaz, gönderilmez.</td>
+                <td><strong class="text-numira-altin">Hayır.</strong> Android'de yalnızca ilk analiz görülene kadar geçiş reklamını ertelemek için kullanılır; iOS'ta reklam olmadığından bu etkisi yoktur. Hangi bölümün ya da tarihin görüldüğü yazılmaz, gönderilmez.</td>
               </tr>
               <tr>
                 <td class="text-slate-200">Uygulamanın ürettiği rastgele yerel kimlik</td>
@@ -147,28 +198,28 @@
               </tr>
               <tr>
                 <td class="text-slate-200">Reklam kimliği (Advertising ID) ve uygulama set kimliği</td>
-                <td>Google AdMob</td>
-                <td><strong class="text-slate-300">Evet.</strong> Reklam SDK'si tarafından toplanır ve Google'a iletilir; ayrıntı aşağıda.</td>
+                <td>Google AdMob (yalnızca Android)</td>
+                <td><strong class="text-slate-300">Android'de evet. iOS'ta uygulama bu veriyi göndermez.</strong> Reklam SDK'si tarafından toplanır ve Google'a iletilir; ayrıntı aşağıda.</td>
               </tr>
               <tr>
                 <td class="text-slate-200">IP adresi ve buradan çıkarılan yaklaşık konum</td>
-                <td>Google AdMob</td>
-                <td><strong class="text-slate-300">Evet.</strong> Reklam isteğiyle birlikte gider; uygulama konum izni istemez, kesin konum alınmaz.</td>
+                <td>Google AdMob (yalnızca Android)</td>
+                <td><strong class="text-slate-300">Android'de evet. iOS'ta uygulama bu veriyi göndermez.</strong> Reklam isteğiyle birlikte gider; uygulama konum izni istemez, kesin konum alınmaz.</td>
               </tr>
               <tr>
                 <td class="text-slate-200">Reklam ve uygulama etkileşimleri (ör. uygulama açılışı, reklam gösterimi, dokunma, video izleme)</td>
-                <td>Google AdMob</td>
-                <td><strong class="text-slate-300">Evet.</strong> Reklam ölçümü, analiz ve sahtekârlığı önleme için.</td>
+                <td>Google AdMob (yalnızca Android)</td>
+                <td><strong class="text-slate-300">Android'de evet. iOS'ta uygulama bu veriyi göndermez.</strong> Reklam ölçümü, analiz ve sahtekârlığı önleme için.</td>
               </tr>
               <tr>
                 <td class="text-slate-200">Uygulama ve SDK performansı / tanılama (ör. açılış süresi, takılma oranı, enerji kullanımı), cihaz modeli, işletim sistemi, uygulama sürümü</td>
-                <td>Google AdMob</td>
-                <td><strong class="text-slate-300">Evet.</strong> Reklam altyapısının çalışması ve ölçümü için.</td>
+                <td>Google AdMob (yalnızca Android)</td>
+                <td><strong class="text-slate-300">Android'de evet. iOS'ta uygulama bu veriyi göndermez.</strong> Reklam altyapısının çalışması ve ölçümü için.</td>
               </tr>
               <tr>
                 <td class="text-slate-200">Ad, e-posta, telefon, adres, kişiler, kesin (GPS) konum, fotoğraf, kamera, mikrofon, sağlık verisi</td>
                 <td>&mdash;</td>
-                <td><strong class="text-numira-altin">Hiç toplanmaz.</strong> Uygulama bu izinlerin hiçbirini istemez.</td>
+                <td><strong class="text-numira-altin">Hiç toplanmaz.</strong> Uygulama bu verilere erişim izni istemez. iOS'ta kartı Fotoğraflar'a kaydetmeyi seçerseniz yalnızca ekleme izni sorulur; fotoğraflarınız okunmaz.</td>
               </tr>
             </tbody>
           </table>
@@ -204,7 +255,7 @@
             </thead>
             <tbody>
               <tr>
-                <td class="text-slate-200">Google AdMob</td>
+                <td class="text-slate-200">Google AdMob (yalnızca Android)</td>
                 <td>"Reklam izle" düğmesiyle açılan ödüllü reklam, analiz bölümlerine geçerken gösterilen geçiş reklamı ve AB/BK/İsviçre'de reklam onayının toplanması (Google User Messaging Platform)</td>
                 <td>IP adresi (yaklaşık konum çıkarımı için), reklam kimliği ve uygulama set kimliği, reklam ve uygulama etkileşimleri, uygulama/SDK performansı ve tanılama bilgileri, cihaz ve ağ bilgileri. Google bu verileri reklam, analiz ve sahtekârlığı önleme amacıyla işler ve aktarım sırasında şifreler. AdMob'un yaptığı bu ölçüm, Google'ın kendi reklam ölçümüdür; uygulamanın kendi analiz katmanından ayrıdır. <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" class="text-numira-altin hover:text-amber-300">Politika</a></td>
               </tr>
@@ -214,7 +265,8 @@
         <p class="text-slate-400 leading-relaxed text-sm">
           <strong class="text-slate-300">Şu anki sürümde etkin olmayan hizmetler:</strong> Firebase (Analytics,
           Remote Config, Authentication, Firestore, Cloud Functions) ve RevenueCat uygulama paketinde
-          kütüphane olarak bulunur, ancak yapılandırılmadıkları için başlatılmaz ve veri göndermez. Jeton
+          kütüphane olarak bulunur, ancak yapılandırılmadıkları için uygulama bunları başlatmaz ve bu hizmetlere kendi kodundan veri göndermez. iOS sürümünde
+          Google Mobile Ads ve Google User Messaging Platform kitaplıkları da pakette bulunur, ancak uygulama bunları başlatmaz. Jeton
           paketleri ve "Reklamsız Numira" satın alımı bu sürümde sunulmaz. Bu hizmetlerden biri
           etkinleştirildiğinde bu politika, ilgili hizmetin işlediği verilerle birlikte önceden güncellenir.
         </p>
@@ -239,7 +291,11 @@
       <section class="space-y-3">
         <h2 class="text-xl font-semibold font-display text-white">Reklamlar ve reklam kimliği</h2>
         <p class="text-slate-400 leading-relaxed">
-          Uygulamada iki reklam biçimi vardır:
+          <strong class="text-slate-200">Bu bölüm yalnızca Android sürümü içindir.</strong> iOS sürümünde reklam
+          gösterilmez; uygulama reklam kimliği (IDFA) istemez ve izleme (App Tracking Transparency) izni sormaz.
+        </p>
+        <p class="text-slate-400 leading-relaxed">
+          Android sürümünde iki reklam biçimi vardır:
         </p>
         <ul class="list-disc pl-5 space-y-2 text-slate-400 leading-relaxed">
           <li>
@@ -278,12 +334,12 @@
       <section class="space-y-3">
         <h2 class="text-xl font-semibold font-display text-white">Uygulama içi satın alma</h2>
         <p class="text-slate-400 leading-relaxed">
-          Detaylı analizler jetonla açılır; geçiş reklamı içeriği açmaz. Bu sürümde jeton yalnızca günlük
-          bonus ve isteğe bağlı ödüllü reklamla kazanılır; <strong class="text-slate-200">uygulama içi satın
+          Detaylı analizler jetonla açılır; geçiş reklamı içeriği açmaz. Jeton Android'de günlük bonus ve
+          isteğe bağlı ödüllü reklamla, iOS'ta yalnızca günlük bonusla kazanılır. İki platformda da <strong class="text-slate-200">uygulama içi satın
           alma (jeton paketleri, "Reklamsız Numira") şu anda sunulmaz</strong> ve ödeme bilgisi işlenmez.
-          Uygulama paketi Google Play faturalandırma iznini bildirir, ancak bu sürümde kullanmaz. Satın alma
-          ileride açıldığında, ödeme akışının tamamı Google Play tarafından yürütülecek ve bu bölüm önceden
-          güncellenecektir.
+          Android uygulama paketi Google Play faturalandırma iznini bildirir, ancak bu sürümde kullanmaz. Satın alma
+          ileride açıldığında, ödeme akışının tamamı ilgili uygulama mağazası tarafından yürütülecek ve bu bölüm
+          önceden güncellenecektir.
         </p>
       </section>
 
@@ -296,13 +352,23 @@
           verilir. Kartın nereye gideceğini tamamen siz seçersiniz; uygulama kendi adına hiçbir yere yüklemez.
           Kartta yalnızca üç basamaklı sayı ve kısa yorum bulunur, doğum tarihiniz yazılmaz.
         </p>
+        <p class="text-slate-400 leading-relaxed">
+          Android'de kartta Google Play sayfasına giden bir QR kodu bulunur ve paylaşım metnine bu adres eklenir.
+          iOS'ta kartta QR kodu ya da bağlantı yoktur ve yalnızca görsel paylaşılır. iOS'ta paylaşım menüsünden
+          "Görüntüyü Kaydet"i seçerseniz sistem bir kez Fotoğraflar'a ekleme izni sorar; uygulama fotoğraflarınızı okumaz.
+        </p>
       </section>
 
       <!-- IZINLER -->
       <section class="space-y-3">
         <h2 class="text-xl font-semibold font-display text-white">Uygulamanın bildirdiği izinler</h2>
         <p class="text-slate-400 leading-relaxed">
-          Aşağıdaki liste, uygulama paketinde bildirilen izinlerin tamamıdır. Hiçbiri sizden ayrıca onay
+          <strong class="text-slate-200">iOS:</strong> yalnızca Fotoğraflar'a ekleme izni vardır ve bu izin, siz
+          paylaşım menüsünden "Görüntüyü Kaydet"i seçtiğinizde sorulur. Konum, kamera, mikrofon, kişiler, izleme
+          ve bildirim izni istenmez.
+        </p>
+        <p class="text-slate-400 leading-relaxed">
+          <strong class="text-slate-200">Android:</strong> aşağıdaki liste, Android uygulama paketinde bildirilen izinlerin tamamıdır. Hiçbiri sizden ayrıca onay
           istemeyen, düşük riskli sistem izinleridir; kamera, konum, kişiler, mikrofon ve depolama izni
           <strong class="text-slate-200">yoktur</strong>.
         </p>
@@ -326,13 +392,23 @@
         </div>
       </section>
 
+      <!-- ERISIM -->
+      <section class="space-y-3">
+        <h2 class="text-xl font-semibold font-display text-white">Gizlilik politikasına uygulamadan erişim</h2>
+        <p class="text-slate-400 leading-relaxed">
+          <em class="text-slate-300">Profil &rarr; Yasal &rarr; Gizlilik Politikası</em> bu sayfayı cihazınızın
+          tarayıcısında açar. Sayfa GitHub Pages ve Cloudflare üzerinden sunulur; bu hizmetler ziyaretlerin teknik
+          günlüklerini (IP adresi, tarayıcı bilgisi gibi) kendi politikaları uyarınca tutabilir.
+        </p>
+      </section>
+
       <!-- SAKLAMA -->
       <section class="space-y-3">
         <h2 class="text-xl font-semibold font-display text-white">Veriler ne kadar saklanır?</h2>
         <ul class="list-disc list-inside text-slate-400 space-y-1.5 pl-2">
           <li><strong class="text-slate-200">Doğum tarihi, partner tarihi, beklenti yanıtı:</strong> uygulama kapanana kadar; saklanmaz.</li>
           <li><strong class="text-slate-200">Jeton bakiyesi, açılmış bölümler ve ilk analiz işareti:</strong> uygulamayı silene kadar yalnızca cihazda; sunucu kaydı tutulmaz.</li>
-          <li><strong class="text-slate-200">Reklam verileri:</strong> Google AdMob tarafından Google'ın kendi saklama politikaları uyarınca saklanır.</li>
+          <li><strong class="text-slate-200">Reklam verileri (yalnızca Android):</strong> Google AdMob tarafından Google'ın kendi saklama politikaları uyarınca saklanır.</li>
         </ul>
       </section>
 
@@ -345,9 +421,9 @@
           ve işlemeye itiraz etme haklarına sahipsiniz.
         </p>
         <ul class="list-disc list-inside text-slate-400 space-y-1.5 pl-2">
-          <li><strong class="text-slate-200">Cihazdaki verileri silmek:</strong> uygulamayı kaldırmanız ya da uygulama verilerini temizlemeniz yeterlidir; jeton kaydı cihazdan silinir. Bu sürümde sunucuda tutulan bir Numira kaydı yoktur.</li>
-          <li><strong class="text-slate-200">Reklam kimliği:</strong> cihaz ayarlarından reklam kimliğinizi sıfırlayabilir ya da silebilirsiniz (<em class="text-slate-300">Ayarlar &rarr; Google &rarr; Tüm hizmetler &rarr; Reklamlar</em>). Google'ın işlediği reklam verileri için Google'ın gizlilik araçları geçerlidir.</li>
-          <li><strong class="text-slate-200">Soru ve talepler:</strong> <!--email_off--><a href="mailto:sahinkuruhan@gmail.com?subject=Numira%20veri%20talebi" class="text-numira-altin hover:text-amber-300 font-semibold">sahinkuruhan@gmail.com</a><!--/email_off--> adresine yazabilirsiniz; talepler en geç 30 gün içinde yanıtlanır.</li>
+          <li><strong class="text-slate-200">Cihazdaki verileri silmek:</strong> uygulamayı kaldırmanız ya da uygulama verilerini temizlemeniz yeterlidir; jeton kaydı cihazdan silinir. Bu sürümde sunucuda tutulan bir Numira kaydı yoktur. Cihaz yedeğinde kalan bir kopya, yedekleme ayarlarınıza tabidir.</li>
+          <li><strong class="text-slate-200">Reklam kimliği (Android):</strong> cihaz ayarlarından reklam kimliğinizi sıfırlayabilir ya da silebilirsiniz (<em class="text-slate-300">Ayarlar &rarr; Google &rarr; Tüm hizmetler &rarr; Reklamlar</em>). Google'ın işlediği reklam verileri için Google'ın gizlilik araçları geçerlidir.</li>
+          <li><strong class="text-slate-200">Soru ve talepler:</strong> <!--email_off--><a href="mailto:numiraapp@gmail.com?subject=Numira%20veri%20talebi" class="text-numira-altin hover:text-amber-300 font-semibold">numiraapp@gmail.com</a><!--/email_off--> adresine yazabilirsiniz; talepler en geç 30 gün içinde yanıtlanır.</li>
         </ul>
         <p class="text-slate-400 leading-relaxed text-sm">
           Doğum tarihiniz hiç kaydedilmediği için, o veriye ilişkin bir silme talebine konu olacak kayıt
@@ -359,7 +435,7 @@
       <section class="space-y-3">
         <h2 class="text-xl font-semibold font-display text-white">Veri güvenliği</h2>
         <p class="text-slate-400 leading-relaxed">
-          Reklam SDK'sinin topladığı veriler aktarım sırasında TLS ile şifrelenir. Uygulamanın kendi verileri
+          Android sürümünde reklam SDK'sinin topladığı veriler aktarım sırasında TLS ile şifrelenir. Uygulamanın kendi verileri
           (jeton bakiyesi, açılmış bölümler) bu sürümde yalnızca cihazda tutulur. Bununla birlikte, internet üzerinden yapılan hiçbir aktarımın %100 güvenli olduğunun garanti
           edilemeyeceğini belirtmek isteriz.
         </p>
@@ -369,9 +445,9 @@
       <section class="space-y-3">
         <h2 class="text-xl font-semibold font-display text-white">Yurt dışına aktarım</h2>
         <p class="text-slate-400 leading-relaxed">
-          Kullanılan Google AdMob hizmeti sunucularını Türkiye dışında (başta Amerika Birleşik
+          Android sürümünde kullanılan Google AdMob hizmeti sunucularını Türkiye dışında (başta Amerika Birleşik
           Devletleri ve Avrupa Birliği olmak üzere) işletir. Bu nedenle yukarıda listelenen veriler yurt dışında
-          işlenebilir. Google bu aktarımları kendi standart sözleşme hükümleri çerçevesinde yürütür.
+          işlenebilir. Google bu aktarımları kendi standart sözleşme hükümleri çerçevesinde yürütür. iOS sürümünde uygulama reklam ve analiz hizmetlerini başlatmaz ve bu hizmetlere kendi kodundan veri göndermez.
         </p>
       </section>
 
@@ -410,10 +486,13 @@
         <h2 class="text-xl font-semibold font-display text-white">İletişim</h2>
         <p class="text-slate-400 leading-relaxed">
           Gizlilikle ilgili her soru ve talep için:
-          <!--email_off--><a href="mailto:sahinkuruhan@gmail.com" class="text-numira-altin hover:text-amber-300 font-semibold">sahinkuruhan@gmail.com</a><!--/email_off-->
+          <!--email_off--><a href="mailto:numiraapp@gmail.com" class="text-numira-altin hover:text-amber-300 font-semibold">numiraapp@gmail.com</a><!--/email_off-->
         </p>
         <p class="text-slate-400 leading-relaxed text-sm">
           Veri sorumlusu: Şahin Kuruhan, bireysel geliştirici, Türkiye.
+        </p>
+        <p class="text-slate-400 leading-relaxed text-sm">
+          Uygulama kullanımı için: <a href="numira-destek.html" class="text-numira-altin hover:text-amber-300 font-semibold">Numira Destek</a>
         </p>
       </section>
 
